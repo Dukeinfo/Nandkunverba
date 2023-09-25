@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Shri Nandkunverba Kshatriya Kanya Vidyalaya - Bhavnagar, Gujrat</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+     <!-- OR -->
+    {!! SEO::generate() !!}
+    {{-- @stack('keywords') --}}
+    <!-- BEGIN: CSS -->
+    @php
+        $headerSnippets = App\Models\Headersnippets::get();
+    @endphp
+        @forelse($headerSnippets as $snippet)
+            {{ $snippet->description }}
+        @empty
+        @endforelse
+
+
+     <link rel="stylesheet" href="{{asset('assets/css/font-icons.min.css')}}">
+     <link rel="stylesheet" href="{{asset('assets/css/theme-vendors.min.css')}}">
+     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+
+</head>
+
+<body class="h-100">
+    <!-- start page loader -->
+    <div class="page-loader"></div>
+    <!-- end page loader -->
+    <!-- start header -->
+    @include('livewire.frontend.common.header')
+    <!-- end header -->
+   
+    {{ $slot }}
+
+    <!-- start footer -->
+    @include('livewire.frontend.common.footer')
+    <!-- end footer -->
+
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+    <!-- end scroll to top -->
+    <!-- javascript -->
+
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/theme-vendors.min.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+</body>
+
+</html>
