@@ -63,11 +63,12 @@
 					
 			  <ul class="sub-menu" aria-expanded="false">
 						<li><a href="{{route('view_home_slider')}}">Home Slider</a></li>
-						<li><a href="{{route('whyus_page')}}">Home Sections</a></li>	
-					    <li><a href="{{route('view_facilities')}}">Facilities</a></li>	
+						<li><a href="{{route('whyus_page')}}">Home Sections</a></li>
+						<li><a href="{{route('view_facilities_expert')}}">Facilities Expert Services</a></li>	
+					    <li><a href="{{route('view_facilities')}}">Facilities Slider</a></li>	
 					    <li><a href="{{route('view_coachings')}}">Life at snkkv</a></li>
 					    <li><a href="{{route('view_testimonials')}}">Testimonials</a></li>	
-						<li><a href="{{route('view_knowledge_home')}}">Activities</a></li>
+						<li><a href="{{route('view_knowledge_home')}}">Coachings</a></li>
 								
 						<li><a href="{{route('view_membership')}}">Memebership</a></li>	
 

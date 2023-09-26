@@ -172,13 +172,27 @@ $facilities = App\Models\Facilities::where('status', 'Active')->get();
                     <h5 class="alt-font font-weight-600 text-dark-purple letter-spacing-minus-1px m-0">Facility Spotlight: Unveiling Excellence in Infrastructure</h5>
                 </div>
             </div>
+ @php
+$expertservices = App\Models\ExpertService::where('status', 'Active')->first();              
+ @endphp           
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 col-xl-3 col-lg-4 position-relative padding-2-rem-top md-no-padding-top md-margin-5-rem-bottom wow animate__fadeIn"
                     data-wow-delay="0.2s">
                     <span class="alt-font margin-20px-bottom d-block text-uppercase font-weight-500 text-tussock">Expert
                         services</span>
+
+                     @if(isset($expertservices->detail) )
+                        
+                     {!! isset($expertservices->detail) 
+                             ? 
+                             str_limit($expertservices->detail, $limit=115 )
+                              : ''!!}
+                    @else     
                     <p class="margin-40px-bottom md-margin-20px-bottom">The Institution has various facilities that cater to both the curricular and co-curricular needs of the students.</p>
-                    <a href="#" class="btn btn-small btn-tussock">View more</a>
+                    @endif
+
+
+                    <a href="{{$expertservices->link ?? 'javascript:void()'}}" class="btn btn-small btn-tussock">View more</a>
                     <!-- <div class="swiper-button-next-nav-2 swiper-button-next slider-navigation-style-06"><i
                             class="line-icon-Arrow-OutRight"></i></div>
                     <div class="swiper-button-previous-nav-2 swiper-button-prev slider-navigation-style-06"><i
@@ -329,8 +343,8 @@ $lifeat = App\Models\Coachings::where('status', 'Active')->get();
                     data-wow-delay="0.2s">
                     <div class="interactive-banners-style-05">
                         <div class="interactive-banners-image">
-                            <img src=" {{isset($life->image) ? getCoaching($life->image) : asset('no_image.jpg')}}" alt="" />
-                        
+                            <img src="{{isset($life->image) ? getCoaching($life->image) : asset('no_image.jpg')}}" alt="" />
+                      
                             <div class="overlay-bg bg-gradient-midium-gray-transparent opacity-medium"></div>
                             <a href="#"
                                 class="section-link icon-box-circled w-35px h-35px line-height-32px text-center text-white border-all border-width-2px border-color-white position-absolute bottom-50px right-45px z-index-1 lg-right-30px xs-bottom-25px">
@@ -454,7 +468,9 @@ $knowledge = App\Models\KnowledgeHome::where('status', 'Active')->get();
                                 {{$know->title ?? ''}}</h6>
                             <div class="fancy-text-box-bottom justify-content-center">
                                 <div class="d-flex">
-                                    <p class="m-0 align-self-center w-75 text-white opacity-6">Building a secure foundation for lifelong learning, where dreams take flight.</p>
+                             @if(isset($know->description) )       
+                             <p class="m-0 align-self-center w-75 text-white opacity-6">    {{ Str::of(strip_tags($know->description))->limit(77)}}</p>
+                            @endif          
                                     <span class="align-self-center text-center ms-auto"><a href="#"
                                             class="d-inline-block line-height-40px rounded-circle bg-extra-dark-gray h-40px w-40px"><i
                                                 class="feather icon-feather-arrow-right text-white"></i></a></span>
@@ -607,8 +623,10 @@ $newsevents = App\Models\BoardMembers::where('status', 'Active')->get();
                                     <a href="javascript:void()"
                                         class="alt-font text-small text-tussock-hover d-inline-block margin-10px-bottom">{{date('d M Y', strtotime($news->dated))}}</a>
                                     <a href="javascript:void()"
-                                        class="alt-font font-weight-500 text-extra-medium text-dark-purple text-tussock-hover margin-15px-bottom d-block">{{$news->heading ?? ''}}</a>
-                                        <p>{!!Str::limit($news->description_guj, 220) ?? ''!!}</p>
+                                        class="alt-font font-weight-500 text-extra-medium text-dark-purple text-tussock-hover margin-15px-bottom d-block">
+
+                                        {{Str::limit($news->heading, 24) ?? ''}}</a>
+                                        <p>{!!Str::limit($news->description_guj, 94) ?? ''!!}</p>
                                 </div>
                             </div>
                         </li>
@@ -626,7 +644,7 @@ $newsevents = App\Models\BoardMembers::where('status', 'Active')->get();
         @if(isset($newsevents) && count($newsevents) >0 )
             <div class="row">
                 <div class="col-12 text-center">
-                    <a href="javascript:void()"
+                    <a href="{{route('home.news_events')}}"
                         class="btn btn-link thin btn-extra-large text-dark-purple margin-70px-top d-inline-block md-margin-40px-top sm-margin-20px-top">View
                         All News & Events</a>
                 </div>

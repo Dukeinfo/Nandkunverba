@@ -19,7 +19,7 @@ class ViewSubMenu extends Component
     public $image = null; 
     public $seo_description = null;
     public  $records, $getMenus,$menu_id ,$name,$name_guj,$sort_id, $cms , $pname ,$status ;
-    public   $url_link,$display_name ,$seo_title ,$clientIp  ,$seo_keywords; 
+    public   $url_link,$display_heading,$display_subheading,$display_heading_guj,$display_subheading_guj ,$seo_title ,$clientIp  ,$seo_keywords; 
     public function render(Request $request)
     {
       $this->clientIp = $request->ip();
@@ -93,7 +93,10 @@ class ViewSubMenu extends Component
         'image' => $uploadedData['file_name'] ?? Null,
         'thumbnail' => $uploadedData['thumbnail_name'] ?? Null,
         'url_link' => $this->url_link ?? Null,
-        'display_name' => $this->display_name ?? Null,   //use slug here
+        'display_heading' => $this->display_heading ?? Null,  
+        'display_subheading' => $this->display_subheading ?? Null,
+        'display_heading_guj' => $this->display_heading_guj ?? Null,
+        'display_subheading_guj' => $this->display_subheading_guj ?? Null, 
         'slug' =>  $this->createSlug($this->name ?? NULL),
         'seo_title' => $this->seo_title ?? Null,
         'seo_keywords' => $this->seo_keywords ?? Null,

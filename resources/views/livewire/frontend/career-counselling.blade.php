@@ -49,42 +49,57 @@
                                 <div class="flex-grow-1"><span class="text-dark text-uppercase">&nbsp;</span>
                                 </div>
                             </div>
-                            
-                            <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
-                                <li class="padding-15px-bottom border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Counselling Cell</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover text-tussock">Career Counselling</a>
-                                </li>
-                            </ul>
+                            @livewire('frontend.common.quick-links')
+                           
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
-                     @if (isset($pageData->image))
-                     <img src="{{ asset('storage/uploads/page/' . $pageData->image) }}" class="img-fluid rounded mb-3" alt="">
-                     @else
-                     <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
+@if(isset($pageData) && count($pageData)>0  )
+             @forelse ($pageData as $index => $data)         
+                     @if (isset($data->image))
+                     <img src="{{ asset('storage/uploads/page/' . $data->image) }}" class="img-fluid rounded mb-3" alt="">
                     @endif
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$pageData->heading ?? 'Guidance & Counselling'}}</span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$data->heading ?? ''}}
+
+                       <!-- for gujrati -->     
+
+                        </span>
                         </div>
                     </div>
 
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$pageData->sub_heading ?? 'Career Counselling'}}</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                   {{$data->sub_heading ?? ''}}
+ 
+                    <!-- for gujrati -->
+                    </h5>
 
-                   @if (isset($pageData->description))
+                   @if (isset($data->description))
 
-                         {!!$pageData->description!!}
-                   @else 
+                         {!!$data->description!!}
+
+                         <!-- for gujrati -->
+                @endif  
+
+             @endforeach
+
+@else
+<!-- show static data -->
+      <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
+                    <div class="alt-font font-weight-500 my-3 d-flex">
+                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Guidance & Counselling</span>
+                        </div>
+                    </div>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">Career Counselling</h5>
 
                     <p>At SNKKV, we believe in preparing a child for life. This includes providing professional career counselling in order to help a child understand their strengths and weaknesses and choose their career paths with ease. A comprehensive career workshop is conducted by 'MAA' Foundation, a charitable organization, which is working at the grass-root level to bring reforms in the education sector. </p>
                     <p>The students of Standard 10 take an aptitude test, which helps them understand which subjects they would inherently be good at. Based on this test, students are guided on their 11th and 12th grade subjects.  </p>
                     <p>For students of Standard 12 and College, guided workshops are organized by the institution. These workshops discuss the various career opportunities, which can be pursed and the way to go about applying for them. </p>
                     <p>Students in their final year of Bachelors as well as Masters sit through mock interviews. These prepare them for securing the jobs of their choices and give them the confidence to speak and conduct themselves in a formal setting.</p>
-                @endif      
+@endif                   
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@ class Location extends Component
             SEOMeta::addKeyword( $keywords);
             
      }
-     $this->pageData =  PageContent::where('status','Active')->where('name',$getRouteName )->first();   
+     $this->pageData =  PageContent::where('status','Active')->where('name',$getRouteName )->get();   
     }
 
    }

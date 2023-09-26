@@ -149,11 +149,38 @@
                                     </div>
                                 </div> --}}
 
+                                            <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Background Banner Heading (Eng)</label>
+                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_heading" placeholder="Display Heading">
+                                        @error('display_heading') <span class="error">{{ $message }}</span> @enderror
+                                   
+                                    </div>
+                                </div>
+
+                                 <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Background Banner Sub Heading (Eng)</label>
+                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_subheading" placeholder="Display Sub Heading">
+                                        @error('display_subheading') <span class="error">{{ $message }}</span> @enderror
+                                   
+                                    </div>
+                                </div>
+
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">Background Banner Display Name</label>
-                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_name" placeholder="Display Name">
-                                        @error('display_name') <span class="error">{{ $message }}</span> @enderror
+                                        <label class="form-label">Background Banner Heading (Guj)</label>
+                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_heading_guj" placeholder="Display Heading">
+                                        @error('display_heading_guj') <span class="error">{{ $message }}</span> @enderror
+                                   
+                                    </div>
+                                </div>
+
+                                 <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Background Banner Sub Heading (Guj)</label>
+                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_subheading_guj" placeholder="Display Sub Heading">
+                                        @error('display_subheading_guj') <span class="error">{{ $message }}</span> @enderror
                                    
                                     </div>
                                 </div>

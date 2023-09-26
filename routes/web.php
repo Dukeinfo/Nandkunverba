@@ -102,6 +102,8 @@ use App\Http\Livewire\Backend\Principal\EditMessage;
 use App\Http\Livewire\Backend\Principal\TrashMessage;
 use App\Http\Livewire\Backend\Facilities\ViewFacilities;
 use App\Http\Livewire\Backend\Facilities\EditFacilities;
+use App\Http\Livewire\Backend\Facilities\ViewExpertServices;
+use App\Http\Livewire\Backend\Facilities\EditExpertServices;
 use App\Http\Livewire\Backend\Facilities\TrashFacilities;
 use App\Http\Livewire\Backend\Footer\ContactusView;
 use App\Http\Livewire\Backend\Footer\TrashContactus;
@@ -317,8 +319,8 @@ Route::get('/git-status', [CkImageUploadController::class, 'showGitStatus'])->na
     Route::get('/view/facilities', ViewFacilities::class)->name('view_facilities');
     Route::get('/edit/facilities/{id}', EditFacilities::class)->name('edit_facilities');
     Route::get('/view/facilities/trash', TrashFacilities::class)->name('trash_facilities');
-
-
+    Route::get('/view/facilities/expert', ViewExpertServices::class)->name('view_facilities_expert');
+    Route::get('/edit/facilities/expert/{id}', EditExpertServices::class)->name('edit_facilities_expert'); 
     Route::get('/view/guest-book', ViewGuestBook::class)->name('view_guest_book');
     Route::get('/edit/guest-book/{id}', EditGuestBook::class)->name('edit_guest_book');
     Route::get('/view/guest-book/trash', TrashGuestBook::class)->name('tarsh_guest_book');

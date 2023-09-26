@@ -20,7 +20,7 @@ class EditSubMenu extends Component
   use UploadTrait;
 
   public  $submenuId ,$image, $records, $getMenus,$menu_id ,$name,$name_guj ,$sort_id, $cms , $pname ,$status ;
-  public   $url_link,$display_name ,$seo_title ,$clientIp ,$seo_description ,$seo_keywords; 
+  public   $url_link,$display_heading,$display_subheading,$display_heading_guj,$display_subheading_guj ,$seo_title ,$clientIp ,$seo_description ,$seo_keywords; 
   public $editimage, $thumbnail; 
      public function mount($id){
         $submenu = Submenu::findOrFail($id);
@@ -31,7 +31,10 @@ class EditSubMenu extends Component
         $this->image = $submenu->image;
          $this->thumbnail = $submenu->thumbnail;
          $this->url_link = $submenu->url_link;
-         $this->display_name = $submenu->display_name;  //use slug here
+          $this->display_heading = $submenu->display_heading; 
+          $this->display_subheading = $submenu->display_subheading; 
+          $this->display_heading_guj = $submenu->display_heading_guj; 
+          $this->display_subheading_guj = $submenu->display_subheading_guj; 
          $this->seo_title = $submenu->seo_title;  
         $this->seo_description = $submenu->seo_description;
         $this->seo_keywords = $submenu->seo_keywords;   
@@ -99,7 +102,10 @@ class EditSubMenu extends Component
       $submenu->image =   $uploadedData['file_name'] ?? NULL;
       $submenu->thumbnail =  $uploadedData['thumbnail_name'] ?? NULL;
       $submenu->url_link =   $this->url_link ;
-      $submenu->display_name =   $this->display_name ;
+      $submenu->display_heading =   $this->display_heading ;
+      $submenu->display_subheading =   $this->display_subheading ;
+      $submenu->display_heading_guj =   $this->display_heading_guj ;
+      $submenu->display_subheading_guj =   $this->display_subheading_guj ;
       $submenu->slug =  $this->createSlug($this->name ?? NULL);
       $submenu->seo_title =   $this->seo_title ;
       $submenu->seo_keywords =   $this->seo_keywords ;
@@ -128,7 +134,10 @@ class EditSubMenu extends Component
       $submenu->status = $this->status;
 
       $submenu->url_link =   $this->url_link ;
-      $submenu->display_name =   $this->display_name ;
+      $submenu->display_heading =   $this->display_heading ;
+      $submenu->display_subheading =   $this->display_subheading ;
+      $submenu->display_heading_guj =   $this->display_heading_guj ;
+      $submenu->display_subheading_guj =   $this->display_subheading_guj ;
       $submenu->slug =  $this->createSlug($this->name ?? NULL);
       $submenu->seo_title =   $this->seo_title ;
       $submenu->seo_keywords =   $this->seo_keywords ;

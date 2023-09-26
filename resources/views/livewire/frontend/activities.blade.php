@@ -51,20 +51,7 @@
                                 </div>
                             </div>
                             
-                            <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
-                                <li class="padding-15px-bottom border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Curricular Facilities</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Co-Curricular Facilities</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover text-tussock">Activities</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Societies</a>
-                                </li>
-                            </ul>
+                             @livewire('frontend.common.quick-links')
                         </div>
                     </div>
                 </div>

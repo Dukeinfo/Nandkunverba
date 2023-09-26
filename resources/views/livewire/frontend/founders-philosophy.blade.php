@@ -51,48 +51,45 @@
                                 </div>
                             </div>
                             
-                            <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
-                                <li class="padding-15px-bottom border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Historical Foundation</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Our Location</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover text-tussock">Founder's Philosophy</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Vision & Mission</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Members of Trust</a>
-                                </li>
-                            </ul>
+                           @livewire('frontend.common.quick-links')
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    @if (isset($pageData->image)) 
-                     <img src="{{ asset('storage/uploads/page/' . $pageData->image) }}" class="img-fluid rounded mb-3" alt="">
-                    @else
-                    <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
+ <!-- show dynmaic data -->                    
+@if(isset($pageData) && count($pageData)>0  )
+             @foreach ($pageData as $index => $data)        
+                    @if (isset($data->image))
+                     <img src="{{ asset('storage/uploads/page/' . $data->image) }}" class="img-fluid rounded mb-3" alt="">
                     @endif
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$pageData->heading ?? 'Our Founder'}}</span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$data->heading ?? ''}}</span>
                         </div>
 
                     </div>
 
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$pageData->sub_heading ?? "Founder's Philosophy"}}</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$data->sub_heading ?? ""}}</h5>
 
-                    @if (isset($pageData->description))
+                    @if (isset($data->description))
 
-                     {!!$pageData->description!!}
-                   @else
+                     {!!$data->description!!}
+                  
+                   @endif 
+    @endforeach 
+
+@else
+<!-- show static data -->
+<img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
+                    <div class="alt-font font-weight-500 my-3 d-flex">
+                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Our Founder</span>
+                        </div>
+                    </div>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">Founder's Philosophy</h5>
 
                     <p>Shri Nandkunverba Kshatriya Kanya Vidyalaya was founded in the year 1917 by the late HH Maharani Saheba Shri Nandkunverba Saheb of Bhavnagar who believed in the emancipation of women. At a time when women were confined to the four walls of their home, Maharani Saheba, took a bold decision to abolish the purdah system and provide girls with a holistic education. A feminist before the term began to trend, the institute strives for all round development and equal opportunities for girls.</p>
-                   @endif 
+@endif                   
                 </div>
             </div>
         </div>

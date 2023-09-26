@@ -50,41 +50,48 @@
                                 </div>
                             </div>
                             
-                            <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
-                                <li class="padding-15px-bottom border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover text-tussock">Counselling Cell</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Career Counselling</a>
-                                </li>
-                            </ul>
+                           @livewire('frontend.common.quick-links')
+                           
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    @if (isset($pageData->image)) 
-                    <img src="{{ asset('storage/uploads/page/' . $pageData->image) }}" class="img-fluid rounded mb-3" alt="">
-                    @else
-                    <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
+<!-- show dynmaic data -->                    
+@if(isset($pageData) && count($pageData)>0  )   
+   @foreach ($pageData as $index => $data)          
+                    @if (isset($data->image)) 
+                    <img src="{{ asset('storage/uploads/page/' . $data->image) }}" class="img-fluid rounded mb-3" alt="">
                     @endif
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$pageData->heading ?? 'Guidance & Counselling'}} </span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$data->heading ?? ''}} </span>
                         </div>
 
                     </div>
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$pageData->sub_heading ?? 'Counselling Cell'}}</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$data->sub_heading ?? ''}}</h5>
 
-                    @if (isset($pageData->description))
+                    @if (isset($data->description))
 
-                     {!!$pageData->description!!}
-                   @else
+                     {!!$data->description!!}
+                   
+                    @endif
+   @endforeach 
+
+@else
+<!-- show static data -->
+   <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
+                    <div class="alt-font font-weight-500 my-3 d-flex">
+                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Guidance & Counselling</span>
+                        </div>
+                    </div>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">Counselling Cell</h5>
+
                     <p>At a time where mental health was not spoken about so freely, the institution established a psychological laboratory on campus. This fully fledged and well-equipped counselling cell is run by an expert counsellor, Dr. Ayanaben Trivedi. The counselling cell is an open space where students can take an appointment and meet the counsellor. They are free to share any educational, personal or family conflicts with the counsellor or at times just simply speak and vent and gather an unbiased perspective. </p>
                     <p>The identity of every student as well as the information shared is kept confidential. </p>
                     <p>The Cell has been highly beneficial for the girls, especially since the COVID-19 pandemic. </p>
                     <p>We strive to make our students mentally and emotionally strong for life.  </p>
-                    
-                    @endif
+@endif                  
                 </div>
             </div>
         </div>

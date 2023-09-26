@@ -25,7 +25,7 @@
                     <td>  
                          <a class="fw-bold"href="{{ route($route->getName()) }}" target="_blank">  {{ str_replace('_' , ' ',$routeName)}}</a> </td>
                      <td>   <a href="" target="_blank"> 
-                     @if(in_array($route->getName(), ['home.homepage', 'home.gallery','home.location','home.contact_us'])) 
+                     @if(in_array($route->getName(), ['home.homepage', 'home.contact_us'])) 
                        ==== 
                     </a>
                      @else

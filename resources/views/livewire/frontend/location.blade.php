@@ -51,47 +51,66 @@
                                 </div>
                             </div>
                             
-                            <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
-                                <li class="padding-15px-bottom border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Historical Foundation</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover text-tussock">Our Location</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Founder's Philosophy</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Vision & Mission</a>
-                                </li>
-                                <li class="padding-15px-tb border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover">Members of Trust</a>
-                                </li>
-                            </ul>
+                            @livewire('frontend.common.quick-links')
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    @if (isset($pageData->image)) 
-                     <img src="{{ asset('storage/uploads/page/' . $pageData->image) }}" class="img-fluid rounded mb-3" alt="">
-                    @else
-                    <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
+<!-- show dynmaic data -->                    
+@if(isset($pageData) && count($pageData)>0  )
+             @foreach ($pageData as $index => $data)        
+                    @if (isset($data->image)) 
+                     <img src="{{ asset('storage/uploads/page/' . $data->image) }}" class="img-fluid rounded mb-3" alt="">
                     @endif
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$pageData->heading ?? 'Our Location'}}</span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$data->heading ?? ''}}
+
+                       <!-- for gujrati -->     
+
+                        </span>
                         </div>
                     </div>
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$pageData->sub_heading ?? 'Where We Are Located'}}</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$data->sub_heading ?? ''}}
+     
+                   <!-- for gujrati -->
+                    </h5>
 
-                   @if (isset($pageData->description))
+                   @if (isset($data->description))
 
-                         {!!$pageData->description!!}
-                   @else
+                         {!!$data->description!!}
+
+                         <!-- for gujrati -->
+                 @endif
+       
+     @endforeach 
+
+@else
+<!-- show static data -->
+ <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
+                    <div class="alt-font font-weight-500 my-3 d-flex">
+                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                        Our Location
+
+                       <!-- for gujrati -->     
+
+                        </span>
+                        </div>
+                    </div>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                    Where We Are Located
+
+                    <!-- for gujrati -->
+
+                    </h5>
+
                     <p>As one enters the city of Bhavnagar in Gujarat, one is greeted by the statue of HH Maharaja Krishna Kumar Singhji, the last ruler of the kingdom of Bhavnagar. The first to hand over his state to the union of India, he later served as the Governor of Madras. He is revered even today for his magnanimity and the era of his brilliant administration. On the right side of the statue ids his original residence, Nilambag Palace, now a heritage hotel. </p>
 
                     <p>On the other side is the campus of the iconic girls’ school responsible for enabling generations of young women to face the world armed with a well-rounded education. Peacocks roam freely, cherubic young faces smile, and the light of knowledge shines benignly upon the school. Amidst the old-world charm and the modern spirit of this institution, bloom many students who then carry forth the rich inheritance of tradition and progress. </p>
-                 @endif
+
+                    <!-- for gujrati -->
+ @endif           
                 </div>
             </div>
         </div>

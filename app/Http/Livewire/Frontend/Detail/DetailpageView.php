@@ -12,7 +12,7 @@ use Artesaos\SEOTools\Facades\SEOMeta;
 
 class DetailpageView extends Component
 {
-    public $pageId, $slug, $heading, $desc ,$image ,$display_name ,$name; 
+    public $pageId, $slug, $heading, $desc ,$image ,$display_heading,$display_subheading,$display_heading_guj,$display_subheading_guj ,$name; 
     public $seotitle ,$seo_description  ,$seo_keywords , $url_link ,$backimage ,$submenuId;
 
     public function mount($page_id , $slug)
@@ -35,7 +35,10 @@ class DetailpageView extends Component
             $this->image = $pageData->image;
             $this->desc = $pageData->description;
             $this->url_link = $pageData->SubMenu->url_link;
-            $this->display_name = $pageData->SubMenu->display_name;
+            $this->display_heading = $pageData->SubMenu->display_heading;
+            $this->display_subheading = $pageData->SubMenu->display_subheading;
+            $this->display_heading_guj = $pageData->SubMenu->display_heading_guj;
+            $this->display_subheading_guj = $pageData->SubMenu->display_subheading_guj;
             $this->name = $pageData->SubMenu->name;
             
             $this->seotitle = $pageData->SubMenu->seo_title;
@@ -48,12 +51,8 @@ class DetailpageView extends Component
             SEOTools::setCanonical( url()->current() ?? '');
             SEOTools::opengraph()->addProperty('type', 'website');
             SEOTools::twitter()->setSite($this->seotitle ?? '');
-            /*SEOTools::jsonLd()->addImage('https://pinegroveschool.org/pinegrove/public/assets/images/logo.png');*/
             $keywords = $pageData->SubMenu->seo_keywords ?? '';
-            SEOMeta::addKeyword( $keywords); //pluck returns the array of product keywords here
-            // if ($this->slug !== $slug) {
-        //     return redirect()->to(route('detail_page', ['item' => $this->pageId, 'slug' => $this->slug]));
-        // }
+            SEOMeta::addKeyword( $keywords); //pluck returns the array 
     } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
         abort(404); // Redirect to a 404 error page if decryption fails
     }
