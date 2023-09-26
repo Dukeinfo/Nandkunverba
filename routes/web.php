@@ -170,7 +170,7 @@ Route::get('/contact-us', ContactUs::class)->name('home.contact_us');
 Route::get('/counselling-cell', CounsellingCell::class)->name('home.counselling_cell');
 Route::get('/founders-philosophy', FoundersPhilosophy::class)->name('home.founders_philosophy');
 Route::get('/photo-gallery', PhotoGallery::class)->name('home.gallery');
-Route::get('/gallery-detail/{category_id}', GalleryDetail::class)->name('home.gallery_detail');
+Route::get('/gallery-detail/{category_id}', GalleryDetail::class)->name('gallery_detail');
 Route::get('/location', Location::class)->name('home.location');
 Route::get('/members-of-trust', MembersOfTrust::class)->name('home.members_of_trust');
 Route::get('/news-events', NewsEvents::class)->name('home.news_events');
