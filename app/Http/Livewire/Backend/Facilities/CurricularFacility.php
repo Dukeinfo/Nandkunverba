@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
+
 class CurricularFacility extends Component
 {
 	use UploadTrait;	
