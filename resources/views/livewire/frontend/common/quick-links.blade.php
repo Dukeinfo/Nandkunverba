@@ -1,15 +1,24 @@
- <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
-  @php
-$currentRouteName = \Route::currentRouteName();
+
+@php
+$getRouteName =  Route::currentRouteName();
+
+$widgets =  App\Models\Widget::where('status','Active')->where('pname',$getRouteName )->get(); 
 @endphp
-        @foreach(Route::getRoutes() as $route)
-        @if (str_starts_with($route->getName(), 'home.'))
+
+<ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
+
+     @if(isset($widgets) && count($widgets) >0 )  
+                        @foreach($widgets as $widget) 
+                      
             @php
-                $routeName = ucwords(str_replace('home.', '', $route->getName()));
-            @endphp  
-                                <li class="padding-15px-bottom border-bottom border-color-medium-gray">
-                                    <a href="{{ route($route->getName()) }}"   class="{{ $currentRouteName === $route->getName() ? 'active' : '' }}" class="text-tussock-hover">{{  Str::title(str_replace('_', ' ', $routeName)) }}</a>
-                                </li>
-                       @endif
-            @endforeach
+                $link = str_replace('home.', '', $widget->spname);
+                $widgetlink=str_replace('_', '-', $link);
+            @endphp 
+           
+                 <li class="padding-15px-bottom border-bottom border-color-medium-gray">
+                 <a href="{{url($widgetlink)}}" class="text-tussock-hover">{{$widget->pagetitle}}
+                 </a>
+                </li>
+                       @endforeach 
+      @endif                       
 </ul>

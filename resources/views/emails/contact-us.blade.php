@@ -11,7 +11,6 @@
 <p><strong>Name:</strong> {{ $contactInfo['name'] }}</p>
 <p><strong>Email:</strong> {{ $contactInfo['email'] }}</p>
 <p><strong>Phone:</strong> {{ $contactInfo['phone'] }}</p>
-<p><strong>Subject:</strong> {{ $contactInfo['subject'] }}</p>
 <p><strong>Message:</strong> {!! $contactInfo['message'] !!}</p>
 
 </body>

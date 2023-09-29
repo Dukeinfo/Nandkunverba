@@ -5,14 +5,13 @@
         <meta charset="utf-8" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Dashboard - Pinegrove School</title>
+        <title>Dashboard - Shri Nandkunverba Kshatriya Kanya Vidyalaya - Bhavnagar, Gujrat</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Pinegrove School, Subathu" name="description" />
-        <meta content="Pinegrove School, Subathu" name="keywords" />
-        <meta content="Pinegrove School, Subathu" name="author" />
+        <meta content="Shri Nandkunverba Kshatriya Kanya Vidyalaya - Bhavnagar, Gujrat" name="description" />
+        <meta content="Shri Nandkunverba Kshatriya Kanya Vidyalaya - Bhavnagar, Gujrat" name="keywords" />
+        <meta content="Shri Nandkunverba Kshatriya Kanya Vidyalaya - Bhavnagar, Gujrat" name="author" />
         <!-- App favicon -->
             <!-- CK editor -->
-            {{-- <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script> --}}
        	<script src="https://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
         <link rel="shortcut icon" href="{{asset('admin_assets/images/faviconn.ico')}}">
 

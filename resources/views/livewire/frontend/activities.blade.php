@@ -18,25 +18,38 @@
     </section>
     <!-- end section -->
 
-    <!-- start page title -->
-    <section class="wow animate__fadeIn bg-seashell padding-30px-tb sm-padding-20px-tb page-title-small">
+
+  <!-- start page title -->
+      <section class="wow animate__fadeIn bg-seashell padding-30px-tb sm-padding-20px-tb page-title-small">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-xl-8 col-lg-6 text-center text-lg-start">
-                    <h1 class="alt-font text-extra-dark-gray font-weight-500 no-margin-bottom d-inline-block">Activities
+                    <h1 class="alt-font text-extra-dark-gray font-weight-500 no-margin-bottom d-inline-block">
+                Activities
                     </h1>
                 </div>
+ 
                 <div
                     class="col-xl-4 col-lg-6 text-center text-lg-end breadcrumb justify-content-center justify-content-lg-end text-small alt-font md-margin-15px-top">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li>Various Activities</li>
+           @php
+           $getRouteName =  Route::currentRouteName();
+           $widget =  App\Models\Widget::where('status','Active')->where('pname',$getRouteName )->first();
+           @endphp 
+                                @if($widget) 
+                            @if($widget->menu_id!=1)    
+                           <li><a href="javascript:void()"> {{$widget->Menu->name}}</a></li>
+                            @endif
+                        @endif
+                         <li>Various Activities</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- end page title -->
+<!-- end page title -->
+ 
 
     <section class="half-section">
         <div class="container position-relative">

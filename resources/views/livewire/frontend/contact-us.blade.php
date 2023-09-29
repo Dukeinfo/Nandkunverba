@@ -107,23 +107,37 @@
                         </div>
                         <div class="col-12">
                             <!-- start contact form -->
-                            <form action="#" method="post">
+                            <form wire:submit.prevent="send">
                                 <div class="row row-cols-1 row-cols-md-2">
                                     <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
-                                        <input class="medium-input bg-white margin-25px-bottom required" type="text" name="name" placeholder="Your name">
-                                        <input class="medium-input bg-white margin-25px-bottom required" type="email" name="email" placeholder="Your email address">
-                                        <input class="medium-input bg-white mb-0" type="tel" name="phone" placeholder="Your mobile">
+                                        <input class="medium-input bg-white margin-25px-bottom" type="text" wire:model="name" placeholder="Your name">
+                                         @error('name') <span class="text-danger">{{ $message }}</span> @enderror
+                                        <input class="medium-input bg-white margin-25px-bottom" type="email" wire:model="email" placeholder="Your email address">
+                                         @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                                        <input class="medium-input bg-white mb-0" type="tel" wire:model="phone" placeholder="Your mobile">
+                                         @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                     <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
-                                        <textarea class="medium-textarea h-200px bg-white" name="comment" placeholder="Your message"></textarea>
+                                        <textarea class="medium-textarea h-200px bg-white" wire:model="message" placeholder="Your message"></textarea>
+                                         @error('message') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                     <div class="col text-start sm-margin-30px-bottom">
-                                        <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
+                                        <input type="checkbox" wire:model="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
+                                        @error('terms_condition') <span class="text-danger">{{ $message }}</span> @enderror
                                         <label for="terms_condition" class="text-small d-inline-block align-top w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="javascript:void()" target="_blank" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
                                     </div>
+                                     
                                     <div class="col text-center text-md-end">
-                                        <button class="btn btn-fancy btn-medium btn-tussock mb-0 submit" type="submit">Send Message</button>
+                                        <button class="btn btn-fancy btn-medium btn-tussock" type="submit">Send Message</button>
                                     </div>
+                                    <!-- show message -->
+                                     @if (session()->has('success'))
+                                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                <i class="mdi mdi-check-all me-2"></i>
+                                                {{ session('success') }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                                            @endif
                                 </div>
                                 <div class="form-results d-none"></div>
                             </form>

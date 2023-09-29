@@ -29,6 +29,15 @@
                     class="col-xl-4 col-lg-6 text-center text-lg-end breadcrumb justify-content-center justify-content-lg-end text-small alt-font md-margin-15px-top">
                     <ul>
                         <li><a href="index.html">Home</a></li>
+                        @php
+           $getRouteName =  Route::currentRouteName();
+           $widget =  App\Models\Widget::where('status','Active')->where('pname',$getRouteName )->first();
+           @endphp 
+                                @if($widget) 
+                            @if($widget->menu_id!=1)    
+                           <li><a href="javascript:void()"> {{$widget->Menu->name}}</a></li>
+                            @endif
+                        @endif
                         <li>Testimonials</li>
                     </ul>
                 </div>
@@ -50,11 +59,7 @@
                                 </div>
                             </div>
                             
-                            <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
-                                <li class="padding-15px-bottom border-bottom border-color-medium-gray">
-                                    <a href="#" class="text-tussock-hover text-tussock">Testimonials</a>
-                                </li>
-                            </ul>
+                          @livewire('frontend.common.quick-links')
                         </div>
                     </div>
                 </div>

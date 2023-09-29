@@ -10,6 +10,7 @@ class SocialAppsManager extends Component
 {
     use WithFileUploads;
 
+    public $category;
     public $name;
     public $link;
     public $logo;
@@ -18,6 +19,7 @@ class SocialAppsManager extends Component
     public $isEditing = false;
 
     protected $rules = [
+        'category' => 'required',
         'name' => 'required|string',
         'link' => 'required|url',
         // 'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -46,6 +48,7 @@ class SocialAppsManager extends Component
         }
 
         SocialApp::create([
+            'category' => $this->category,
             'name' => $this->name,
             'link' => $this->link,
             'icon' => $this->icon, 
@@ -61,6 +64,7 @@ class SocialAppsManager extends Component
         $socialApp = SocialApp::findOrFail($id);
 
         $this->selectedId = $socialApp->id;
+        $this->category = $socialApp->category;
         $this->name = $socialApp->name;
         $this->link = $socialApp->link;
         $this->icon = $socialApp->icon;
@@ -80,6 +84,7 @@ class SocialAppsManager extends Component
         }
 
         $socialApp->update([
+            'category' => $this->category,
             'name' => $this->name,
             'link' => $this->link,
             'icon' => $this->icon,
@@ -101,6 +106,7 @@ class SocialAppsManager extends Component
 
     private function resetFields()
     {
+        $this->category = '';  
         $this->name = '';
         $this->link = '';
         $this->logo = null;

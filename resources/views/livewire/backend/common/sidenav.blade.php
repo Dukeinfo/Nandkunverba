@@ -32,12 +32,9 @@
 						<li><a href="{{route('view_subnmenu')}}">Sub Menu</a>
 							<li><a href="{{route('view_class')}}">Class</a></li>
 						<li><a href="{{route('view_section')}}">Section</a></li>
-						
-
-						
 					</ul>
 			
-			</li>
+			   </li>
 
 			
 			 <li>
@@ -77,6 +74,36 @@
 					</ul>
 			
 			</li>
+
+
+
+			  <li>
+				<a href="javascript: void(0);" class="has-arrow waves-effect">
+					<i class='bx bx-image-add'></i>
+					<span>Facilities</span>
+				</a>
+					
+			  <ul class="sub-menu" aria-expanded="false">
+						
+				<li><a href="{{route('view_curricular_facility')}}">Curricular Facilities</a></li>
+				<li><a href="{{route('view_cocurricular_facility')}}">Cocurricular Facilities</a></li>
+			  </ul>
+			
+			   </li>
+
+	    <li>
+				<a href="javascript: void(0);" class="has-arrow waves-effect">
+					<i class='bx bx-image-add'></i>
+					<span>Members of Trust</span>
+				</a>
+					
+			  <ul class="sub-menu" aria-expanded="false">
+						
+				<li><a href="{{route('view_memberof_trust')}}">Members of Trust</a></li>
+				<li><a href="{{route('view_view_commitee_members')}}">Committee Members</a></li>
+			  </ul>
+			
+			   </li>		   
 
 
           <li>
@@ -139,6 +166,17 @@
 					<li><a href="{{route('manage_blog')}}">Manage Blog</a></li>
 				</ul>
 			</li>
+
+		<li>
+				<a href="javascript: void(0);" class="has-arrow waves-effect">
+					<i class='bx bx-file'></i>
+					<span>Widget</span>
+				</a>
+				<ul class="sub-menu" aria-expanded="false">
+					<li><a href="{{route('add_widget')}}">Add Widgets</a></li>
+					
+				</ul>
+			</li>		
 			
 			
 			<li class="menu-title">Search Engine Optimization</li>

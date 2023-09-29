@@ -25,6 +25,8 @@
      <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
      <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 
+     @livewireStyles
+
 </head>
 
 <body class="h-100">
@@ -41,10 +43,26 @@
     @include('livewire.frontend.common.footer')
     <!-- end footer -->
 
+    <!-- floating btn for desktop/laptop -->
+    <div class="banner_floating_sec d-md-block d-sm-none d-none">
+        <div class="floating_btn floating_btn_1"><a href="#"><span>English</span> </a></div>
+        <div class="floating_btn floating_btn_2"><a href="#"><span>Gujarati</span> </a></div>
+    </div>
+    
+    <!-- floating btn for mobile view -->
+    <div class="banner_floating_sec_mobile d-md-none d-sm-block d-block">
+        <div class="row">
+            <div class="col-6"><a href="#" class="btn btn-primary w-100">English</a></div>
+            <div class="col-6"><a href="#" class="btn btn-danger w-100">Gujarati</a></div>
+        </div>
+    </div>
+
     <!-- start scroll to top -->
     <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
     <!-- end scroll to top -->
     <!-- javascript -->
+
+     @livewireScripts
 
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/theme-vendors.min.js')}}"></script>

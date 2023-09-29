@@ -50,6 +50,17 @@
 
                             <form wire:submit.prevent="{{ $isEditing ? 'update' : 'store' }}" enctype="multipart/form-data">
                                 <div class="row g-3">
+                                       <div class="col-md-2">
+                                    <div class="mb-3">
+                                        <label class="form-label">Category</label>
+                                        <select class="form-select" wire:model="category">
+                                                <option value="">Select</option>
+                                                <option value="Header">Header</option>
+                                                <option value="Footer">Footer </option>
+                                        </select>
+                                         @error('category') <span class="error">{{ $message }}</span> @enderror
+                                    </div>
+                                </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <div class="form-group">
@@ -127,6 +138,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
+                                        <th>Category</th>
                                         <th>Name</th>
                                         <th>Link</th>
                                         <th>Logo</th>
@@ -136,6 +148,7 @@
                                 <tbody>
                                     @foreach ($socialApps as $socialApp)
                                         <tr>
+                                            <td>{{ $socialApp->category }}</td>
                                             <td>{{ $socialApp->name }}</td>
                                             <td><a href="{{ $socialApp->link }}" target="_blank">{{ $socialApp->link }}</a></td>
                                             <td>

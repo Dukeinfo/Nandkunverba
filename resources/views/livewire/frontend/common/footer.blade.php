@@ -1,6 +1,8 @@
 <footer class="footer-dark bg-extra-dark-gray">
     @php
-     $contactInfo = App\Models\ContactInfo::orderBy('sort_id','asc')->where('status','Active')->first();                     
+     $contactInfo = App\Models\ContactInfo::orderBy('sort_id','asc')->where('status','Active')->first();
+
+     $SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where(['status' => 'Active' , 'category' =>'Footer'])->get();                      
     @endphp
         <div class="footer-top padding-40px-tb border-bottom border-color-white-transparent">
             <div class="container">
@@ -21,6 +23,12 @@
                     <div class="col-12 col-md-3 text-center text-md-end">
                         <div class="social-icon-style-03">
                             <ul class="extra-small-icon light">
+        @if(isset($SocialApps) && count($SocialApps) >0 )
+            @foreach($SocialApps as $SocialApp)   
+                <li><a class="facebook" href="{{$SocialApp->link ?? ''}}" target="_blank"><i
+                                            class="{{$SocialApp->icon ?? ''}}"></i></a></li>
+            @endforeach
+        @else 
                                 <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
                                             class="fab fa-facebook-f text-white"></i></a></li>
                                 <li><a class="youtube" href="https://www.youtube.com/" target="_blank"><i
@@ -29,6 +37,7 @@
                                             class="fab fa-twitter text-white"></i></a></li>
                                 <li><a class="instagram" href="https://www.instagram.com/" target="_blank"><i
                                             class="fab fa-instagram text-white"></i></a></li>
+            @endif                     
                             </ul>
                         </div>
                     </div>

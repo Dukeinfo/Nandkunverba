@@ -137,6 +137,18 @@ use App\Http\Livewire\Backend\Mandatory\MandatoryPublicDisclosure;
 use App\Http\Livewire\Backend\Mandatory\ViewMandatoryPublicDisclosure;
 use App\Http\Livewire\Backend\VirtualTour\ViewVirtualTour;
 use App\Http\Livewire\Backend\VirtualTour\EditVirtualTour;
+use App\Http\Livewire\Backend\Widget\ViewWidget;
+use App\Http\Livewire\Backend\Widget\EditWidget;
+
+use App\Http\Livewire\Backend\Facilities\CurricularFacility;
+use App\Http\Livewire\Backend\Facilities\EditCurricularFacility;
+use App\Http\Livewire\Backend\Facilities\CoCurricularFacility;
+use App\Http\Livewire\Backend\Facilities\EditCoCurricularFacility;
+
+use App\Http\Livewire\Backend\MemberofTrust\ViewMemberofTrust;
+use App\Http\Livewire\Backend\MemberofTrust\EditMemberofTrust;
+use App\Http\Livewire\Backend\MemberofTrust\ViewCommiteeMembers;
+use App\Http\Livewire\Backend\MemberofTrust\EditCommiteeMembers;
 
 use Illuminate\Support\Facades\Route;
 
@@ -321,6 +333,19 @@ Route::get('/git-status', [CkImageUploadController::class, 'showGitStatus'])->na
     Route::get('/view/facilities/trash', TrashFacilities::class)->name('trash_facilities');
     Route::get('/view/facilities/expert', ViewExpertServices::class)->name('view_facilities_expert');
     Route::get('/edit/facilities/expert/{id}', EditExpertServices::class)->name('edit_facilities_expert'); 
+
+Route::get('/curricular-facility', CurricularFacility::class)->name('view_curricular_facility');
+Route::get('/edit/curricular-facility/{id}', EditCurricularFacility::class)->name('edit_curricular_facility');
+   
+Route::get('/co-curricular-facility', CoCurricularFacility::class)->name('view_cocurricular_facility');
+Route::get('/edit/co-curricular-facility/{id}', EditCoCurricularFacility::class)->name('edit_cocurricular_facility');   
+
+ Route::get('/memberof-trust', ViewMemberofTrust::class)->name('view_memberof_trust');
+    Route::get('/edit/memberof-trust/{id}', EditMemberofTrust::class)->name('edit_memberof_trust');
+
+ Route::get('/view-commitee-members', ViewCommiteeMembers::class)->name('view_view_commitee_members');
+ Route::get('/edit/commitee-members/{id}', EditCommiteeMembers::class)->name('edit_commitee_members');   
+
     Route::get('/view/guest-book', ViewGuestBook::class)->name('view_guest_book');
     Route::get('/edit/guest-book/{id}', EditGuestBook::class)->name('edit_guest_book');
     Route::get('/view/guest-book/trash', TrashGuestBook::class)->name('tarsh_guest_book');
@@ -373,6 +398,9 @@ Route::get('/view-mandatory-form', ViewMandatoryPublicDisclosure::class)->name('
 
 Route::get('/virtual-tour', ViewVirtualTour::class)->name('virtual_tour');
 Route::get('/edit-virtual-tour/{id}', EditVirtualTour::class)->name('edit_virtual_tour');
+Route::get('/add-widget', ViewWidget::class)->name('add_widget');
+Route::get('/edit-widget/{id}', EditWidget::class)->name('edit_widget');
+
 
 
          

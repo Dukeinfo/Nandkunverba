@@ -29,7 +29,15 @@
                     class="col-xl-4 col-lg-6 text-center text-lg-end breadcrumb justify-content-center justify-content-lg-end text-small alt-font md-margin-15px-top">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="javascript:void()">About Us</a></li>
+                        @php
+           $getRouteName =  Route::currentRouteName();
+           $widget =  App\Models\Widget::where('status','Active')->where('pname',$getRouteName )->first();
+           @endphp 
+                                @if($widget) 
+                            @if($widget->menu_id!=1)    
+                           <li><a href="javascript:void()"> {{$widget->Menu->name}}</a></li>
+                            @endif
+                        @endif
                         <li>Our Location</li>
                     </ul>
                 </div>

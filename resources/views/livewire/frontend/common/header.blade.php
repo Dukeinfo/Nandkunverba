@@ -2,7 +2,7 @@
         <!-- start navigation -->
 @php
 $contactInfo = App\Models\ContactInfo::orderBy('id','desc')->where('status','Active')->first();     
-$SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where('status','Active')->get();     
+$SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where(['status' => 'Active' , 'category' =>'Header'])->get();     
            
 @endphp
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent header-dark fixed-top navbar-static-overlay">
@@ -103,21 +103,24 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
                 </div>
                 <div class="text-center elements-social social-icon-style-12 d-none d-md-inline-block">
                     <ul class="small-icon light">
-                        @forelse($SocialApps as  $SocialApp)
+                       @if(isset($SocialApps) && count($SocialApps) >0 )
+            @foreach($SocialApps as $SocialApp)
                         <li><a class="facebook" href="{{$SocialApp->link ?? ''}}" target="_blank"><i
                                     class="{{$SocialApp->icon ?? ''}}"></i></a></li>
-                        @empty 
+                        @endforeach
+         @else 
                         <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a></li>
                         <li><a class="dribbble" href="http://www.dribbble.com/" target="_blank"><i
                                     class="fab fa-dribbble"></i></a></li>
+                                    
                         <li><a class="twitter" href="http://www.twitter.com/" target="_blank"><i
                                     class="fab fa-twitter"></i></a></li>
                         <li><a class="instagram" href="http://www.instagram.com/" target="_blank"><i
                                     class="fab fa-instagram"></i></a></li>
                         <li><a class="linkedin" href="http://www.linkedin.com/" target="_blank"><i
                                     class="fab fa-linkedin-in"></i></a></li>
-                        @endforelse            
+                        @endif            
                     </ul>
                 </div>
             </div>
