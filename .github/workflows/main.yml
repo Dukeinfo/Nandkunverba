@@ -24,7 +24,7 @@ jobs:
       - name: Clear Application Cache
         run: php artisan cache:clear
       - name: 📂 Sync files
-        uses: dukeinfo/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
