@@ -100,7 +100,7 @@
 			  <ul class="sub-menu" aria-expanded="false">
 						
 				<li><a href="{{route('view_memberof_trust')}}">Members of Trust</a></li>
-				<li><a href="{{route('view_view_commitee_members')}}">Committee Members</a></li>
+				
 			  </ul>
 			
 			   </li>		   

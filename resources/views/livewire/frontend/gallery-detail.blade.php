@@ -88,6 +88,10 @@
                                 <!-- end lightbox gallery item -->
                               
                               @endforeach
+                               @else
+         <center><div class="alert alert-warning">
+        <strong>Sorry!</strong> No Record Found.
+        </div>       
                            @endif
                             </ul>
                         </div>

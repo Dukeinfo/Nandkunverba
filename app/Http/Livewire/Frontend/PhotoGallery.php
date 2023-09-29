@@ -24,11 +24,39 @@ class PhotoGallery extends Component
 
 use WithPagination;
 
-  // protected $paginationTheme = 'bootstrap';
-   public $selectedRecords = 1;
+    public $total;
+    public $perPage = 3;
+
+    public function mount(){
+     $this->total=Categories::orderBy('id', 'desc')->where('status', 'Active')->get();
+
+     $getRouteName =  Route::currentRouteName(); 
+    if($getRouteName){
+    $seoMetaData =  Metadetails::where('name',$getRouteName )->first();
+    SEOTools::setTitle($seoMetaData->title ?? 'Photo Gallery');
+    if($seoMetaData){
+    SEOTools::setDescription($seoMetaData->description ?? '');
+    SEOTools::opengraph()->setUrl(url()->current());
+    SEOTools::setCanonical(url()->current());
+    SEOTools::opengraph()->addProperty('type', 'website');
+    SEOTools::twitter()->setSite($seoMetaData->title ?? '');
+    $keywords = $seoMetaData->keywords ?? '';
+    SEOMeta::addKeyword( $keywords);
+       }
+    }
+    }
+
+    public function loadMore()
+    {
+        $this->perPage = $this->perPage + 3;
+    }
 
     public function render()
     {
-        return view('livewire.frontend.photo-gallery',[ 'categories' => Categories::where('status', 'Active')->get()])->layout('layouts.frontend');
+
+    $this->categories =Categories::where('status', 'Active')->orderBy('id', 'desc')->limit($this->perPage)->get();              
+
+
+        return view('livewire.frontend.photo-gallery')->layout('layouts.frontend');
     }
 }

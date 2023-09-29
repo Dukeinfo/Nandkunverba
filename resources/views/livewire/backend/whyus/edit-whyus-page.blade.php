@@ -197,12 +197,15 @@
                                       <input type="file" class="form-control" id="" wire:model="edit_multi_images"  multiple>
                                       @error('edit_multi_images.*') <span class="error">{{ $message }}</span> @enderror
                                   </div>
-                                  @foreach($getMultiple as $image)
+                                    @foreach($getMultiple as $image)
                                   <div style="display:inline-block">
-                                      <img src="{{getmultiple_images($image->multi_images)}}" alt="" width="50">
+                                      <img src="{{getmultiple_images($image->multi_images)}}" alt="" width="100" height="70">
 
-                                      <a href="" wire:click='deletemultiple({{$image->id}})'><i class="fa fa-times fa-fw fa-lg"></i></a>
-                                    </div>
+                                      <button class="btn btn-delete" wire:click='deletemultiple({{$image->id}})'>
+  <span class="mdi mdi-delete mdi-24px"></span>
+  <span>Delete</span>
+</button>
+                               </div>
                                  @endforeach
                                  
                               </div>

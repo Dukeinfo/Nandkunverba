@@ -109,6 +109,8 @@ use App\Http\Livewire\Backend\Footer\ContactusView;
 use App\Http\Livewire\Backend\Footer\TrashContactus;
 use App\Http\Livewire\Backend\Footer\SocialAppsManager;
 use App\Http\Livewire\Backend\Footer\TrashSocialAppsManager;
+use App\Http\Livewire\Backend\Footer\ViewFooterLinks;
+use App\Http\Livewire\Backend\Footer\EditFooterLinks;
 use App\Http\Livewire\Backend\Memories\ViewGuestBook;
 use App\Http\Livewire\Backend\Memories\EditGuestBook;
 use App\Http\Livewire\Backend\Memories\TrashGuestBook;
@@ -147,8 +149,6 @@ use App\Http\Livewire\Backend\Facilities\EditCoCurricularFacility;
 
 use App\Http\Livewire\Backend\MemberofTrust\ViewMemberofTrust;
 use App\Http\Livewire\Backend\MemberofTrust\EditMemberofTrust;
-use App\Http\Livewire\Backend\MemberofTrust\ViewCommiteeMembers;
-use App\Http\Livewire\Backend\MemberofTrust\EditCommiteeMembers;
 
 use Illuminate\Support\Facades\Route;
 
@@ -250,9 +250,9 @@ Route::get('/git-status', [CkImageUploadController::class, 'showGitStatus'])->na
     Route::get('/edit/slider/{id}', EditHomeSlider::class)->name('edit_home_slider');
     Route::get('/view/slider/trash', TrashHomeSlider::class)->name('trash_home_slider');
 
-    Route::get('/whyus/page', WhyusPage::class)->name('whyus_page');
-    Route::get('/whyus/page/{id}', EditWhyusPage::class)->name('edit_whyus_page');
-    Route::get('/whyus/page/trash', TrashWhyusPage::class)->name('trash_whyus_page');
+    Route::get('/common/section', WhyusPage::class)->name('whyus_page');
+    Route::get('/common/section/{id}', EditWhyusPage::class)->name('edit_whyus_page');
+    Route::get('/common/section/trash', TrashWhyusPage::class)->name('trash_whyus_page');
 
     Route::get('/view/membership', ViewMembership::class)->name('view_membership');
     Route::get('/edit/membership/{id}', EditMemberShip::class)->name('edit_membership');
@@ -343,9 +343,6 @@ Route::get('/edit/co-curricular-facility/{id}', EditCoCurricularFacility::class)
  Route::get('/memberof-trust', ViewMemberofTrust::class)->name('view_memberof_trust');
     Route::get('/edit/memberof-trust/{id}', EditMemberofTrust::class)->name('edit_memberof_trust');
 
- Route::get('/view-commitee-members', ViewCommiteeMembers::class)->name('view_view_commitee_members');
- Route::get('/edit/commitee-members/{id}', EditCommiteeMembers::class)->name('edit_commitee_members');   
-
     Route::get('/view/guest-book', ViewGuestBook::class)->name('view_guest_book');
     Route::get('/edit/guest-book/{id}', EditGuestBook::class)->name('edit_guest_book');
     Route::get('/view/guest-book/trash', TrashGuestBook::class)->name('tarsh_guest_book');
@@ -359,7 +356,10 @@ Route::get('/edit/co-curricular-facility/{id}', EditCoCurricularFacility::class)
 
     Route::get('/social-view', SocialAppsManager::class)->name('social_view');
       Route::get('/social-view/trash', TrashSocialAppsManager::class)->name('trash_social_view');
-    
+
+    Route::get('/footer-quick-links', ViewFooterLinks::class)->name('footer_quick_links'); 
+    Route::get('/edit/footer-quick-links/{id}', EditFooterLinks::class)->name('edit_footer_quick_links'); 
+
     Route::get('/contact-entries', ContactFormEntries::class)->name('contact_entries');
     Route::get('/contact-entry/{id}', ViewContactFormEntry::class)->name('contact_view_entry');
     Route::get('/contact-entries/trash', TrashContactFormEntries::class)->name('trash_contact_entries');

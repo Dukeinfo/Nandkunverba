@@ -44,15 +44,13 @@ class EditWhyusPage extends Component
         $this->sort_id = $whyus->sort_id;
     	  $this->status = $whyus->status;
 
-       $this->getMultiple =    MultipleImages::where('whyus_id' ,  $this->whyusId)->get();
+       
 
        
      }
 
      public function deletemultiple($id){
-        $image = MultipleImages::where('whyus_id' ,  $this->whyusId)->where('id',$id)->delete();
-        
-        return redirect(request()->header('Referer'));
+        $image = MultipleImages::where('id',$id)->delete();
      }
 
 
@@ -167,6 +165,8 @@ class EditWhyusPage extends Component
 
     public function render()
     {
+      $this->getMultiple =    MultipleImages::where('whyus_id' ,  $this->whyusId)->get();
+
         return view('livewire.backend.whyus.edit-whyus-page')->layout('layouts.backend');
     }
 }

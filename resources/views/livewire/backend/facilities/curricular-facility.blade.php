@@ -141,7 +141,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Choose Multiple Images </label>
                                     <input type="file" class="form-control" id="" wire:model="multi_images"  multiple>
-                                    @error('multi_images.*') <span class="error">{{ $message }}</span> @enderror
+                                    @error('multi_images') <span class="error">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
@@ -219,7 +219,7 @@
                                             <td>{{$record->sort_id ?? '' }}</td>
                                             <td><span class="badge badge-soft-success">{{$record->status ?? '' }}</span></td>
                                             <td>                               
-                                                <a href="{{route('edit_whyus_page',['id' => $record->id])}}" class="text-success me-2" title="Edit"><i class="fa fa-edit fa-fw"></i></a>
+                                                <a href="{{route('edit_curricular_facility',['id' => $record->id])}}" class="text-success me-2" title="Edit"><i class="fa fa-edit fa-fw"></i></a>
                                                 <a href="javascript:void(0)" class="text-danger me-2" title="Delete" wire:click="delete({{ $record->id }})"><i class="fa fa-times fa-fw fa-lg"></i></a>
                                             </td>
                                         </tr>

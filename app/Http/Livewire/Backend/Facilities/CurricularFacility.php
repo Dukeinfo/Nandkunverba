@@ -20,11 +20,12 @@ class CurricularFacility extends Component
     public $title,$desc,$title_guj,$desc_guj,$link,$sort_id,$status;
     public $multi_images =[];
 
-        protected $rules = [
+    protected $rules = [
         'title' => 'required', 
         'desc' => 'required', 
         'title_guj' => 'required',  
-        'desc_guj' => 'required', 
+        'desc_guj' => 'required',
+        'multi_images' => 'required', 
         'sort_id' => 'required| unique:curricular_facilities,sort_id', 
         'status' => 'required', 
        
@@ -35,18 +36,14 @@ class CurricularFacility extends Component
           'title_guj.required' => 'Title Required.',
           'desc.required' => 'Description Required.',
           'desc_guj.required' => 'Description Required.',
+          'multi_images.required' => 'Image Required.',
           'sort_id.required' => 'Sort Id Required.',
           'status.required' => 'Status Required.',
           
       ];
 
       public function addCurricular(){
-      if($this->multi_images){
-       $this->validate([
-          'multi_images.*' => 'required', 
-
-        ]);
-      }
+    
       $validatedData = $this->validate();
 
       $curricular = new CurricularFacilities();
@@ -65,15 +62,15 @@ class CurricularFacility extends Component
          foreach ($this->multi_images as $img) {
           // Define folder path
           $uploadedData = $this->uploadOne($img, $folder);
-          $whyusItem = new CurricularImages();
-          $whyusItem->curricular_facility_id = $curricular->id;
-          $whyusItem->multi_images =  $uploadedData['file_name']?? NULL;
-          $whyusItem->thumbnail =  $uploadedData['thumbnail_name'] ?? NULL;
-          $whyusItem->link = $this->link;;
-          $whyusItem->status = $this->status;
-          $whyusItem->ip_address = getUserIp();
-          $whyusItem->login = authUserId();
-          $whyusItem->save();
+          $curricularImages = new CurricularImages();
+          $curricularImages->curricular_facility_id = $curricular->id;
+          $curricularImages->multi_images =  $uploadedData['file_name']?? NULL;
+          $curricularImages->thumbnail =  $uploadedData['thumbnail_name'] ?? NULL;
+          $curricularImages->link = $this->link;;
+          $curricularImages->status = $this->status;
+          $curricularImages->ip_address = getUserIp();
+          $curricularImages->login = authUserId();
+          $curricularImages->save();
  
        }
       }
@@ -95,12 +92,22 @@ class CurricularFacility extends Component
     $this->link = '';
     $this->sort_id = '';
     $this->status = '';
-    $this->multi_images =null;
+    $this->multi_images =null; 
+   }
 
-    
-}
+  
+     public function delete($id){
+
+      $curricular = CurricularFacilities::findOrFail($id);
+      if(!is_null($curricular)){
+        $curricular->delete();
+      }
+
+     }
+
     public function render()
     {
+      $this->records = CurricularFacilities::orderBy('sort_id','asc')->get();	 	
         return view('livewire.backend.facilities.curricular-facility')->layout('layouts.backend');
     }
 }

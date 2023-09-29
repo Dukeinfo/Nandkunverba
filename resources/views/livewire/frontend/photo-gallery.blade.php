@@ -70,9 +70,7 @@
                         </div>
                     </div>
 
-@php
-$categories = App\Models\Categories::where('status', 'Active')->get();              
- @endphp                    
+                   
                     <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">Photo Gallery</h5>
 
                     <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2">
@@ -106,6 +104,12 @@ $categories = App\Models\Categories::where('status', 'Active')->get();
                         </div>
                         <!-- end interactive banner item -->
                      @endforeach
+ 
+ @if(count($categories)!=count($total))
+ <button type="button" class="btn btn-primary btn-lg btn-block" wire:click="loadMore">Load More</button>
+ @endif
+
+
                       @else
          <center><div class="alert alert-warning">
         <strong>Sorry!</strong> No Record Found.
