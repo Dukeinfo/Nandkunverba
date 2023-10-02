@@ -15,7 +15,7 @@ class CreateFooterLinksTable extends Migration
     {
         Schema::create('footer_links', function (Blueprint $table) {
             $table->id();
-            $table->string('pname');
+            $table->string('pname')->nullable();
             $table->string('pagetitle');
             $table->string('pagetitleguj'); 
             $table->integer('sort_id')->nullable();   

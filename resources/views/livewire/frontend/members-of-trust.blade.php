@@ -67,13 +67,20 @@
                     
 
                     <div class="row mb-4">
+
+@php
+$members = App\Models\MemberOfTrust::where('category', '1')->where('status', 'Active')->get();              
+@endphp               
+ @if(isset($members) && count($members)>0  )
+        @foreach($members as $key => $member)         
+                        <!-- start item -->
                         <div class="col-md-12 mb-4">
                             <div class="card rounded-0">
                                 <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">HH Maharani Saheba Samyukta Kumari Gohil</h6>
+                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">{{$member->name}}</h6>
                                     <div class="alt-font font-weight-500 d-flex">
                                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">President</span>
+                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$member->designation}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -81,201 +88,31 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="photo">
-                                                <img src="assets/images/members/maharani_samyukta_kumari.jpg" class="img-fluid" alt="">
+                                                <img src="{{ getMemberofTrust($member->image) }}" class="img-fluid" alt="">
                                             </div>
                                         </div>
                                         <div class="col-lg-8">                                            
-                                            <p>Maharani Saheba Samyukta Kumari is a graduate in English Honours from the University of Pradesh. She distinguished herself by topping the girls from her batch in her Himachal twelfth Board Exam, with an All India Merit. She is the recipient of the Presidents Gold Medal for the best all rounder from The Lawrence School Sanawar. A Director of Vijay Mahal Hotels Pvt Ltd and a Trustee of the Khodiyar Mandir Trust, she is also on the Maharaja Krishna Kumar Singhji Trust, which runs a boys school Shri Kumarshala. A proprietor of Shishu Vidya Mandir, a nursery school on the Nilambagh Palace grounds, she has volunteered with cancer patients for five years in Mumbai and set up the Sri Urological Cancer Foundation. Her hobbies include Kathak and yoga.</p>
+                                          {!!$member->description!!}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
                         </div>
-                        <div class="col-md-12 mb-4">
-                            <div class="card rounded-0">
-                                <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">HH Maharaja Saheb Vijayraj Singhji Gohil</h6>
-                                    <div class="alt-font font-weight-500 d-flex">
-                                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Vice President</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="photo">
-                                                <img src="assets/images/members/maharaja.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">                                            
-                                            <p>A graduate from Osmania University, Maharaja Saheb Vijayraj Singhji is the Chairman of Vijay Mahal Hotels Pvt Ltd, President of the Khodiyar Mandir Trust, and a trustee of the Maharaja Krishna Kumar Singhji Trust. A keen traveller, photographer and wildlife enthusiast, he is also an active member on the Trustee Board of Rajkumar College, Rajkot, the erstwhile state of Bhavnagar being a founder member.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="col-md-12 mb-4">
-                            <div class="card rounded-0">
-                                <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">Yuvraj Saheb Jaiveer Raj Singh Gohil</h6>
-                                    <div class="alt-font font-weight-500 d-flex">
-                                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Member</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="photo">
-                                                <img src="assets/images/members/maharaja.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">                                            
-                                            <p>Armed with a degree in hospitality from Les Roches International School of Hotel Management, Switzerland, Yuvraj Jaiveer Raj Singh Gohil brings youth energy to the Trust. He has studied in Jamnabai Narsee School and Ecole Mondiale World School in Mumbai. He is a director of Vijay Mahal Hotels Pvt Ltd and a trustee of Shri Khodiyar Mandir Trust and Shri Krishna Kumar Singhji Trust. He is also the proprietor of Narayani Heritage Hotel and the Chairperson of the Gujarat Heritage Tourism Association. He is a keen fitness enthusiast and the founder of Handlebar Pvt. Ltd. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="col-md-12 mb-4">
-                            <div class="card rounded-0">
-                                <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">Maharajkumari Shree Brijeshwari Kumari Gohil</h6>
-                                    <div class="alt-font font-weight-500 d-flex">
-                                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Member</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="photo">
-                                                <img src="assets/images/members/maharaja.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">                                            
-                                            <p>Having studied in Jamnabai Narsee School and Ecole Mondiale World School in Mumbai, Maharajkumari Shree  Brijeshwari Kumari Gohil went on to the University of Nottingham in the UK to pursue a degree in Archaeology and Art History (Joint Honors). Following which, she worked at the PIimal Art Foundation in Mumbai and then went on to completing her MA in Heritage Management and Conservation from Durham University, UK. She is currently working as the Vice President at Prinseps Auctions, Mumbai and Consultant at Olympia Auctions in the UK. </p>
-                                            <p>She is a director of Vijay Mahal Hotels Pvt Ltd and a trustee on Shri Krishna Kumar Singhji Trust. She is passionate about heritage conservation and is working towards preservation of heritage sites through INTACH (Indian National Trust for Art and Cultural Heritage) and Bhavnagar Heritage. She is deeply inspired by her mother and follows her footstep for women empowerment. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="col-md-12 mb-4">
-                            <div class="card rounded-0">
-                                <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">Shri Dr. Shivraj Singhji Raol</h6>
-                                    <div class="alt-font font-weight-500 d-flex">
-                                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Member</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="photo">
-                                                <img src="assets/images/members/maharaja.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">                                            
-                                            <p>A well-known senior pediatrician of Bhavnagar, Dr. Raol brings with him a wealth of knowledge of the culture and history of Gujarat and is a storehouse of information. He is a constant, hands on advisor on all matters of the Trust.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="col-md-12 mb-4">
-                            <div class="card rounded-0">
-                                <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">Shri Dr. Shivraj Singhji Raol</h6>
-                                    <div class="alt-font font-weight-500 mb-3 d-flex">
-                                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Member</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="photo">
-                                                <img src="assets/images/members/maharaja.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">                                            
-                                            <p>A well-known senior pediatrician of Bhavnagar, Dr. Raol brings with him a wealth of knowledge of the culture and history of Gujarat and is a storehouse of information. He is a constant, hands on advisor on all matters of the Trust.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                        </div>
-
-                        <div class="col-md-12 mb-4">
-                            <div class="card rounded-0">
-                                <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">Shri G.S Nirmala Devi</h6>
-                                    <div class="alt-font font-weight-500 d-flex">
-                                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Member</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="photo">
-                                                <img src="assets/images/members/maharaja.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">                                            
-                                            <p>With a sound and balanced attitude towards decision making, she is a stable and mature advisor who is a constant presence in all the functions and activities.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                        </div>
-
-                        <div class="col-md-12 mb-4">
-                            <div class="card rounded-0">
-                                <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">Shri Vachini Devi Gohil</h6>
-                                    <div class="alt-font font-weight-500 d-flex">
-                                        <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Member</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="photo">
-                                                <img src="assets/images/members/maharaja.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">                                            
-                                            <p>The former principal and the current trustee of the institute, character building is her foremost aim for her students and she believes that a woman of substance is one who excels in academics as well as in sports, and at the same time has an inner strength that carries her forward in life. Determined to exalt the status of the school and college to a higher level, she constantly pushes boundaries and innovates so that the institution moves forward. She is famous for presenting the most vibrant and beautiful annual day functions and has set up a girl's band in the school that often plays at official government functions. A strict disciplinarian, she is the compass that directs the school towards new heights.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
+                       <!-- close item -->
+        @endforeach
+         @else
+         <center><div class="alert alert-warning">
+        <strong>Sorry!</strong> No Record Found.
+        </div>   
+ @endif                       
+                   
                     </div>
 
+
+@php
+$committeemembers = App\Models\MemberOfTrust::where('category', '2')->where('status', 'Active')->get();              
+@endphp 
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="table-responsive">
@@ -286,30 +123,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+ @if(isset($committeemembers) && count($committeemembers)>0  )
+        @foreach($committeemembers as $key => $member)                                         
                                         <tr>
-                                            <td>A.S. Yuvrani Saheb Kritiranjanii Kumari</td>
+                                            <td>{{$member->name}}</td>
                                         </tr>
-                                        <tr>
-                                            <td>A.S. Devyaniba S. Gohil </td>
-                                        </tr>
-                                        <tr>
-                                            <td>A.S. Padminiba Devi Raol  </td>
-                                        </tr>
-                                        <tr>
-                                            <td>A.S. Jalpaba Raol </td>
-                                        </tr>
-                                        <tr>
-                                            <td>A.S. Ambicaba Raol </td>
-                                        </tr>
-                                        <tr>
-                                            <td>A.S. Padminiba Kumari  </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shri Shakuntalaba B. Jadeja </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shri Jainandinidevi Gohil </td>
-                                        </tr>
+        @endforeach
+        @else
+        <tr>
+         <td>No Record Found</td>
+        </tr>
+ @endif                                       
+                                   
                                     </tbody>
                                 </table>
                             </div>

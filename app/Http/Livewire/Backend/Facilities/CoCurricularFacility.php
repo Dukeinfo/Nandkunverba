@@ -26,7 +26,7 @@ class CoCurricularFacility extends Component
         'title_guj' => 'required',  
         'desc_guj' => 'required',
         'multi_images' => 'required', 
-        'sort_id' => 'required| unique: co_curricular_facilities,sort_id', 
+        'sort_id' => 'required| unique:co_curricular_facilities,sort_id',
         'status' => 'required', 
        
       ];

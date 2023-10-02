@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AdminLogoutController;
 use App\Http\Controllers\CkImageUploadController;
+use App\Http\Controllers\LanguageController;
 
 use App\Http\Livewire\Frontend\Home\Homepage;
 use App\Http\Livewire\Frontend\Detail\DetailpageView;
@@ -22,6 +23,11 @@ use App\Http\Livewire\Frontend\Societies;
 use App\Http\Livewire\Frontend\StudentHeadlines;
 use App\Http\Livewire\Frontend\Testimonials;
 use App\Http\Livewire\Frontend\VisionAndMission;
+//new page with empty blade files
+use App\Http\Livewire\Frontend\AboutUs;
+use App\Http\Livewire\Frontend\HistoricalFoundation;
+use App\Http\Livewire\Frontend\AcademicObjectives;
+
 
 use App\Http\Livewire\Backend\AdminDashboard;
 use App\Http\Livewire\Backend\Admissions\AdmissionsInquery;
@@ -92,6 +98,8 @@ use App\Http\Livewire\Backend\Pages\EditPageContent;
 use App\Http\Livewire\Backend\Pages\TrashPageContent;
 use App\Http\Livewire\Backend\Pages\CreatePage;
 use App\Http\Livewire\Backend\Pages\EditPage;
+use App\Http\Livewire\Backend\Pages\ViewPageHeadings;
+use App\Http\Livewire\Backend\Pages\EditPageHeadings;
 use App\Http\Livewire\Backend\Pages\TrashPage;
 use App\Http\Livewire\Backend\Profile\AdminProfile;
 use App\Http\Livewire\Backend\Staff\ViewStaff;
@@ -169,7 +177,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-// ============================= frontend route start  ======================
+// ============================= frontend route start  ====================== correct  i nblade 
+
+
+
+ Route::get('/language/english', [LanguageController::class,'english'])->name('english.language');
+
+ Route::get('/language/gujrati', [LanguageController::class,'gujrati'])->name('gujrati.language');
+
+// copy past code 
 Route::get('/phpinfo', function (){
     dd(phpinfo());
 });
@@ -192,6 +208,12 @@ Route::get('/societies', Societies::class)->name('home.societies');
 Route::get('/student-headlines', StudentHeadlines::class)->name('home.student_headlines');
 Route::get('/testimonials', Testimonials::class)->name('home.testimonials');
 Route::get('/vision-and-mission', VisionAndMission::class)->name('home.vision_and_mission');
+//new pages with empty blade files
+Route::get('/about-us', AboutUs::class)->name('home.about_us');
+Route::get('/historical-foundation', HistoricalFoundation::class)->name('home.historical_foundation');
+Route::get('/academic-objectives', AcademicObjectives::class)->name('home.academic_objectives');
+
+
 });
 
 
@@ -401,6 +423,8 @@ Route::get('/edit-virtual-tour/{id}', EditVirtualTour::class)->name('edit_virtua
 Route::get('/add-widget', ViewWidget::class)->name('add_widget');
 Route::get('/edit-widget/{id}', EditWidget::class)->name('edit_widget');
 
+Route::get('/page/headings', ViewPageHeadings::class)->name('page_headings');
+Route::get('/page/headings/edit/{id}', EditPageHeadings::class)->name('edit_page_headings');
 
 
          

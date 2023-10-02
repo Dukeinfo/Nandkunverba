@@ -38,7 +38,7 @@ class TestimonialsSeeder extends Seeder
 
 			Teaching music is not just about imparting technical skills; it's about instilling a lifelong love for the art form and encouraging creativity and self-expression. I strive to be a mentor, guiding my students to discover their unique musical strengths and supporting them as they pursue their dreams.
 
-			As I reflect on my journey, I can't help but feel immense gratitude for both my school experiences and my chosen path as a music teacher. They have shaped me into the person I am today, and I am excited about the endless possibilities that lie ahead. With a heart full of passion and dedication.",'rating' => '5','sort_id' => '1','link' => NULL,'status' => 'Active','ip_address' => NULL,'login' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now()),  
+			As I reflect on my journey, I can't help but feel immense gratitude for both my school experiences and my chosen path as a music teacher. They have shaped me into the person I am today, and I am excited about the endless possibilities that lie ahead. With a heart full of passion and dedication.",'rating' => '5','sort_id' => '3','link' => NULL,'status' => 'Active','ip_address' => NULL,'login' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now()),  
 
          );
         foreach ( $testimonials as $key => $name) {

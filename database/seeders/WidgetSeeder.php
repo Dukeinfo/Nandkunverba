@@ -15,7 +15,7 @@ class WidgetSeeder extends Seeder
     public function run()
     {
 
-    	//activities 
+    	//activities (4 widgets)
         $widget = new Widget();
         $widget->menu_id = 1;
         $widget->pname = 'home.activities';
@@ -56,7 +56,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //career-counselling
+        //career-counselling (2 widgets)
 
         $widget = new Widget();
         $widget->menu_id = 1;
@@ -78,7 +78,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //cocurricular-facilities
+        //cocurricular-facilities (3 widgets)
 
         $widget = new Widget();
         $widget->menu_id = 1;
@@ -110,7 +110,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //counselling-cell
+        //counselling-cell (2 widgets)
 
         $widget = new Widget();
         $widget->menu_id = 1;
@@ -132,7 +132,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //curricular-facilities
+        //curricular-facilities (3 widgets)
 
         $widget = new Widget();
         $widget->menu_id = 1;
@@ -164,7 +164,69 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //founders-philosophy
+         //historical-foundation (5 widgets )
+
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.historical_foundation';
+        $widget->spname = 'home.historical_foundation';
+        $widget->pagetitle = 'Historical Foundation';
+        $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
+        $widget->sort_id = 15;
+        $widget->status = 'Active';
+        $widget->save();
+
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.historical_foundation';
+        $widget->spname = 'home.location';
+        $widget->pagetitle = 'OUR LOCATION';
+        $widget->pagetitleguj = 'અમારું સ્થાન';
+        $widget->sort_id = 15;
+        $widget->status = 'Active';
+        $widget->save();
+
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.historical_foundation';
+        $widget->spname = 'home.founders_philosophy';
+        $widget->pagetitle = "FOUNDER'S PHILOSOPHY";
+        $widget->pagetitleguj = 'સ્થાપકની ફિલસૂફી';
+        $widget->sort_id = 16;
+        $widget->status = 'Active';
+        $widget->save();
+
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.historical_foundation';
+        $widget->spname = 'home.vision_and_mission';
+        $widget->pagetitle = "VISION & MISSION";
+        $widget->pagetitleguj = 'વિઝન અને મિશન';
+        $widget->sort_id = 17;
+        $widget->status = 'Active';
+        $widget->save();
+
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.historical_foundation';
+        $widget->spname = 'home.members_of_trust';
+        $widget->pagetitle = "MEMBERS OF TRUST";
+        $widget->pagetitleguj = 'ટ્રસ્ટના સભ્યો';
+        $widget->sort_id = 18;
+        $widget->status = 'Active';
+        $widget->save();
+
+        //founders-philosophy (5 widgets )
+
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.founders_philosophy';
+        $widget->spname = 'home.historical_foundation';
+        $widget->pagetitle = 'Historical Foundation';
+        $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
+        $widget->sort_id = 15;
+        $widget->status = 'Active';
+        $widget->save();
 
         $widget = new Widget();
         $widget->menu_id = 2;
@@ -206,9 +268,18 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //location
+        //location (5 widgets)
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.location';
+        $widget->spname = 'home.historical_foundation';
+        $widget->pagetitle = 'Historical Foundation';
+        $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
+        $widget->sort_id = 15;
+        $widget->status = 'Active';
+        $widget->save();
 
-         $widget = new Widget();
+        $widget = new Widget();
         $widget->menu_id = 2;
         $widget->pname = 'home.location';
         $widget->spname = 'home.location';
@@ -248,7 +319,17 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //members-of-trust
+        //members-of-trust (5 widgets)
+
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.members_of_trust';
+        $widget->spname = 'home.historical_foundation';
+        $widget->pagetitle = 'Historical Foundation';
+        $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
+        $widget->sort_id = 15;
+        $widget->status = 'Active';
+        $widget->save();
 
         $widget = new Widget();
         $widget->menu_id = 2;
@@ -290,7 +371,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //news-events
+        //news-events (2 widgets)
 
         $widget = new Widget();
         $widget->menu_id = 1;
@@ -313,7 +394,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //photo-gallery 
+        //photo-gallery (2 widegts)
 
         $widget = new Widget();
         $widget->menu_id = 1;
@@ -325,7 +406,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //societies
+        //societies (4 widgets)
 
         $widget = new Widget();
         $widget->menu_id = 1;
@@ -367,7 +448,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //student-headlines
+        //student-headlines (2 widgets)
         $widget = new Widget();
         $widget->menu_id = 1;
         $widget->pname = 'home.student_headlines';
@@ -388,7 +469,7 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //testimonials
+        //testimonials (1 widget)
 
         $widget = new Widget();
         $widget->menu_id = 1;
@@ -400,7 +481,18 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-        //vision-and-mission
+        //vision-and-mission (5 widgets)
+
+        $widget = new Widget();
+        $widget->menu_id = 2;
+        $widget->pname = 'home.vision_and_mission';
+        $widget->spname = 'home.historical_foundation';
+        $widget->pagetitle = 'Historical Foundation';
+        $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
+        $widget->sort_id = 15;
+        $widget->status = 'Active';
+        $widget->save();
+
 
         $widget = new Widget();
         $widget->menu_id = 2;

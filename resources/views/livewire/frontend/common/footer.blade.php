@@ -2,7 +2,9 @@
     @php
      $contactInfo = App\Models\ContactInfo::orderBy('sort_id','asc')->where('status','Active')->first();
 
-     $SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where(['status' => 'Active' , 'category' =>'Footer'])->get();                      
+     $SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where(['status' => 'Active' , 'category' =>'Footer'])->get();  
+
+     $footerLinks = App\Models\FooterLink::orderBy('sort_id','asc')->where('status','Active')->get();                    
     @endphp
         <div class="footer-top padding-40px-tb border-bottom border-color-white-transparent">
             <div class="container">
@@ -56,12 +58,22 @@
                         <a href="" class="btn btn-tussock text-white btn-small">Read More</a>
                     </div>
                     <!-- end footer column -->
+
                     <!-- start footer column -->
                     <div class="col col-xl-2 col-lg md-margin-50px-bottom xs-margin-25px-bottom">
                         <span
                             class="alt-font font-weight-500 d-block text-white margin-20px-bottom xs-margin-10px-bottom">Quick
                             Links</span>
                         <ul>
+                         @if(isset($footerLinks) && count($footerLinks) >0 )
+                              @foreach($footerLinks as  $links)   
+                @php
+                $link = str_replace('home.', '', $links->pname);
+                $footertlink=str_replace('_', '-', $link);
+                @endphp 
+                          <li><a href="{{url($footertlink)}}">{{$links->pagetitle}}</a></li>
+                         @endforeach
+                        @else
                             <li><a href="javascript:void()">About School</a></li>
                             <li><a href="javascript:void()">Academics</a></li>
                             <li><a href="javascript:void()">Admissions</a></li>
@@ -69,6 +81,7 @@
                             <li><a href="javascript:void()">Societies</a></li>
                             <li><a href="javascript:void()">News & Events</a></li>
                             <li><a href="javascript:void()">Contact Us</a></li>
+                         @endif   
                         </ul>
                     </div>
                     <!-- end footer column -->

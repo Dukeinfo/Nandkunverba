@@ -71,7 +71,7 @@
          <div class="col-md-6">
                                     <div class="mb-6">
                                         <label class="form-label"> Link Title (Eng) <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="" wire:model="pagetitle" placeholder="Sub Page Name">
+                                        <input type="text" class="form-control" id="" wire:model="pagetitle" placeholder="Link Title">
                                         @error('pagetitle') <span class="error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                  <div class="col-md-6">
                                     <div class="mb-6">
                                         <label class="form-label"> Link Title (Guj) <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="" wire:model="pagetitleguj" placeholder="Sub Page Name">
+                                        <input type="text" class="form-control" id="" wire:model="pagetitleguj" placeholder="Link Title">
                                         @error('pagetitleguj') <span class="error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>                        
@@ -134,7 +134,7 @@
                                             <th>Link</th>
                                      
                                             <th>Link Title (Eng)</th>
-                                            <th>Link Title Nam (Guj)</th>
+                                            <th>Link Title (Guj)</th>
                                             <th>Sorting Order#</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -152,7 +152,7 @@
                                             <td>{{$record->sort_id ?? '' }}</td>
                                             <td><span class="badge badge-soft-success">{{$record->status ?? '' }}</span></td>
                                             <td>
-                                                <a href="{{route('edit_widget',['id' => $record->id])}}" class="text-success me-2" title="Edit"><i class="fa fa-edit fa-fw"></i></a>
+                                                <a href="{{route('edit_footer_quick_links',['id' => $record->id])}}" class="text-success me-2" title="Edit"><i class="fa fa-edit fa-fw"></i></a>
                                                 <a href="javascript:void(0)" class="text-danger me-2" title="Delete" wire:click="delete({{ $record->id }})"><i class="fa fa-times fa-fw fa-lg"></i></a>
                                             </td>
                                         </tr>

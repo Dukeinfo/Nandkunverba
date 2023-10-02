@@ -44,8 +44,12 @@
 				</a>
 					
 			  <ul class="sub-menu" aria-expanded="false">
+
 						<li><a href="{{route('create_page')}}">Create Page</a></li>
+						<li><a href="{{route('page_headings')}}">Page Headings</a></li>
 						<li><a href="{{route('page_content')}}">Page Content</a></li>
+
+						
 					   
 					</ul>
 			

@@ -25,5 +25,8 @@ class DatabaseSeeder extends Seeder
         $this->call(StudentHeadlinesSeeder::class);
         $this->call(WidgetSeeder::class);
         $this->call(SocialAppSeeder::class);
+        $this->call(FooterLinksSeeder::class);
+        $this->call(PageHeadingsSeeder::class);
+
     }
 }

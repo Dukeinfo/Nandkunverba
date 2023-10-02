@@ -145,3 +145,7 @@ function getKnowledgeHome($value) {
 function getMembership($value) {
     return asset('storage/uploads/membership/'.$value);
 }
+
+function getMemberofTrust($value) {
+    return asset('storage/uploads/members_trust/'.$value);
+}

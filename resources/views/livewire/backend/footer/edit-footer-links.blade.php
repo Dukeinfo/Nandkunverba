@@ -66,12 +66,12 @@
 
 
                                
-                              	
+                                
 
          <div class="col-md-6">
                                     <div class="mb-6">
                                         <label class="form-label"> Link Title (Eng) <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="" wire:model="pagetitle" placeholder="Sub Page Name">
+                                        <input type="text" class="form-control" id="" wire:model="pagetitle" placeholder="Link Title">
                                         @error('pagetitle') <span class="error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                  <div class="col-md-6">
                                     <div class="mb-6">
                                         <label class="form-label"> Link Title (Guj) <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="" wire:model="pagetitleguj" placeholder="Sub Page Name">
+                                        <input type="text" class="form-control" id="" wire:model="pagetitleguj" placeholder="Link Title">
                                         @error('pagetitleguj') <span class="error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>                        
@@ -95,7 +95,7 @@
                                     <div class="mb-3">
                                         <label class="form-label">Status <span class="text-danger">*</span></label>
                                         <select wire:model="status" class="form-select">
-                                        	 <option value="">Select</option>
+                                             <option value="">Select</option>
                                              <option value="Active">Active</option>
                                              <option value="Inactive">Inactive </option>
                                         </select>
@@ -117,62 +117,6 @@
                 </div>
             </div>
             <!-- end row -->
-            
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header bg-transparent border-bottom py-3">
-                            <h4 class="card-title">Manage Footer Quick Links</h4>
-                            <p class="card-title-desc mb-0">Manage the content by clicking on action accrodingly.</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-striped datatable">
-                                    <thead>
-                                        <tr>
-                                   
-                                            <th>Link</th>
-                                     
-                                            <th>Link Title (Eng)</th>
-                                            <th>Link Title Nam (Guj)</th>
-                                            <th>Sorting Order#</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                      @if(isset($records) && count($records)>0 )                      
-                                         @foreach ($records as  $record)	
-                                        <tr>
-                                        	 
-                                            <td>{{$record->pname ?? '' }}</td>
-                                          
-                                          <td>{{$record->pagetitle ?? '' }}</td>
-                                           <td>{{$record->pagetitleguj ?? '' }}</td> 
-                                            <td>{{$record->sort_id ?? '' }}</td>
-                                            <td><span class="badge badge-soft-success">{{$record->status ?? '' }}</span></td>
-                                            <td>
-                                                <a href="{{route('edit_widget',['id' => $record->id])}}" class="text-success me-2" title="Edit"><i class="fa fa-edit fa-fw"></i></a>
-                                                <a href="javascript:void(0)" class="text-danger me-2" title="Delete" wire:click="delete({{ $record->id }})"><i class="fa fa-times fa-fw fa-lg"></i></a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                      @else
-                                 <tr>
-                                 <td colspan="4"> Record Not Found</td>
-                                
-                                 </tr>
-                                 @endif 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
-
-
             
         </div>
         <!-- container-fluid -->
