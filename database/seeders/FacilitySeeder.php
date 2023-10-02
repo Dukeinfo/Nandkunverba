@@ -24,6 +24,8 @@ class FacilitySeeder extends Seeder
           array('title' => 'Prayer Hall','description' => '<p>Prayer hall is an essential place for students to gather everyday before the school starts to indulge into a melodious experience</p>','title_guj' => '
 			પ્રાર્થના હોલ','description_guj' =>'પ્રેયર હોલ એ વિદ્યાર્થીઓ માટે રોજેરોજ ભેગા થવા માટેનું એક આવશ્યક સ્થળ છે, તે પહેલાં શાળા એક મધુર અનુભવમાં સામેલ થવાનું શરૂ કરે છે.','image' => NULL,'thumbnail' => NULL,'link' => 'https://example.com/','sort_id' => '4','status' => 'Active','ip_address' => NULL,'login' => NULL,'deleted_at' => NULL,'created_at' => '2023-08-04 17:20:29','updated_at' => '2023-08-04 17:20:29'),
 
+          
+
         );
 		  foreach ( $facilities as $key => $name) {
 		            Facilities::create($name);
