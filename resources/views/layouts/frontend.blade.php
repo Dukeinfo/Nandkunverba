@@ -2,7 +2,13 @@
 <html class="no-js" lang="en">
 
 <head>
-    <title>Shri Nandkunverba Kshatriya Kanya Vidyalaya - Bhavnagar, Gujrat</title>
+    <title>
+        @if(session()->get('language') == 'gujrati')
+        શ્રી નંદકુંવરબા ક્ષત્રિય કન્યા વિદ્યાલય - ભાવનગર, ગુજરાત
+        @else
+        Shri Nandkunverba Kshatriya Kanya Vidyalaya - Bhavnagar, Gujrat
+        @endif
+    </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="">

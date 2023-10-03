@@ -67,36 +67,9 @@ $thumb = !empty($thumbnail) ? asset('uploads/thumbnail/'.basename($thumbnail)) :
                                         <label class="form-label">Description (Eng)</label>
                                       
                                  <div wire:ignore>
-                                         <textarea id="editor" wire:model="desc" placeholder="Description of Event" class="form-control xtra-cat"></textarea>
+                                         <textarea  wire:model="desc" placeholder="Description of Event" class="form-control xtra-cat" rows="10"></textarea>
                                  </div>
-                                 <script>
-                                            document.addEventListener('livewire:load', function () {
-                                                // Get the CSRF token from the meta tag
-                                                const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                                    
-                                                CKEDITOR.replace('editor', {
-                                                    // filebrowserUploadUrl: '{{ route("image.upload") }}', // Set the image upload endpoint URL
-                                                    filebrowserUploadUrl: "{{route('image.upload', ['_token' => csrf_token() ])}}",
-                                                    filebrowserUploadMethod: 'form', // Use form-based file upload (default is XMLHttpRequest)
-                                                    filebrowserBrowseUrl: '/ckfinder/ckfinder.html', // Set the CKFinder browse server URL
-                                                    filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images', // Set the CKFinder image browse server URL
-                                                    headers: {
-                                                        'X-CSRF-TOKEN': csrfToken // Pass the CSRF token with the request headers
-                                                    },
-                                                    
-                                                });
-                                    
-                                                CKEDITOR.instances.editor.on('change', function () {
-                                                    @this.set('desc', CKEDITOR.instances.editor.getData());
-                                                });
-                                                Livewire.on('formSubmitted', function () {
-                                                CKEDITOR.instances.editor.setData(''); // Reset CKEditor content
-
-                                                // document.querySelector('[wire:model="image"]').reset();
-
-                                                            });
-                                                    });
-                                            </script>
+                                 
                                  @error('desc') <span class="error">{{ $message }}</span> @enderror
                                      
                                     </div>
@@ -115,36 +88,9 @@ $thumb = !empty($thumbnail) ? asset('uploads/thumbnail/'.basename($thumbnail)) :
             <label class="form-label">Description (Guj)</label>
           
      <div wire:ignore>
-             <textarea id="editor_guj" wire:model="desc_guj" placeholder="Description of Event" class="form-control xtra-cat"></textarea>
+             <textarea  wire:model="desc_guj" placeholder="Description of Event" class="form-control xtra-cat" rows="10"></textarea>
      </div>
-     <script>
-                document.addEventListener('livewire:load', function () {
-                    // Get the CSRF token from the meta tag
-                    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        
-                    CKEDITOR.replace('editor_guj', {
-                        // filebrowserUploadUrl: '{{ route("image.upload") }}', // Set the image upload endpoint URL
-                        filebrowserUploadUrl: "{{route('image.upload', ['_token' => csrf_token() ])}}",
-                        filebrowserUploadMethod: 'form', // Use form-based file upload (default is XMLHttpRequest)
-                        filebrowserBrowseUrl: '/ckfinder/ckfinder.html', // Set the CKFinder browse server URL
-                        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images', // Set the CKFinder image browse server URL
-                        headers: {
-                            'X-CSRF-TOKEN': csrfToken // Pass the CSRF token with the request headers
-                        },
-                        
-                    });
-        
-                    CKEDITOR.instances.editor_guj.on('change', function () {
-                        @this.set('desc_guj', CKEDITOR.instances.editor_guj.getData());
-                    });
-                    Livewire.on('formSubmitted', function () {
-                    CKEDITOR.instances.editor_guj.setData(''); // Reset CKEditor content
-
-                    // document.querySelector('[wire:model="image"]').reset();
-
-                                });
-                        });
-                </script>
+     
      @error('desc_guj') <span class="error">{{ $message }}</span> @enderror
          
         </div>

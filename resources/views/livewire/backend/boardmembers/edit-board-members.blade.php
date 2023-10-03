@@ -131,7 +131,7 @@
                     });
         
                     CKEDITOR.instances.editor_guj.on('change', function () {
-                        @this.set('desc', CKEDITOR.instances.editor_guj.getData());
+                        @this.set('desc_guj', CKEDITOR.instances.editor_guj.getData());
                     });
                         Livewire.on('formSubmitted', function () {
                             CKEDITOR.instances.editor_guj.setData(''); // Reset CKEditor content

@@ -284,9 +284,9 @@ Route::get('/git-status', [CkImageUploadController::class, 'showGitStatus'])->na
     Route::get('/edit/testimonials/{id}', EditTestimonials::class)->name('edit_testimonials');
     Route::get('/view/testimonials/trash', TrashTestimonials::class)->name('trash_testimonials');
 
-    Route::get('/view/coachings', ViewCoachings::class)->name('view_coachings');
+    Route::get('/view/life-at-ankkv', ViewCoachings::class)->name('view_coachings');
     Route::get('/edit/coachings/{id}', EditCoachings::class)->name('edit_coachings');
-    Route::get('/view/coachings/trash', TrashCoachings::class)->name('trash_coachings');
+    Route::get('/view/life-at-ankkv/trash', TrashCoachings::class)->name('trash_coachings');
 
     Route::get('/view/category', ViewGalleryCategory::class)->name('view_category');
     Route::get('/edit/category/{id}', EditGalleryCategory::class)->name('edit_category');

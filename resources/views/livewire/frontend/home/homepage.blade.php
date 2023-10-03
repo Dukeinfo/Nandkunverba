@@ -79,8 +79,6 @@
     </section>
     <!-- end slider section -->
 
-
-
 @php
 $categoryFirst = App\Models\Whyus::where('category', '1')->where('status', 'Active')->first();              
  @endphp
@@ -93,27 +91,61 @@ $categoryFirst = App\Models\Whyus::where('category', '1')->where('status', 'Acti
                     data-wow-delay="0.1s">
                     <div class="alt-font font-weight-500 margin-30px-bottom d-flex"><span
                             class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$categoryFirst->title ?? 'Historical Foundation'}}</span></div>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+@if(session()->get('language') == 'gujrati')
+             {{$categoryFirst->title_guj ?? 'ઐતિહાસિક ફાઉન્ડેશન'}}
+ @else
+            {{$categoryFirst->title ?? 'Historical Foundation'}}
+@endif            
+
+
+                        </span></div>
                     </div>
                     
                     <h4
                         class="alt-font font-weight-600 text-dark-purple letter-spacing-minus-1px margin-30px-bottom sm-margin-20px-bottom">
-                        {{$categoryFirst->title ?? 'Shri Nandkunverba Kshatriya Kanya Vidyalaya'}}</h4>
-                     @if(isset($categoryFirst->description) )
+@if(session()->get('language') == 'gujrati')
+{{$categoryFirst->sub_title_guj ?? 'શ્રી નંદકુંવરબા ક્ષત્રિય કન્યા વિદ્યાલય'}}
+@else
+{{$categoryFirst->sub_title ?? 'Shri Nandkunverba Kshatriya Kanya Vidyalaya'}}
+@endif                    </h4>
+                    @if(isset($categoryFirst->description) )
                         
+
+                        @if(session()->get('language') == 'gujrati')
+                           {!! isset($categoryFirst->description_guj) 
+                             ? 
+                             str_limit($categoryFirst->description_guj, $limit=276 )
+                              : ''!!}
+                        @else
                             {!! isset($categoryFirst->description) 
                              ? 
                              str_limit($categoryFirst->description, $limit=276 )
                               : ''!!}
+                        @endif      
 
                         
-                        @else 
+                @else 
+                     @if(session()->get('language') == 'gujrati')
+                    <p class="w-80 lg-w-100">દ્વારા શાળાની સ્થાપના વર્ષ 1917માં કરવામાં આવી હતી
+                        ભાવનગરના સ્વર્ગસ્થ <strong>પ.પૂ.મહારાણી સાહેબ શ્રી નંદકુંવરબા સાહેબ</strong>. "પુરદા સિસ્ટમ" ના યુગમાં
+                        તમામ રાજપૂત મહિલાઓ માટે, આ દૂરંદેશી મહારાણીએ ભાવનગરની મહિલાઓ માટે તેને નાબૂદ કરી
+                        સમાજની છોકરીઓને શિક્ષિત કરવાનું નક્કી કર્યું.</p>
+                     @else
                     <p class="w-80 lg-w-100">The School was founded in the year 1917 by
                         the late <strong>HH Maharani Saheba Shri Nandkunverba Saheb</strong> of Bhavnagar. In an era of "purdah system"
                         for all Rajput women, this foresighted Maharani abolished it for the women of Bhavnagar and
                         decided to educate the girls of the community.</p>
-                     @endif    
-                    <a href="{{$categoryFirst->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple">Explore More<i
+                    @endif
+             @endif    
+                    <a href="{{$categoryFirst->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple">
+                    @if(session()->get('language') == 'gujrati')    
+                        વધુ અન્વેષણ કરો
+                    @else
+                        Explore More
+                    @endif    
+
+                        <i
                             class="fas fa-arrow-right right-icon"></i></a>
                 </div>
                 <div class="col-12 col-lg-4 order-md-1 order-lg-2 md-margin-5-rem-bottom wow animate__fadeIn"
@@ -135,7 +167,13 @@ $categoryFirst = App\Models\Whyus::where('category', '1')->where('status', 'Acti
                                     class="text-dark-purple title-extra-small font-weight-500 margin-5px-left">+</span>
 
                             </div>
-                            <span class="alt-font text-medium text-uppercase d-block">Years of<br>Excellence</span>
+
+@if(session()->get('language') == 'gujrati')
+<span class="alt-font text-medium text-uppercase d-block">ના વર્ષો<br>શ્રેષ્ઠતા</span>
+@else
+    <span class="alt-font text-medium text-uppercase d-block">Years of<br>Excellence</span>
+@endif
+
                             <div class="w-100 h-1px bg-medium-gray margin-2-rem-tb xs-margin-3-rem-tb"></div>
                         </div>
                         <!-- end counter item -->
@@ -147,7 +185,12 @@ $categoryFirst = App\Models\Whyus::where('category', '1')->where('status', 'Acti
                                     data-to="{{$categoryFirst->expteachers ?? '50'}}"></h4><span
                                     class="text-dark-purple title-extra-small font-weight-500 margin-5px-left">+</span>
                             </div>
-                            <span class="alt-font text-medium text-uppercase d-block">Experienced<br>Teachers</span>
+
+                 @if(session()->get('language') == 'gujrati')      
+                 <span class="alt-font text-medium text-uppercase d-block">અનુભવી<br>શિક્ષકો</span>
+                 @else     
+                 <span class="alt-font text-medium text-uppercase d-block">Experienced<br>Teachers</span>
+                 @endif
                             <div class="w-100 h-1px bg-medium-gray margin-2-rem-tb xs-margin-3-rem-tb"></div>
                         </div>
                         <!-- end counter item -->
@@ -159,7 +202,11 @@ $categoryFirst = App\Models\Whyus::where('category', '1')->where('status', 'Acti
                                     data-to="{{$categoryFirst->notalumna ?? '25'}}"></h4><span
                                     class="text-dark-purple title-extra-small font-weight-500 margin-5px-left">+</span>
                             </div>
-                            <span class="alt-font text-medium text-uppercase d-block">Notable<br>Alumna</span>
+                         @if(session()->get('language') == 'gujrati')
+                         <span class="alt-font text-medium text-uppercase d-block">નોંધનીય<br>ભૂતપૂર્વ વિદ્યાર્થી</span>
+                         @else   
+                         <span class="alt-font text-medium text-uppercase d-block">Notable<br>Alumna</span>
+                         @endif   
                         </div>
                         <!-- end counter item -->
                     </div>
@@ -179,16 +226,34 @@ $facilities = App\Models\Facilities::where('status', 'Active')->get();
         <div class="container">
             <div class="row justify-content-lg-center">
                 <div class="col-12 overflow-hidden alt-font font-weight-600 text-white text-overlap-style-02 d-none d-xl-block wow animate__fadeInDown"
-                    data-wow-delay="0.2s">Infrastructure</div>
+                    data-wow-delay="0.2s">
+                    @if(session()->get('language') == 'gujrati')
+                    ઈન્ફ્રાસ્ટ્રક્ચર
+                    @else
+                    Infrastructure
+                    @endif
+                </div>
                 <div
                     class="col-12 col-lg-6 col-sm-8 text-lg-center margin-6-rem-bottom lg-margin-4-rem-bottom md-margin-3-rem-bottom xs-margin-5-rem-bottom wow animate__fadeIn">
                     <div
                         class="d-flex flex-row align-items-center justify-content-center text-center margin-10px-bottom">
                         <span class="w-25px h-1px bg-tussock opacity-7"></span>
-                        <div class="alt-font text-uppercase font-weight-500 text-tussock padding-10px-lr">Facilities We Provide</div>
+                        <div class="alt-font text-uppercase font-weight-500 text-tussock padding-10px-lr">
+                     @if(session()->get('language') == 'gujrati')
+                      સુવિધાઓ અમે પ્રદાન કરીએ છીએ
+                     @else       
+                        Facilities We Provide
+                     @endif   
+                    </div>
                         <span class="w-25px h-1px bg-tussock opacity-7"></span>
                     </div>
-                    <h5 class="alt-font font-weight-600 text-dark-purple letter-spacing-minus-1px m-0">Facility Spotlight: Unveiling Excellence in Infrastructure</h5>
+                    <h5 class="alt-font font-weight-600 text-dark-purple letter-spacing-minus-1px m-0">
+                   @if(session()->get('language') == 'gujrati')
+                   સુવિધા સ્પોટલાઇટ: ઇન્ફ્રાસ્ટ્રક્ચરમાં શ્રેષ્ઠતાનું અનાવરણ
+                   @else     
+                    Facility Spotlight: Unveiling Excellence in Infrastructure
+                   @endif  
+                </h5>
                 </div>
             </div>
  @php
@@ -197,21 +262,44 @@ $expertservices = App\Models\ExpertService::where('status', 'Active')->first();
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 col-xl-3 col-lg-4 position-relative padding-2-rem-top md-no-padding-top md-margin-5-rem-bottom wow animate__fadeIn"
                     data-wow-delay="0.2s">
-                    <span class="alt-font margin-20px-bottom d-block text-uppercase font-weight-500 text-tussock">Expert
-                        services</span>
+                    <span class="alt-font margin-20px-bottom d-block text-uppercase font-weight-500 text-tussock">
+@if(session()->get('language') == 'gujrati')
+     નિષ્ણાત સેવાઓ
+@else
+     Expert services
+@endif                        
+                    </span>
 
-                     @if(isset($expertservices->detail) )
-                        
+          @if(isset($expertservices->detail) )
+                     @if(session()->get('language') == 'gujrati')
+                     {!! isset($expertservices->detail_guj) 
+                             ? 
+                             str_limit($expertservices->detail_guj, $limit=115 )
+                              : ''!!}
+                     @else
                      {!! isset($expertservices->detail) 
                              ? 
                              str_limit($expertservices->detail, $limit=115 )
                               : ''!!}
-                    @else     
+                     @endif          
+
+            @else    
+                @if(session()->get('language') == 'gujrati')
+                 <p class="margin-40px-bottom md-margin-20px-bottom">
+સંસ્થા પાસે વિવિધ સુવિધાઓ છે જે વિદ્યાર્થીઓની અભ્યાસક્રમ અને સહ-અભ્યાસિક બંને જરૂરિયાતોને પૂરી કરે છે.</p>
+                @else 
                     <p class="margin-40px-bottom md-margin-20px-bottom">The Institution has various facilities that cater to both the curricular and co-curricular needs of the students.</p>
-                    @endif
+                @endif    
+           @endif
 
 
-                    <a href="{{$expertservices->link ?? 'javascript:void()'}}" class="btn btn-small btn-tussock">View more</a>
+                    <a href="{{$expertservices->link ?? 'javascript:void()'}}" class="btn btn-small btn-tussock">
+                   @if(session()->get('language') == 'gujrati')
+                    વધુ જોવો
+                   @else     
+                    View more
+                   @endif  
+                </a>
                     <!-- <div class="swiper-button-next-nav-2 swiper-button-next slider-navigation-style-06"><i
                             class="line-icon-Arrow-OutRight"></i></div>
                     <div class="swiper-button-previous-nav-2 swiper-button-prev slider-navigation-style-06"><i
@@ -236,15 +324,27 @@ $expertservices = App\Models\ExpertService::where('status', 'Active')->first();
                                             <div class="feature-box-content last-paragraph-no-margin">
                                                 <span
                                                     class="text-dark-purple text-extra-medium font-weight-600 text-uppercase d-block margin-10px-bottom alt-font">
-                                                {{$facility->title ?? ''}}      
+                                @if(session()->get('language') == 'gujrati')
+                                {{$facility->title_guj ?? ''}}      
+                                @else               
+                                 {{$facility->title ?? ''}} 
+                                @endif       
                                                 </span>
-                                                <p>{!!$facility->description ?? ''!!}
-                                                </p>
+                                @if(session()->get('language') == 'gujrati')
+                                 <p>{!!$facility->description_guj ?? ''!!} </p>
+                                @else                
+                                 <p>{!!$facility->description ?? ''!!} </p>
+                                @endif                
                                             </div>
                                             <div class="move-bottom-top margin-15px-top">
                                                 <a href="#"
-                                                    class="btn btn-link p-0 btn-extra-large text-tussock text-tussock-hover md-margin-auto-lr">Read
-                                                    More</a>
+                                                    class="btn btn-link p-0 btn-extra-large text-tussock text-tussock-hover md-margin-auto-lr">
+                                   @if(session()->get('language') == 'gujrati')
+                                        વધુ વાંચો
+                                   @else                 
+                                        Read More
+                                   @endif     
+                                    </a>
                                             </div>
                                         </div>
                                     </div>
@@ -310,23 +410,52 @@ $categorySecond = App\Models\Whyus::where('category', '2')->where('status', 'Act
                 <div class="col-12 col-lg-5 offset-lg-1 col-md-10 wow animate__fadeIn" data-wow-delay="0.4s">
                     <div class="alt-font font-weight-500 margin-30px-bottom d-flex"><span
                             class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$categorySecond->title ?? "Founder's Philosophy"}} </span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                 @if(session()->get('language') == 'gujrati')
+                   {{$categorySecond->title_guj ?? "સ્થાપકની ફિલસૂફી"}}
+                 @else
+                    {{$categorySecond->title ?? "Founder's Philosophy"}} 
+                 @endif   
+                        </span>
 
                         </div>
                     </div>
 
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$categorySecond->sub_title ?? 'HH Maharani Saheba Shri Nandkunverba Saheb'}}</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+          @if(session()->get('language') == 'gujrati')
+               {{$categorySecond->sub_title_guj ?? '
+પ.પૂ.મહારાણી સાહેબ શ્રી નંદકુંવરબા સાહેબ'}}
+          @else
+                {{$categorySecond->sub_title ?? 'HH Maharani Saheba Shri Nandkunverba Saheb'}}
+          @endif      
+
+                    </h5>
 
                     @if(isset($categorySecond->description) )
                         
-                        {!!Str::limit($categorySecond->description, 488) ?? ''!!}    
+                        @if(session()->get('language') == 'gujrati')
+                        {!!Str::limit($categorySecond->description_guj, 488) ?? ''!!}
+                        @else
+                        {!!Str::limit($categorySecond->description, 488) ?? ''!!}
+                        @endif    
                         
                     @else 
+                    @if(session()->get('language') == 'gujrati')
+                     <p class="w-75 xl-w-100">શ્રી નંદકુંવરબા ક્ષત્રિય કન્યા વિદ્યાલયની સ્થાપના વર્ષ 1917 માં ભાવનગરના સ્વર્ગસ્થ પ.પૂ. મહારાણી સાહેબ શ્રી નંદકુંવરબા સાહેબ દ્વારા કરવામાં આવી હતી જેઓ સ્ત્રીઓની મુક્તિમાં માનતા હતા. </p>
+                    <p class="w-75 xl-w-100">એ સમયે જ્યારે મહિલાઓ તેમના ઘરની ચાર દિવાલો સુધી સીમિત હતી, મહારાણી સાહેબાએ પરદા પ્રથા નાબૂદ કરવાનો અને છોકરીઓને સર્વગ્રાહી શિક્ષણ આપવાનો સાહસિક નિર્ણય લીધો. આ શબ્દનો ટ્રેન્ડ શરૂ થયો તે પહેલાં એક નારીવાદી, સંસ્થા સર્વાંગી વિકાસ અને છોકરીઓ માટે સમાન તકો માટે પ્રયત્નશીલ છે.</p>
+                    @else
                     <p class="w-75 xl-w-100">Shri Nandkunverba Kshatriya Kanya Vidyalaya was founded in the year 1917 by the late HH Maharani Saheba Shri Nandkunverba Saheb of Bhavnagar who believed in the emancipation of women. </p>
                     <p class="w-75 xl-w-100">At a time when women were confined to the four walls of their home, Maharani Saheba, took a bold decision to abolish the purdah system and provide girls with a holistic education. A feminist before the term began to trend, the institute strives for all round development and equal opportunities for girls.</p>
+                    @endif
 
                     @endif
-                    <a href="{{$categorySecond->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple margin-20px-top" target="_blank">Know More</a>
+                    <a href="{{$categorySecond->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple margin-20px-top" target="_blank">
+                        @if(session()->get('language') == 'gujrati')
+                        વધુ જાણો
+                        @else
+                        Know More
+                        @endif
+                    </a>
 
                 </div>
             </div>
@@ -346,11 +475,27 @@ $lifeat = App\Models\Coachings::where('status', 'Active')->get();
                     <div
                         class="d-flex flex-row align-items-center justify-content-center text-center margin-10px-bottom">
                         <span class="w-25px h-1px bg-tussock opacity-7"></span>
-                        <div class="alt-font text-uppercase font-weight-500 text-tussock padding-10px-lr">Life at SNKKV </div>
+                        <div class="alt-font text-uppercase font-weight-500 text-tussock padding-10px-lr">
+                   @if(session()->get('language') == 'gujrati')
+                     SNKKV ખાતે જીવન
+                   @else         
+                        Life at SNKKV
+                   @endif      
+                    </div>
                         <span class="w-25px h-1px bg-tussock opacity-7"></span>
                     </div>
-                    <h5 class="alt-font font-weight-600 text-dark-purple letter-spacing-minus-1px">Nurturing Minds, Enriching Souls</h5>
+                    <h5 class="alt-font font-weight-600 text-dark-purple letter-spacing-minus-1px">
+                @if(session()->get('language') == 'gujrati')
+                   મનનું પોષણ કરવું, આત્માઓને સમૃદ્ધ બનાવવું
+                @else        
+                    Nurturing Minds, Enriching Souls
+                @endif    
+                </h5>
+                   @if(session()->get('language') == 'gujrati')
+                    <p class="w-80 mx-auto md-w-100 mb-0">મન, શરીર અને આત્મામાં વૃદ્ધિ સાથે શૈક્ષણિક સિદ્ધિઓ, ભાવનાત્મક સુખાકારી અને જીવનભરની સફળતાને પ્રોત્સાહન આપવું</p>
+                   @else
                     <p class="w-80 mx-auto md-w-100 mb-0">Fostering Academic Achievement, Emotional Well-being, and Lifelong Success with Growth in Mind, Body and Spirit</p>
+                  @endif  
                 </div>
             </div>
         </div>
@@ -376,9 +521,30 @@ $lifeat = App\Models\Coachings::where('status', 'Active')->get();
                             <div class="d-table h-100 w-100">
                                 <div class="d-table-cell align-bottom padding-35px-right">
                                     <span
-                                        class="text-white d-block text-extra-large margin-15px-bottom alt-font font-weight-500">{{$life->title ?? ''}}</span>
-                                    <p class="interactive-banners-content-text">{!!Str::limit($life->description, 220) ?? ''!!}</p>
-                                    <a href="{{$life->link ?? 'javascript:void()'}}" class="btn btn-small btn-tussock" target="_blank">View more</a>
+                                        class="text-white d-block text-extra-large margin-15px-bottom alt-font font-weight-500">
+@if(session()->get('language') == 'gujrati')
+  {{$life->title_guj ?? ''}}
+@else
+  {{$life->title ?? ''}}
+@endif                                        
+                                    </span>
+
+@if(session()->get('language') == 'gujrati')
+<p class="interactive-banners-content-text">            
+ {!!Str::limit($life->description_guj, 220) ?? ''!!}
+ </p>
+@else                                    
+<p class="interactive-banners-content-text">            
+ {!!Str::limit($life->description, 220) ?? ''!!}
+ </p>
+@endif 
+                                    <a href="{{$life->link ?? 'javascript:void()'}}" class="btn btn-small btn-tussock" target="_blank">
+                                 @if(session()->get('language') == 'gujrati')
+                                 વધુ જોવો
+                                 @else       
+                                    View more
+                                 @endif   
+                                </a>
                                 </div>
                             </div>
                         </div>
@@ -386,9 +552,15 @@ $lifeat = App\Models\Coachings::where('status', 'Active')->get();
                 </div>
          @endforeach
          @else
-         <center><div class="alert alert-warning">
-        <strong>Sorry!</strong> No Record Found.
-        </div>
+          @if(session()->get('language') == 'gujrati')
+          <center><div class="alert alert-warning">
+          <strong>માફ કરશો!</strong> કોઈ રેકોર્ડ મળ્યો નથી.
+          </div>
+          @else
+          <center><div class="alert alert-warning">
+          <strong>Sorry!</strong> No Record Found.
+          </div>
+          @endif
        @endif       
             
             </div>
@@ -407,7 +579,12 @@ $testimonials = App\Models\Testimonials::where('status', 'Active')->get();
                     <div class="overlap-section-inner">
                         <h3
                             class="alt-font text-salmon-rose title-large letter-spacing-minus-3px font-weight-700 mb-0">
-                            studentspeaks</h3>
+                            @if(session()->get('language') == 'gujrati')
+                            વિદ્યાર્થીઓ બોલે છે
+                            @else
+                            studentspeaks
+                            @endif
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -432,10 +609,27 @@ $testimonials = App\Models\Testimonials::where('status', 'Active')->get();
                                             class="w-70px margin-50px-bottom xs-w-50px xs-margin-25px-bottom">
                                         <p
                                             class="margin-40px-bottom md-line-height-30px w-90 d-inline-block xs-margin-25px-bottom">
-                                           {!!Str::limit($testim->description, 481) ?? ''!!} </p>
+                                         @if(session()->get('language') == 'gujrati')
+                                         {!!Str::limit($testim->description_guj, 481) ?? ''!!}
+                                         @else
+                                           {!!Str::limit($testim->description, 481) ?? ''!!}
+                                         @endif   
+                                       </p>
                                         <span
-                                            class="alt-font font-weight-600 text-tussock text-uppercase d-block">{{$testim->name ?? ''}}</span>
-                                        <span class="alt-font text-small text-uppercase d-block">{{$testim->position ?? ''}} </span>
+                                            class="alt-font font-weight-600 text-tussock text-uppercase d-block">
+@if(session()->get('language') == 'gujrati')
+  {{$testim->name_guj ?? ''}}
+@else
+  {{$testim->name ?? ''}}
+@endif                                            
+                                        </span>
+                                        <span class="alt-font text-small text-uppercase d-block">
+                           @if(session()->get('language') == 'gujrati')
+                             {{$testim->position_guj ?? ''}} 
+                           @else                 
+                             {{$testim->position ?? ''}} 
+                           @endif 
+                           </span>
                                     </div>
                                 </div>
                             </div>
@@ -447,16 +641,32 @@ $testimonials = App\Models\Testimonials::where('status', 'Active')->get();
                     <!-- start slider pagination -->
                     <div
                         class="swiper-button-next-nav slider-custom-text-next swiper-button-next font-weight-600 alt-font text-small text-dark-purple">
-                        NEXT</div>
+                        @if(session()->get('language') == 'gujrati')
+                        આગળ
+                        @else
+                        NEXT
+                        @endif 
+                    </div>
                     <div
                         class="swiper-button-previous-nav slider-custom-text-prev swiper-button-prev font-weight-600 alt-font text-small text-dark-purple">
-                        PREV</div>
+                        @if(session()->get('language') == 'gujrati')
+                         પૂર્વ
+                        @else 
+                         PREV
+                        @endif 
+                      </div>
                     <!-- end slider pagination -->
                 </div>
                  @else
+      @if(session()->get('language') == 'gujrati')
+       <center><div class="alert alert-warning">
+        <strong>માફ કરશો!</strong> કોઈ રેકોર્ડ મળ્યો નથી.
+        </div>
+     @else
          <center><div class="alert alert-warning">
         <strong>Sorry!</strong> No Record Found.
         </div>
+     @endif   
                  @endif 
             </div>
         </div>
@@ -465,7 +675,7 @@ $testimonials = App\Models\Testimonials::where('status', 'Active')->get();
 @php
 $knowledge = App\Models\KnowledgeHome::where('status', 'Active')->get();
 @endphp
-   <!-- start section activity-->
+   <!-- start section coachings-->
     <section class="bg-extra-dark-gray fancy-box-background big-section cover-background p-0 wow animate__fadeIn"
         style="background-image: url('assets/images/widget_bg.jpg');">
         <div class="opacity-very-light opacity-3 bg-extra-dark-gray"></div>
@@ -484,11 +694,22 @@ $knowledge = App\Models\KnowledgeHome::where('status', 'Active')->get();
                             class="fancy-text-content padding-5-rem-lr padding-4-half-rem-tb xl-padding-2-rem-lr xl-padding-1-half-rem-tb lg-padding-4-rem-all">
                             <h6
                                 class="alt-font font-weight-600 text-white text-uppercase margin-20px-bottom w-80 xl-w-100 lg-w-60 md-w-80">
-                                {{$know->title ?? ''}}</h6>
+                           @if(session()->get('language') == 'gujrati')   
+                               {{$know->title_guj ?? ''}} 
+                           @else 
+                                {{$know->title ?? ''}}
+                           @endif     
+                            </h6>
                             <div class="fancy-text-box-bottom justify-content-center">
                                 <div class="d-flex">
                              @if(isset($know->description) )       
-                             <p class="m-0 align-self-center w-75 text-white opacity-6">    {{ Str::of(strip_tags($know->description))->limit(77)}}</p>
+                             <p class="m-0 align-self-center w-75 text-white opacity-6">   
+                             @if(session()->get('language') == 'gujrati')
+                              {{ Str::of(strip_tags($know->description_guj))->limit(77)}}
+                             @else
+                             {{ Str::of(strip_tags($know->description))->limit(77)}}
+                             @endif
+                           </p>
                             @endif          
                                     <span class="align-self-center text-center ms-auto"><a href="#"
                                             class="d-inline-block line-height-40px rounded-circle bg-extra-dark-gray h-40px w-40px"><i
@@ -513,10 +734,20 @@ $knowledge = App\Models\KnowledgeHome::where('status', 'Active')->get();
                             class="fancy-text-content padding-5-rem-lr padding-4-half-rem-tb xl-padding-2-rem-lr xl-padding-1-half-rem-tb lg-padding-4-rem-all">
                             <h6
                                 class="alt-font font-weight-600 text-white text-uppercase margin-20px-bottom w-80 xl-w-100 lg-w-60 md-w-80">
-                                Safe learning environment</h6>
+                                @if(session()->get('language') == 'gujrati')
+                                 સલામત શિક્ષણ વાતાવરણ
+                                @else
+                                Safe learning environment
+                                @endif
+
+                            </h6>
                             <div class="fancy-text-box-bottom justify-content-center">
                                 <div class="d-flex">
-                                    <p class="m-0 align-self-center w-75 text-white opacity-6">Building a secure foundation for lifelong learning, where dreams take flight.</p>
+                           @if(session()->get('language') == 'gujrati')
+                             <p class="m-0 align-self-center w-75 text-white opacity-6">આજીવન શિક્ષણ માટે સુરક્ષિત પાયો બનાવવો, જ્યાં સપના ઉડાન ભરે છે.</p>
+                           @else
+                                <p class="m-0 align-self-center w-75 text-white opacity-6">Building a secure foundation for lifelong learning, where dreams take flight.</p>
+                           @endif
                                     <span class="align-self-center text-center ms-auto"><a href="#"
                                             class="d-inline-block line-height-40px rounded-circle bg-extra-dark-gray h-40px w-40px"><i
                                                 class="feather icon-feather-arrow-right text-white"></i></a></span>
@@ -537,10 +768,20 @@ $knowledge = App\Models\KnowledgeHome::where('status', 'Active')->get();
                             class="fancy-text-content padding-5-rem-lr padding-4-half-rem-tb xl-padding-2-rem-lr xl-padding-1-half-rem-tb lg-padding-4-rem-all">
                             <h6
                                 class="alt-font font-weight-600 text-white text-uppercase margin-20px-bottom w-80 xl-w-100 lg-w-60 md-w-80">
-                                Complete Holistic Development</h6>
+                                @if(session()->get('language') == 'gujrati')
+                                સંપૂર્ણ સર્વગ્રાહી વિકાસ
+                                @else
+                                Complete Holistic Development
+                                @endif
+                            </h6>
                             <div class="fancy-text-box-bottom justify-content-center">
                                 <div class="d-flex">
+                                    @if(session()->get('language') == 'gujrati')
+                                    <p class="m-0 align-self-center w-75 text-white opacity-6">
+                                    મનને પોષવું, હૃદયને સમૃદ્ધ બનાવવું અને શરીરને મજબૂત બનાવવું.</p>
+                                    @else
                                     <p class="m-0 align-self-center w-75 text-white opacity-6">Nurturing the mind, enriching the heart, and strengthening the body.</p>
+                                    @endif
                                     <span class="align-self-center text-center ms-auto"><a href="#"
                                             class="d-inline-block line-height-40px rounded-circle bg-extra-dark-gray h-40px w-40px"><i
                                                 class="feather icon-feather-arrow-right text-white"></i></a></span>
@@ -563,10 +804,20 @@ $knowledge = App\Models\KnowledgeHome::where('status', 'Active')->get();
                             class="fancy-text-content padding-5-rem-lr padding-4-half-rem-tb xl-padding-2-rem-lr xl-padding-1-half-rem-tb lg-padding-4-rem-all">
                             <h6
                                 class="alt-font font-weight-600 text-white text-uppercase margin-20px-bottom w-80 xl-w-100 lg-w-60 md-w-80">
-                                Wellbeing and Counselling</h6>
+                                @if(session()->get('language') == 'gujrati')
+                                 સુખાકારી અને પરામર્શ
+                                @else
+                                Wellbeing and Counselling
+                                @endif
+                            </h6>
                             <div class="fancy-text-box-bottom justify-content-center">
                                 <div class="d-flex">
+                                    @if(session()->get('language') == 'gujrati')
+                                    <p class="m-0 align-self-center w-75 text-white opacity-6">
+                                    કાઉન્સેલિંગ સાથે તમને વધુ સુખી, સ્વસ્થ તરફ પગલાં લેવા.</p>
+                                    @else
                                     <p class="m-0 align-self-center w-75 text-white opacity-6">Taking Steps Toward a Happier, Healthier you with Counseling.</p>
+                                    @endif
                                     <span class="align-self-center text-center ms-auto"><a href="#"
                                             class="d-inline-block line-height-40px rounded-circle bg-extra-dark-gray h-40px w-40px"><i
                                                 class="feather icon-feather-arrow-right text-white"></i></a></span>
@@ -588,10 +839,19 @@ $knowledge = App\Models\KnowledgeHome::where('status', 'Active')->get();
                             class="fancy-text-content padding-5-rem-lr padding-4-half-rem-tb xl-padding-2-rem-lr xl-padding-1-half-rem-tb lg-padding-4-rem-all">
                             <h6
                                 class="alt-font font-weight-600 text-white text-uppercase margin-20px-bottom w-80 xl-w-100 lg-w-60 md-w-80">
-                                Health and Wellness</h6>
+                              @if(session()->get('language') == 'gujrati')
+                                આરોગ્ય અને સુખાકારી
+                              @else  
+                                Health and Wellness
+                              @endif  
+                            </h6>
                             <div class="fancy-text-box-bottom justify-content-center">
                                 <div class="d-flex">
+                                    @if(session()->get('language') == 'gujrati')
+                                    <p class="m-0 align-self-center w-75 text-white opacity-6">મન, શરીર, આત્મા: સાકલ્યવાદી આરોગ્યની શક્તિ અને સુખાકારીની ટ્રિફેક્ટા શોધો.</p>
+                                    @else
                                     <p class="m-0 align-self-center w-75 text-white opacity-6">Mind, Body, Spirit: Discover the Power of Holistic Health and Trifecta of Wellness.</p>
+                                    @endif
                                     <span class="align-self-center text-center ms-auto"><a href="#"
                                             class="d-inline-block line-height-40px rounded-circle bg-extra-dark-gray h-40px w-40px"><i
                                                 class="feather icon-feather-arrow-right text-white"></i></a></span>
@@ -619,9 +879,18 @@ $newsevents = App\Models\BoardMembers::where('status', 'Active')->get();
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-6 col-md-8 text-center margin-5-rem-bottom md-margin-3-rem-bottom">
-                    <h4 class="alt-font font-weight-600 text-dark-purple letter-spacing-minus-1px">In the News
+                    <h4 class="alt-font font-weight-600 text-dark-purple letter-spacing-minus-1px">
+                    @if(session()->get('language') == 'gujrati')
+                       સમાચારમાં
+                    @else    
+                        In the News
+                    @endif    
                     </h4>
+                    @if(session()->get('language') == 'gujrati')
+                    <p class="w-80 mx-auto md-w-100 mb-0">સંસ્થા કેમ્પસમાં અને કેમ્પસની બહાર યોજાનાર વિવિધ આગામી કાર્યક્રમોમાં ભાગ લઈ રહી છે.</p>
+                    @else
                     <p class="w-80 mx-auto md-w-100 mb-0">The institute is participating in various upcoming events held in and out of campus.</p>
+                    @endif
                 </div>
             </div>
             <div class="row">
@@ -643,19 +912,33 @@ $newsevents = App\Models\BoardMembers::where('status', 'Active')->get();
                                         class="alt-font text-small text-tussock-hover d-inline-block margin-10px-bottom">{{date('d M Y', strtotime($news->dated))}}</a>
                                     <a href="javascript:void()"
                                         class="alt-font font-weight-500 text-extra-medium text-dark-purple text-tussock-hover margin-15px-bottom d-block">
+                                   @if(session()->get('language') == 'gujrati')
+                                     {{Str::limit($news->heading_guj, 24) ?? ''}}
+                                   @else 
+                                        {{Str::limit($news->heading, 24) ?? ''}}
+                                   @endif
+                                    </a>
 
-                                        {{Str::limit($news->heading, 24) ?? ''}}</a>
-                                        <p>{!!Str::limit($news->description_guj, 94) ?? ''!!}</p>
+@if(session()->get('language') == 'gujrati')
+    {!!Str::limit($news->description_guj, 94) ?? ''!!}
+@else
+    {!!Str::limit($news->description, 94) ?? ''!!}
+@endif                                 
                                 </div>
                             </div>
                         </li>
                         <!-- end blog item -->
                       @endforeach 
                       @else
-         <center><div class="alert alert-warning">
+       @if(session()->get('language') == 'gujrati')               
+        <center><div class="alert alert-warning">
+        <strong>માફ કરશો!</strong> કોઈ રેકોર્ડ મળ્યો નથી.
+        </div>               
+       @else
+        <center><div class="alert alert-warning">
         <strong>Sorry!</strong> No Record Found.
         </div>
-
+       @endif
                      @endif   
                     </ul>
                 </div>
@@ -664,8 +947,13 @@ $newsevents = App\Models\BoardMembers::where('status', 'Active')->get();
             <div class="row">
                 <div class="col-12 text-center">
                     <a href="{{route('home.news_events')}}"
-                        class="btn btn-link thin btn-extra-large text-dark-purple margin-70px-top d-inline-block md-margin-40px-top sm-margin-20px-top">View
-                        All News & Events</a>
+                        class="btn btn-link thin btn-extra-large text-dark-purple margin-70px-top d-inline-block md-margin-40px-top sm-margin-20px-top">
+                        @if(session()->get('language') == 'gujrati')
+                        બધા સમાચાર અને ઘટનાઓ જુઓ
+                        @else 
+                        View All News & Events
+                        @endif
+                    </a>
                 </div>
             </div>
         @endif    
