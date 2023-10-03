@@ -96,27 +96,70 @@ $thumb = !empty($thumbnail) ?  getThumbnail($thumbnail) : url('admin_assets/imag
                                         @error('rating') <span class="error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
-                                  <div class="col-md-12">
+                            <div class="col-md-12">
                                     <div class="mb-3" >
-                                        <label class="form-label">Message</label>
-                                       <!--  <textarea wire:model="desc" class="form-control" name="" id="" cols="" rows="6"></textarea> -->
-
-                                        <div wire:ignore>
-        <textarea id="editor" wire:model="desc" placeholder="Description of Event" class="form-control xtra-cat"></textarea>
-    </div>  
-    <script>
+                                        <label class="form-label">Message (Eng)</label>
+                                      {{-- <textarea wire:model="desc" class="form-control" name="" id="" cols="" rows="6"></textarea>  --}}
+                                 <!-- Include CKEditor script from the CDN -->
+                          
+                                 <div wire:ignore>
+                                         <textarea id="editor" wire:model="desc" placeholder="Description of Event" class="form-control xtra-cat"></textarea>
+                                 </div>
+                                 <script>
                                     document.addEventListener('livewire:load', function () {
                                         CKEDITOR.replace('editor');
                                 
                                         CKEDITOR.instances.editor.on('change', function () {
                                             @this.set('desc', CKEDITOR.instances.editor.getData());
+                                    
+                                      
                                         });
+                                         Livewire.on('formSubmitted', function () {
+                                         CKEDITOR.instances.editor.setData(''); // Reset CKEditor content
+                                       
+                                                  
+                                          });
                                     });
                                 </script>
-    @error('desc') <span class="error">{{ $message }}</span> @enderror                                     
+                                
+
+                                     
+                                        @error('desc') <span class="error">{{ $message }}</span> @enderror                                     
                                     </div>
                                 </div>
 
+
+                                 <div class="col-md-12">
+                                    <div class="mb-3" >
+                                        <label class="form-label">Message (Guj)</label>
+                                      {{-- <textarea wire:model="desc" class="form-control" name="" id="" cols="" rows="6"></textarea>  --}}
+                                 <!-- Include CKEditor script from the CDN -->
+                          
+                                 <div wire:ignore>
+                                         <textarea id="editor_guj" wire:model="desc_guj" placeholder="Description of Event" class="form-control xtra-cat"></textarea>
+                                 </div>
+                                 <script>
+                                    document.addEventListener('livewire:load', function () {
+                                        CKEDITOR.replace('editor_guj');
+                                
+                                        CKEDITOR.instances.editor_guj.on('change', function () {
+                                            @this.set('desc_guj', CKEDITOR.instances.editor_guj.getData());
+                                    
+                                      
+                                        });
+                                         Livewire.on('formSubmitted', function () {
+                                         CKEDITOR.instances.editor_guj.setData(''); // Reset CKEditor content
+                                       
+                                                  
+                                          });
+                                    });
+                                </script>
+                                
+
+                                     
+                                        @error('desc_guj') <span class="error">{{ $message }}</span> @enderror                                     
+                                    </div>
+                                </div>  
                                  <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label">Link</label>

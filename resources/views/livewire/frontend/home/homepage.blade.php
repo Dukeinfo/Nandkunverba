@@ -609,11 +609,11 @@ $testimonials = App\Models\Testimonials::where('status', 'Active')->get();
                                             class="w-70px margin-50px-bottom xs-w-50px xs-margin-25px-bottom">
                                         <p
                                             class="margin-40px-bottom md-line-height-30px w-90 d-inline-block xs-margin-25px-bottom">
-                                         @if(session()->get('language') == 'gujrati')
-                                         {!!Str::limit($testim->description_guj, 481) ?? ''!!}
-                                         @else
-                                           {!!Str::limit($testim->description, 481) ?? ''!!}
-                                         @endif   
+                                     @if(session()->get('language') == 'gujrati')
+                                     {!!Str::limit($testim->description_guj, 481) ?? ''!!}
+                                     @else
+                                       {!!Str::limit($testim->description, 481) ?? ''!!}
+                                     @endif   
                                        </p>
                                         <span
                                             class="alt-font font-weight-600 text-tussock text-uppercase d-block">
