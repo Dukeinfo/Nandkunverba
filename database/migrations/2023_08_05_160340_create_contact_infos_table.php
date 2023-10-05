@@ -17,11 +17,14 @@ class CreateContactInfosTable extends Migration
             $table->id();
             $table->string('logo')->nullable(); 
             $table->longText('disclaimer')->nullable();
+            $table->longText('disclaimer_guj')->nullable();
             $table->string('email', 100)->unique();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
+            $table->text('address_guj')->nullable();
             $table->string('zip_code')->nullable(); 
             $table->longText('map')->nullable();
+            $table->string('link')->nullable();
             $table->integer('sort_id')->nullable(); 
             $table->enum('status', ['Active', 'Inactive', 'Deleted'])->default('Active');
             $table->ipAddress('ip_address')->nullable();

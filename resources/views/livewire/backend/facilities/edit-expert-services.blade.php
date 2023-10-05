@@ -41,14 +41,14 @@
 <div class="col-md-12">
 <div class="mb-12">
 <label class="form-label">Detail (Eng)</label>
-<input type="text" class="form-control" id="" wire:model="detail" placeholder="Detail">
+<textarea  wire:model="detail" placeholder="Description" class="form-control xtra-cat" rows="4"></textarea>
 @error('detail') <span class="error">{{ $message }}</span> @enderror
 </div>
 </div>
 <div class="col-md-12">
 <div class="mb-12">
 <label class="form-label">Detail (Guj)</label>
-<input type="text" class="form-control" id="" wire:model="detailguj" placeholder="Detail">
+<textarea  wire:model="detailguj" placeholder="Description" class="form-control xtra-cat" rows="4"></textarea>
 @error('detailguj') <span class="error">{{ $message }}</span> @enderror
 </div>
 </div>

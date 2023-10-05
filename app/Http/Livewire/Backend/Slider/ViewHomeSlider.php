@@ -90,7 +90,8 @@ class ViewHomeSlider extends Component
     public function delete($id){
       $slider = Slider::findOrFail($id);
       if(!is_null($slider)){
-        $slider->delete();
+        $slider->status = 'Inactive';
+        $slider->save();
       }
       
 

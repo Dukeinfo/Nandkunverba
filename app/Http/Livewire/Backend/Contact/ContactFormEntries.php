@@ -16,7 +16,8 @@ class ContactFormEntries extends Component
     public function delete($id)
     {
         $socialApp = ContactUs::findOrFail($id);
-        $socialApp->delete();
+        $socialApp->status = 'Inactive';
+        $socialApp->save();
         session()->flash('success', 'Message deleted successfully!');
     }
 }

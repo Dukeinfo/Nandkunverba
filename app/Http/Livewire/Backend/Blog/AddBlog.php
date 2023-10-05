@@ -114,8 +114,11 @@ class AddBlog extends Component
       }
 
     public function delete($id){
-       
-       Blogs::destroy($id);
+       $blogs = Blogs::findOrFail($id);
+       if(!is_null($classname)){
+        $blogs->status = 'Inactive';
+        $blogs->save();
+      }
 
      }
 

@@ -61,7 +61,8 @@ class ViewDepartment extends Component
 
       $department = Department::findOrFail($id);
       if(!is_null($department)){
-        $department->delete();
+        $department->status = 'Inactive';
+        $department->save();
       }
 
      }

@@ -74,7 +74,7 @@ class EditWhyusPage extends Component
       $whyus->image = $uploadedData['file_name'] ?? NULL;
       $whyus->thumbnail = $uploadedData['thumbnail_name'] ?? NULL;
       $whyus->description = $this->desc;
-      $whyus->description_guj = $this->desc_guj;
+      $whyus->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $whyus->yearexcellence = $this->yearexcellence;
       $whyus->expteachers = $this->expteachers;
       $whyus->notalumna = $this->notalumna;
@@ -95,7 +95,7 @@ class EditWhyusPage extends Component
       $whyus->sub_title_guj = $this->sub_title_guj;
       $whyus->slug_guj =  strtolower(str_replace(' ', '-',$this->title_guj));
       $whyus->description = $this->desc;
-      $whyus->description_guj = $this->desc_guj;
+      $whyus->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $whyus->yearexcellence = $this->yearexcellence;
       $whyus->expteachers = $this->expteachers;
       $whyus->notalumna = $this->notalumna;

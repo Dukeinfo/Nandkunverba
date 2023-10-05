@@ -14,7 +14,56 @@ class PageHeadingsSeeder extends Seeder
      */
     public function run()
     {
-        //activities 1
+
+        //abuot us 1
+        $pageHeading = new PageHeading();
+        $pageHeading->menu_id = 2;
+        $pageHeading->pname = 'home.about_us';
+        $pageHeading->pname_eng = "About Us" ;
+        $pageHeading->pname_guj = 'અમારી વિશેષ';
+        $pageHeading->pname_title = 'About SNKKV';
+        $pageHeading->pname_title_guj = 'SNKKV વિશે';
+        $pageHeading->pname_heading = "Where Children";
+        $pageHeading->pname_heading_guj = 'ક્યાં બાળકો';
+        $pageHeading->pname_subheading = 'Go To Be Educated';
+        $pageHeading->pname_subheading_guj = 'શૈક્ષણિક થવા માટે જાઓ';
+        $pageHeading->sort_id = 1;
+        $pageHeading->status = 'Active';
+        $pageHeading->save();
+
+        //historical foundation  2
+        $pageHeading = new PageHeading();
+        $pageHeading->menu_id = 2;
+        $pageHeading->pname = 'home.historical_foundation';
+        $pageHeading->pname_eng = "Historical Foundation" ;
+        $pageHeading->pname_guj = '"ઐતિહાસિક આધાર';
+        $pageHeading->pname_title = 'About SNKKV';
+        $pageHeading->pname_title_guj = 'SNKKV વિશે';
+        $pageHeading->pname_heading = "Historical";
+        $pageHeading->pname_heading_guj = 'ઐતિહાસિક';
+        $pageHeading->pname_subheading = 'Foundation';
+        $pageHeading->pname_subheading_guj = 'આધાર';
+        $pageHeading->sort_id = 2;
+        $pageHeading->status = 'Active';
+        $pageHeading->save();
+
+         //academic objectives  3
+        $pageHeading = new PageHeading();
+        $pageHeading->menu_id = 3;
+        $pageHeading->pname = 'home.academic_objectives';
+        $pageHeading->pname_eng = "Academic Objectives" ;
+        $pageHeading->pname_guj = '"શૈક્ષણિક ઉદ્દેશ્યો';
+        $pageHeading->pname_title = 'About SNKKV';
+        $pageHeading->pname_title_guj = 'SNKKV વિશે';
+        $pageHeading->pname_heading = "Academic";
+        $pageHeading->pname_heading_guj = 'એકેડમિક';
+        $pageHeading->pname_subheading = 'Objectives';
+        $pageHeading->pname_subheading_guj = 'ઉદ્દેશ્યો';
+        $pageHeading->sort_id = 3;
+        $pageHeading->status = 'Active';
+        $pageHeading->save();
+
+        //activities 4
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 1;
         $pageHeading->pname = 'home.activities';
@@ -26,11 +75,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'વિવિધ';
         $pageHeading->pname_subheading = 'Activities';
         $pageHeading->pname_subheading_guj = 'પ્રવૃત્તિઓ';
-        $pageHeading->sort_id = 1;
+        $pageHeading->sort_id = 4;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //career counselling 2
+        //career counselling 5
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 4;
         $pageHeading->pname = 'home.career_counselling';
@@ -42,11 +91,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'માર્ગદર્શન અને';
         $pageHeading->pname_subheading = 'Counselling';
         $pageHeading->pname_subheading_guj = 'કાઉન્સેલિંગ';
-        $pageHeading->sort_id = 2;
+        $pageHeading->sort_id = 5;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //counselling cell 3
+        //counselling cell 6
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 4;
         $pageHeading->pname = 'home.counselling_cell';
@@ -58,11 +107,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'માર્ગદર્શન અને';
         $pageHeading->pname_subheading = 'Counselling';
         $pageHeading->pname_subheading_guj = 'કાઉન્સેલિંગ';
-        $pageHeading->sort_id = 3;
+        $pageHeading->sort_id = 6;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //curricular facilities 4
+        //curricular facilities 7
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 6;
         $pageHeading->pname = 'home.curricular_facilities';
@@ -74,11 +123,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'અભ્યાસક્રમ';
         $pageHeading->pname_subheading = 'Facilities';
         $pageHeading->pname_subheading_guj = 'સુવિધાઓ';
-        $pageHeading->sort_id = 4;
+        $pageHeading->sort_id = 7;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //co-curricular facilities 5
+        //co-curricular facilities 8
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 6;
         $pageHeading->pname = 'home.cocurricular_facilities';
@@ -90,27 +139,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'સહ અભ્યાસક્રમ';
         $pageHeading->pname_subheading = 'Facilities';
         $pageHeading->pname_subheading_guj = 'સુવિધાઓ';
-        $pageHeading->sort_id = 5;
+        $pageHeading->sort_id = 8;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //about us  6
-        $pageHeading = new PageHeading();
-        $pageHeading->menu_id = 2;
-        $pageHeading->pname = 'home.about_us';
-        $pageHeading->pname_eng = 'About';
-        $pageHeading->pname_guj = 'વિશે';
-        $pageHeading->pname_title = 'About SNKKV';
-        $pageHeading->pname_title_guj = 'SNKKV વિશે';
-        $pageHeading->pname_heading = 'About Us';
-        $pageHeading->pname_heading_guj = 'અમારા વિશે';
-        $pageHeading->pname_subheading = 'About Us';
-        $pageHeading->pname_subheading_guj = 'અમારા વિશે';
-        $pageHeading->sort_id = 6;
-        $pageHeading->status = 'Active';
-        $pageHeading->save();
-
-        //vision and mission 7
+        //vision and mission 9
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 2;
         $pageHeading->pname = 'home.vision_and_mission';
@@ -122,11 +155,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'દ્રષ્ટિ &';
         $pageHeading->pname_subheading = 'Mission';
         $pageHeading->pname_subheading_guj = 'મિશન';
-        $pageHeading->sort_id = 7;
+        $pageHeading->sort_id = 9;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //location 8
+        //location 10
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 2;
         $pageHeading->pname = 'home.location';
@@ -138,11 +171,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'જ્યાં અમે';
         $pageHeading->pname_subheading = 'are Located';
         $pageHeading->pname_subheading_guj = 'સ્થિત છે';
-        $pageHeading->sort_id = 8;
+        $pageHeading->sort_id = 10;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //historical foundation 9
+        //historical foundation 11
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 2;
         $pageHeading->pname = 'home.historical_foundation';
@@ -154,11 +187,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'ઐતિહાસિક';
         $pageHeading->pname_subheading = 'Foundation';
         $pageHeading->pname_subheading_guj = 'ફાઉન્ડેશન';
-        $pageHeading->sort_id = 9;
+        $pageHeading->sort_id = 11;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //founders philosophy 10
+        //founders philosophy 12
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 2;
         $pageHeading->pname = 'home.founders_philosophy';
@@ -170,11 +203,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'સ્થાપકની';
         $pageHeading->pname_subheading = 'Philosophy';
         $pageHeading->pname_subheading_guj = 'તત્વજ્ઞાન';
-        $pageHeading->sort_id = 10;
+        $pageHeading->sort_id = 12;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //members of trust 11
+        //members of trust 13
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 2;
         $pageHeading->pname = 'home.members_of_trust';
@@ -186,11 +219,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'ટ્રસ્ટીઓ';
         $pageHeading->pname_subheading = '& Members';
         $pageHeading->pname_subheading_guj = 'અને સભ્યો';
-        $pageHeading->sort_id = 11;
+        $pageHeading->sort_id = 13;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //societies 12
+        //societies 14
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 1;
         $pageHeading->pname = 'home.societies';
@@ -202,11 +235,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'વિવિધ';
         $pageHeading->pname_subheading = 'Societies';
         $pageHeading->pname_subheading_guj = 'સોસાયટીઓ';
-        $pageHeading->sort_id = 12;
+        $pageHeading->sort_id = 14;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //gallery detai 13
+        //gallery detai 15
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 1;
         $pageHeading->pname = 'home.gallery';
@@ -218,11 +251,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'ફોટો';
         $pageHeading->pname_subheading = 'Gallery';
         $pageHeading->pname_subheading_guj = 'ગેલેરી';
-        $pageHeading->sort_id = 13;
+        $pageHeading->sort_id = 15;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //news_events 14
+        //news_events 16
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 1;
         $pageHeading->pname = 'home.news_events';
@@ -234,11 +267,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'સમાચાર';
         $pageHeading->pname_subheading = '& Events';
         $pageHeading->pname_subheading_guj = 'અને ઘટનાઓ';
-        $pageHeading->sort_id = 14;
+        $pageHeading->sort_id = 16;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //student headlines 15
+        //student headlines 17
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 1;
         $pageHeading->pname = 'home.student_headlines';
@@ -250,11 +283,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'વિદ્યાર્થીઓ';
         $pageHeading->pname_subheading = 'in Headline';
         $pageHeading->pname_subheading_guj = 'હેડલાઇનમાં';
-        $pageHeading->sort_id = 15;
+        $pageHeading->sort_id = 17;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //testimonials 16
+        //testimonials 18
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 1;
         $pageHeading->pname = 'home.testimonials';
@@ -266,11 +299,11 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'વિદ્યાર્થીઓ';
         $pageHeading->pname_subheading = 'Speaks';
         $pageHeading->pname_subheading_guj = 'બોલે છે';
-        $pageHeading->sort_id = 16;
+        $pageHeading->sort_id = 18;
         $pageHeading->status = 'Active';
         $pageHeading->save();
 
-        //contact us 17
+        //contact us 19
         $pageHeading = new PageHeading();
         $pageHeading->menu_id = 1;
         $pageHeading->pname = 'home.contact_us';
@@ -282,8 +315,10 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_heading_guj = 'જોડાવા';
         $pageHeading->pname_subheading = 'With Us';
         $pageHeading->pname_subheading_guj = 'અમારી સાથે';
-        $pageHeading->sort_id = 17;
+        $pageHeading->sort_id = 19;
         $pageHeading->status = 'Active';
         $pageHeading->save();
+
+
     }
 }

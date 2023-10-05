@@ -37,7 +37,7 @@ class EditFacilities extends Component
       $facilities->title = $this->title;
       $facilities->description = $this->desc;
       $facilities->title_guj = $this->title_guj;
-      $facilities->description_guj = $this->desc_guj;
+      $facilities->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $facilities->sort_id =$this->sort;
       $facilities->status = $this->status;
       $facilities->save();

@@ -78,15 +78,18 @@
                          @endif   
  
                       @if(session()->get('language') == 'gujrati')
-                        <p>{{$contactInfo->disclaimer ?? 'અમે માનીએ છીએ કે છોકરીને શિક્ષિત કરવી એ પરિવારને શિક્ષિત કરવા સમાન છે. અમારી સંસ્થા શિક્ષણ સાથે રિવાજો અને સંસ્કૃતિની જાળવણી સાથે જોડાયેલી છે. અમે અમારા વિદ્યાર્થીઓને દરેક સાથે આદર અને નમ્રતાથી વર્તવાનું શીખવીએ છીએ. સર્વાંગી વિકાસ અને ચારિત્ર્ય નિર્માણ માટે શાળામાં કડક શિસ્ત નીતિ છે.'}}</p>
+                       {!! isset($contactInfo->disclaimer_guj) 
+                             ? 
+                             str_limit($contactInfo->disclaimer_guj, $limit=115 )
+                              : 'અમે માનીએ છીએ કે છોકરીને શિક્ષિત કરવી એ પરિવારને શિક્ષિત કરવા સમાન છે. અમારી સંસ્થા શિક્ષણ સાથે રિવાજો અને સંસ્કૃતિની જાળવણી સાથે જોડાયેલી છે. અમે અમારા વિદ્યાર્થીઓને દરેક સાથે આદર અને નમ્રતાથી વર્તવાનું શીખવીએ છીએ. સર્વાંગી વિકાસ અને ચારિત્ર્ય નિર્માણ માટે શાળામાં કડક શિસ્ત નીતિ છે'!!}
                       @else
-                        <p>{{$contactInfo->disclaimer ?? 'We believe that educating a girl is equal to educating a family. Our institution is associated with education along with preservation of customs and culture. We teach our students to treat everyone with respect and humility. To achieve all round development and character building the school has a strict discipline policy.'}}</p>
+                        <p>We believe that educating a girl is equal to educating a family. Our institution is associated with education along with preservation of customs and culture. We teach our students to treat everyone with respect and humility. To achieve all round development and character building the school has a strict discipline policy.</p>
                       @endif  
 
                       @if(session()->get('language') == 'gujrati')
-                      <a href="" class="btn btn-tussock text-white btn-small">વધુ વાંચો</a>
+                      <a href="{{$contactInfo->link ?? 'javascript:void()'}}" class="btn btn-tussock text-white btn-small">વધુ વાંચો</a>
                       @else 
-                       <a href="" class="btn btn-tussock text-white btn-small">Read More</a>
+                       <a href="{{$contactInfo->link ?? 'javascript:void()'}}" class="btn btn-tussock text-white btn-small">Read More</a>
                       @endif
 
                     </div>
@@ -138,7 +141,7 @@
                     </span>
 
                        @if(session()->get('language') == 'gujrati')
-                        <p class="w-85 margin-15px-bottom">{{$contactInfo->address ?? 'નિલમબાગ સર્કલ, દેવબાગ, ભાવનગર, ગુજરાત 364002'}}</p>
+                        <p class="w-85 margin-15px-bottom">{{$contactInfo->address_guj ?? 'નિલમબાગ સર્કલ, દેવબાગ, ભાવનગર, ગુજરાત 364002'}}</p>
                        @else
                         <p class="w-85 margin-15px-bottom">{{$contactInfo->address ?? 'Nilambaug Circle, Devbagh, Bhavnagar, Gujarat 364002'}}</p>
                        @endif

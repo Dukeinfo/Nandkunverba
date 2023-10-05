@@ -50,7 +50,7 @@ class EditMemberofTrust extends Component
       $members->description = $this->desc;
       $members->name_guj = $this->name_guj;
       $members->designation_guj = $this->designation_guj;
-      $members->description_guj = $this->desc_guj;
+      $members->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $members->image = $uploadedData['file_name'] ?? NULL;
       $members->thumbnail = $uploadedData['thumbnail_name'] ?? NULL;
       $members->link = $this->link;
@@ -67,7 +67,7 @@ class EditMemberofTrust extends Component
       $members->description = $this->desc;
       $members->name_guj = $this->name_guj;
       $members->designation_guj = $this->designation_guj;
-      $members->description_guj = $this->desc_guj;
+      $members->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $members->link = $this->link;
       $members->sort_id =$this->sort_id;
       $members->status = $this->status;

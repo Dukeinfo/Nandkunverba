@@ -92,7 +92,7 @@ class ViewTestimonials extends Component
       $testimonials->description = $this->desc;
       $testimonials->name_guj = $this->name_guj;
       $testimonials->position_guj = $this->position_guj;
-      $testimonials->description_guj = $this->desc_guj;
+      $testimonials->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $testimonials->slug_guj =  strtolower(str_replace(' ', '-',$this->name_guj));
       $testimonials->link = $this->link;
       $testimonials->save();
@@ -107,7 +107,8 @@ class ViewTestimonials extends Component
      public function delete($id){
       $testimonial = Testimonials::findOrFail($id);
       if(!is_null($testimonial)){
-        $testimonial->delete();
+         $testimonial->status = 'Inactive';
+         $testimonial->save();
       }
 
      }

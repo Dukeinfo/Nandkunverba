@@ -35,11 +35,15 @@ class DetailpageView extends Component
             $this->image = $pageData->image;
             $this->desc = $pageData->description;
             $this->url_link = $pageData->SubMenu->url_link;
+             $this->display_title = $pageData->SubMenu->display_title;
+            $this->menu_id = $pageData->SubMenu->menu_id; 
+            $this->display_title_guj = $pageData->SubMenu->display_title_guj;
             $this->display_heading = $pageData->SubMenu->display_heading;
             $this->display_subheading = $pageData->SubMenu->display_subheading;
             $this->display_heading_guj = $pageData->SubMenu->display_heading_guj;
             $this->display_subheading_guj = $pageData->SubMenu->display_subheading_guj;
             $this->name = $pageData->SubMenu->name;
+            $this->name_guj = $pageData->SubMenu->name_guj;
             
             $this->seotitle = $pageData->SubMenu->seo_title;
             $this->seo_description = $pageData->SubMenu->seo_description;

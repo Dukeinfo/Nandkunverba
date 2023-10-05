@@ -132,7 +132,8 @@ class ViewStaff extends Component
 
       $staff = Staff::findOrFail($id);
       if(!is_null($staff)){
-        $staff->delete();
+        $staff->status = 'Inactive';
+        $staff->save();
       }
 
      }

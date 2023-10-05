@@ -138,32 +138,28 @@
                                 </div>
                        
                                 
-             
-
-                                {{-- <div class="col-md-6">
+                          <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label"> URL Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" {{$cms == "No" ? 'disabled' : ''}}   wire:model="url_link" 
-                                        placeholder="URL Name">
-                                        @error('url_link') <span class="error">{{ $message }}</span> @enderror
+                                        <label class="form-label">Background Banner Title(Eng)</label>
+                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_title" placeholder="Display Title">
+                                        @error('display_title') <span class="error">{{ $message }}</span> @enderror
                                    
                                     </div>
-                                </div> --}}
+                                </div>
 
+                          <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Background Banner Title(Guj)</label>
+                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_title_guj" placeholder="Display Title">
+                                        @error('display_title_guj') <span class="error">{{ $message }}</span> @enderror
+                                   
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Background Banner Heading (Eng)</label>
                                         <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_heading" placeholder="Display Heading">
                                         @error('display_heading') <span class="error">{{ $message }}</span> @enderror
-                                   
-                                    </div>
-                                </div>
-
-                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Background Banner Sub Heading (Eng)</label>
-                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_subheading" placeholder="Display Sub Heading">
-                                        @error('display_subheading') <span class="error">{{ $message }}</span> @enderror
                                    
                                     </div>
                                 </div>
@@ -177,6 +173,17 @@
                                     </div>
                                 </div>
 
+
+                                 <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Background Banner Sub Heading (Eng)</label>
+                                        <input type="text" class="form-control"  {{$cms == "No" ? 'disabled' : ''}}   wire:model="display_subheading" placeholder="Display Sub Heading">
+                                        @error('display_subheading') <span class="error">{{ $message }}</span> @enderror
+                                   
+                                    </div>
+                                </div>
+
+                                
                                  <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Background Banner Sub Heading (Guj)</label>

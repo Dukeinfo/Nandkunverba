@@ -79,18 +79,19 @@
                                       <option value="{{ $route->getName() }}" 
                                         @if(in_array($route->getName(), [ 
 'home.homepage',
-'home.admission_process',
+'home.activities',
 'home.contact_us',
-'faqs_introduction',
 'home.gallery',
 'home.gallery_detail',
-'home.admission_form',
-'home.career',
-'home.download_resources',
-'home.our_faculties',
-'home.group_photo',
-'home.school_event',
-'home.transfer_certificate',
+'home.gallery_detail',
+'home.curricular_facilities',
+'home.cocurricular_facilities',
+'home.members_of_trust',
+'home.news_events',
+'home.societies',
+'home.student_headlines',
+'home.testimonials',
+'home.vision_and_mission',
   ])) disabled @endif
                                           class="form-control">{{ str_replace('_' , ' ',$routeName)}}</option>
                                                

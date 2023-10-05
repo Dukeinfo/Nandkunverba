@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Livewire\Frontend;
-use App\Models\PageContent;
+
 use Livewire\Component;
+use App\Models\PageContent;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\TwitterCard;

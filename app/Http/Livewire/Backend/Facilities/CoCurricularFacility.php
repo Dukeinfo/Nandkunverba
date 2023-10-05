@@ -49,7 +49,7 @@ class CoCurricularFacility extends Component
       $curricular->title = $this->title;
       $curricular->title_guj = $this->title_guj;
       $curricular->description = $this->desc;
-      $curricular->description_guj = $this->desc_guj;
+      $curricular->description_guj =trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $curricular->link = $this->link;
       $curricular->sort_id =$this->sort_id;
       $curricular->status = $this->status;
@@ -100,7 +100,8 @@ class CoCurricularFacility extends Component
 
       $cocurricular = CoCurricularFacilities::findOrFail($id);
       if(!is_null($cocurricular)){
-        $cocurricular->delete();
+         $cocurricular->status = 'Inactive';
+         $cocurricular->save();
       }
 
      }

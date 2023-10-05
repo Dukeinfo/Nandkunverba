@@ -58,7 +58,8 @@ class ViewClass extends Component
 
       $classname = ClassMaster::findOrFail($id);
       if(!is_null($classname)){
-        $classname->delete();
+        $classname->status = 'Inactive';
+        $classname->save();
       }
 
      }

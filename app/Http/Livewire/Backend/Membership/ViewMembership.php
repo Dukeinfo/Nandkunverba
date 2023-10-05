@@ -89,7 +89,8 @@ class ViewMembership extends Component
 
       $membership = Memberships::findOrFail($id);
       if(!is_null($membership)){
-        $membership->delete();
+         $membership->status = 'Inactive';
+         $membership->save();
       }
 
      }

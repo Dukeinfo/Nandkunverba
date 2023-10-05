@@ -80,7 +80,7 @@ class WhyusPage extends Component
       $whyus->image = $uploadedData['file_name'] ?? NULL;
       $whyus->thumbnail = $uploadedData['thumbnail_name'] ?? NULL;
       $whyus->description = $this->desc;
-      $whyus->description_guj = $this->desc_guj;
+      $whyus->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $whyus->yearexcellence = $this->yearexcellence;
       $whyus->expteachers = $this->expteachers;
       $whyus->notalumna = $this->notalumna;
@@ -174,7 +174,8 @@ class WhyusPage extends Component
 
       $whyus = Whyus::findOrFail($id);
       if(!is_null($whyus)){
-        $whyus->delete();
+        $whyus->status = 'Inactive';
+        $whyus->save();
       }
 
      }

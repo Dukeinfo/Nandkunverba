@@ -60,9 +60,16 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">Address</label>
+                                        <label class="form-label">Address (Eng)</label>
                                         <input type="text" class="form-control" id="" wire:model="address"  placeholder="Address">
                                         @error('address') <span class="error">{{ $message }}</span> @enderror
+                                    </div>
+                                </div>
+                                   <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Address (Guj)</label>
+                                        <input type="text" class="form-control" id="" wire:model="address_guj"  placeholder="Address">
+                                        @error('address_guj') <span class="error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -79,14 +86,29 @@
                                         @error('footer_logo') <span class="error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Desclaimer</label>
+                                        <label class="form-label">Desclaimer (Eng)</label>
                                         <textarea  rows="5" cols="5" class="form-control" id="" wire:model="disclaimer" placeholder="Footer Desclaimer" ></textarea>
                                         @error('disclaimer') <span class="error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Desclaimer (Guj)</label>
+                                        <textarea  rows="5" cols="5" class="form-control" id="" wire:model="disclaimer_guj" placeholder="Footer Desclaimer" ></textarea>
+                                        @error('disclaimer_guj') <span class="error">{{ $message }}</span> @enderror
+                                    </div>
+                                </div>
+                              <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Link</label>
+                                        <input type="text" class="form-control" id="" wire:model="link"  placeholder="Link">
+                                        @error('link') <span class="error">{{ $message }}</span> @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
                                     <div class="mb-3">
                                         <label class="form-label">Map ifrmae</label>
                                         <textarea  rows="5" cols="5" class="form-control" id="" wire:model="map" placeholder="Map Frmae"></textarea>

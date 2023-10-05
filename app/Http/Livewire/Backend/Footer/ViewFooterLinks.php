@@ -59,7 +59,8 @@ class ViewFooterLinks extends Component
 
       $footerLink = FooterLink::findOrFail($id);
       if(!is_null($footerLink)){
-        $footerLink->delete();
+        $footerLink->status = 'Inactive';
+        $footerLink->save();
       }
 
      }

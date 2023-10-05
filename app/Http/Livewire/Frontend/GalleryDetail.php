@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Frontend;
-
+use App\Models\PageContent;
 use App\Models\Categories;
 use App\Models\Gallery;
 use Livewire\Component;
@@ -29,6 +29,23 @@ class GalleryDetail extends Component
         $this->category_name = $category->name;
 
      $this->records = Gallery::where(['category_id'=> $category_id , 'status' => 'Active' ])->get();
+
+    $getRouteName =  Route::currentRouteName(); 
+    if($getRouteName){
+        $seoMetaData =  Metadetails::where('name',$getRouteName )->first();
+          if($seoMetaData){
+            SEOTools::setTitle($seoMetaData->title ?? 'Curricular Facilities');
+            SEOTools::setDescription($seoMetaData->description ?? '');
+            SEOTools::opengraph()->setUrl(url()->current());
+            SEOTools::setCanonical(url()->current());
+            SEOTools::opengraph()->addProperty('type', 'website');
+            SEOTools::twitter()->setSite($seoMetaData->title ?? '');
+            $keywords = $seoMetaData->keywords ?? '';
+            SEOMeta::addKeyword( $keywords);
+            
+     }
+     $this->pageData =  PageContent::where('status','Active')->where('name',$getRouteName )->get();   
+    }
 
     }
     public function render()

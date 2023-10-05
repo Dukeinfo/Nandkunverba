@@ -24,10 +24,12 @@ class CreateSubmenusTable extends Migration
             $table->string('image')->nullable() ;
             $table->string('thumbnail')->nullable(); 
             $table->string('url_link')->nullable(); 
+            $table->string('display_title')->nullable();
+            $table->string('display_title_guj')->nullable();
             $table->string('display_heading')->nullable();
-            $table->string('display_subheading')->nullable();
             $table->string('display_heading_guj')->nullable();
-             $table->string('display_subheading_guj')->nullable(); 
+            $table->string('display_subheading')->nullable();
+            $table->string('display_subheading_guj')->nullable(); 
             $table->text('slug')->nullable() ;
             $table->longText('seo_title')->nullable(); 
             $table->longText('seo_description')->nullable(); 

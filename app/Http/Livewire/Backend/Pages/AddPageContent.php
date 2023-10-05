@@ -92,7 +92,8 @@ class AddPageContent extends Component
       $folder = '/uploads/page';
       $uploadedData = $this->uploadOne($image, $folder);
       // dd( $uploadedData );
-    }   
+      }   
+
 
       $pageContent = new PageContent();
       $pageContent->menu_id = $this->menu ?? Null;
@@ -104,7 +105,7 @@ class AddPageContent extends Component
        $pageContent->heading_guj = $this->heading_guj ?? Null;
       $pageContent->sub_heading_guj = $this->sub_heading_guj ?? Null;
       $pageContent->slug_guj =  strtolower(str_replace(' ', '-',$this->heading_guj))?? Null;
-      $pageContent->description_guj = $this->desc_guj ?? Null;
+      $pageContent->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $pageContent->image = $uploadedData['file_name'] ?? NULL;
       $pageContent->thumbnail = $uploadedData['thumbnail_name'] ?? NULL;
       $pageContent->link = $this->link ?? Null;
@@ -124,7 +125,8 @@ class AddPageContent extends Component
 
       $pageContent = PageContent::findOrFail($id);
       if(!is_null($pageContent)){
-        $pageContent->delete();
+        $pageContent->status = 'Inactive';
+        $pageContent->save();
       }
 
      }

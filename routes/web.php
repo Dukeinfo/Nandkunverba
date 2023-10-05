@@ -247,114 +247,82 @@ Auth Routes
 Route::group(['middleware' => 'auth'],function(){
     Route::prefix('admin')->group(function(){
 
-    Route::get('/dashboard', AdminDashboard::class)->name('admin_dashboard');
-    Route::get('/profile', AdminProfile::class)->name('admin_profile');
-    Route::post('/admin-logout', [AdminLogoutController::class,'adminlogout'])->name('adminlogout');
+Route::get('/dashboard', AdminDashboard::class)->name('admin_dashboard');
+Route::get('/profile', AdminProfile::class)->name('admin_profile');
+Route::post('/admin-logout', [AdminLogoutController::class,'adminlogout'])->name('adminlogout');
 
 Route::get('/view/menu', ViewMenu::class)->name('view_menu');
 Route::get('/edit/menu/{id}', EditMenu::class)->name('edit_menu');
-Route::get('/view/menu/trash', TrashMenu::class)->name('trash_menu');
 
 Route::get('/view/submenu', ViewSubMenu::class)->name('view_subnmenu');
 Route::get('/edit/submenu/{id}', EditSubMenu::class)->name('edit_sub_menu');
-Route::get('/view/submenu/trash', TrashSubMenu::class)->name('trash_subnmenu');
 
 Route::get('/view/class', ViewClass::class)->name('view_class');
 Route::get('/edit/class/{id}', EditClass::class)->name('edit_class');
-Route::get('/view/class/trash', TrashClass::class)->name('trash_class');
 Route::get('/view/section', ViewSection::class)->name('view_section');
 Route::get('/edit/section/{id}', EditSection::class)->name('edit_section');
-Route::get('/view/section/trash', TrashSection::class)->name('trash_section');
 
 Route::post('ckeditor/image_upload', [CkImageUploadController::class, 'upload'])->name('image.upload');
 Route::get('/git-status', [CkImageUploadController::class, 'showGitStatus'])->name('git.status');
-    Route::get('/view/slider', ViewHomeSlider::class)->name('view_home_slider');
-    Route::get('/edit/slider/{id}', EditHomeSlider::class)->name('edit_home_slider');
-    Route::get('/view/slider/trash', TrashHomeSlider::class)->name('trash_home_slider');
 
-    Route::get('/common/section', WhyusPage::class)->name('whyus_page');
-    Route::get('/common/section/{id}', EditWhyusPage::class)->name('edit_whyus_page');
-    Route::get('/common/section/trash', TrashWhyusPage::class)->name('trash_whyus_page');
+Route::get('/view/slider', ViewHomeSlider::class)->name('view_home_slider');
+Route::get('/edit/slider/{id}', EditHomeSlider::class)->name('edit_home_slider');
 
-    Route::get('/view/membership', ViewMembership::class)->name('view_membership');
-    Route::get('/edit/membership/{id}', EditMemberShip::class)->name('edit_membership');
-    Route::get('/view/membership/trash', TrashMemberShip::class)->name('trash_membership');
+Route::get('/common/section', WhyusPage::class)->name('whyus_page');
+Route::get('/common/section/{id}', EditWhyusPage::class)->name('edit_whyus_page');
 
-    Route::get('/view/testimonials', ViewTestimonials::class)->name('view_testimonials');
-    Route::get('/edit/testimonials/{id}', EditTestimonials::class)->name('edit_testimonials');
-    Route::get('/view/testimonials/trash', TrashTestimonials::class)->name('trash_testimonials');
+Route::get('/view/membership', ViewMembership::class)->name('view_membership');
+Route::get('/edit/membership/{id}', EditMemberShip::class)->name('edit_membership');
 
-    Route::get('/view/life-at-ankkv', ViewCoachings::class)->name('view_coachings');
-    Route::get('/edit/coachings/{id}', EditCoachings::class)->name('edit_coachings');
-    Route::get('/view/life-at-ankkv/trash', TrashCoachings::class)->name('trash_coachings');
+Route::get('/view/testimonials', ViewTestimonials::class)->name('view_testimonials');
+Route::get('/edit/testimonials/{id}', EditTestimonials::class)->name('edit_testimonials');
 
-    Route::get('/view/category', ViewGalleryCategory::class)->name('view_category');
-    Route::get('/edit/category/{id}', EditGalleryCategory::class)->name('edit_category');
-    Route::get('/view/category/trash', TrashGalleryCategory::class)->name('trash_category');
+Route::get('/view/life-at-ankkv', ViewCoachings::class)->name('view_coachings');
+Route::get('/edit/coachings/{id}', EditCoachings::class)->name('edit_coachings');
 
+Route::get('/view/category', ViewGalleryCategory::class)->name('view_category');
+Route::get('/edit/category/{id}', EditGalleryCategory::class)->name('edit_category');
 
-    Route::get('/view/latestnews', ViewLatestNews::class)->name('view_news');
-    Route::get('/edit/latestnews/{id}', EditLatestNews::class)->name('edit_news');
-    Route::get('/view/latestnews/trash', TrashLatestNews::class)->name('trash_news');
+Route::get('/view/latestnews', ViewLatestNews::class)->name('view_news');
+Route::get('/edit/latestnews/{id}', EditLatestNews::class)->name('edit_news');
 
-    Route::get('/manage/gallery', ManageGallery::class)->name('manage_gallery');
-    Route::get('/edit/gallery/{id}', EditGallery::class)->name('edit_gallery');
-    Route::get('/manage/gallery/trash', EditGallery::class)->name('trash_gallery'); 
+Route::get('/manage/gallery', ManageGallery::class)->name('manage_gallery');
+Route::get('/edit/gallery/{id}', EditGallery::class)->name('edit_gallery');
 
-     Route::get('/group-photos', AddGroupPhoto::class)->name('group_phptos');
-      Route::get('/group-photos/{id}', EditGroupPhoto::class)->name('edit_group_phptos');
+Route::get('/view/knowledge-home', ViewKnowledgeHome::class)->name('view_knowledge_home');
+ Route::get('/edit/knowledge-home/{id}', EditKnowledgeHome::class)->name('edit_knowledge_home');
 
-   Route::get('/view/our-topper', ViewOurTopper::class)->name('view_our_topper');
-    Route::get('/edit/our-topper/{id}', EditOurTopper::class)->name('edit_our_topper');
-   Route::get('/view/our-topper/trash', TrashOurTopper::class)->name('trash_our_topper');
+Route::get('/add/blog', AddBlog::class)->name('add_blog');
+Route::get('/manage/blog', ManageBlog::class)->name('manage_blog');
+Route::get('/edit/blog/{id}', EditBlog::class)->name('edit_blog');
 
-    Route::get('/view/knowledge-home', ViewKnowledgeHome::class)->name('view_knowledge_home');
-     Route::get('/edit/knowledge-home/{id}', EditKnowledgeHome::class)->name('edit_knowledge_home');
-     Route::get('/view/knowledge-home/trash', TrashKnowledgeHome::class)->name('trash_knowledge_home');
+Route::get('/manage/seo', Metadetails::class)->name('manage_metadata');
+Route::get('/edit/seo/{id}', EditMetadetails::class)->name('edit_metadata');
 
-    Route::get('/add/blog', AddBlog::class)->name('add_blog');
-    Route::get('/manage/blog', ManageBlog::class)->name('manage_blog');
-    Route::get('/edit/blog/{id}', EditBlog::class)->name('edit_blog');
-    Route::get('/manage/blog/trash', TrashBlog::class)->name('trash_blog');
+Route::get('/header/snippets', HeaderSnippets::class)->name('manage_snippets');
+ Route::get('/edit/header/snippets/{id}', EditHeaderSnippets::class)->name('edit_snippets');
+Route::get('/footer/snippets', FooterSnippets::class)->name('manage_footer_snippets');
 
-    
-    Route::get('/manage/seo', Metadetails::class)->name('manage_metadata');
-    Route::get('/edit/seo/{id}', EditMetadetails::class)->name('edit_metadata');
+Route::get('/page/content', AddPageContent::class)->name('page_content');
+ Route::get('/page/content/edit/{id}', EditPageContent::class)->name('edit_content');
 
+Route::get('/create/page', CreatePage::class)->name('create_page');
+Route::get('/edit/page/{id}', EditPage::class)->name('edit_page');
+ 
+Route::get('/view/department', ViewDepartment::class)->name('view_department');
+Route::get('/edit/department/{id}', EditDepartment::class)->name('edit_department');
 
-    Route::get('/header/snippets', HeaderSnippets::class)->name('manage_snippets');
-     Route::get('/edit/header/snippets/{id}', EditHeaderSnippets::class)->name('edit_snippets');
-    Route::get('/footer/snippets', FooterSnippets::class)->name('manage_footer_snippets');
+Route::get('/view/staff', ViewStaff::class)->name('view_staff');
+Route::get('/edit/staff/{id}', EditStaff::class)->name('edit_staff');
 
-    Route::get('/page/content', AddPageContent::class)->name('page_content');
-     Route::get('/page/content/edit/{id}', EditPageContent::class)->name('edit_content');
-     Route::get('/page/content/trash', TrashPageContent::class)->name('trash_content');
+Route::get('/view/boardmembers', ViewBoardMembers::class)->name('view_boardmembers');
+Route::get('/edit/boardmembers/{id}', EditBoardMembers::class)->name('edit_boardmembers');
+     
+Route::get('/view/facilities', ViewFacilities::class)->name('view_facilities');
+Route::get('/edit/facilities/{id}', EditFacilities::class)->name('edit_facilities');
 
-    Route::get('/create/page', CreatePage::class)->name('create_page');
-    Route::get('/edit/page/{id}', EditPage::class)->name('edit_page');
-    Route::get('/create/page/trash', TrashPage::class)->name('trash_page');
-
-    Route::get('/view/department', ViewDepartment::class)->name('view_department');
-    Route::get('/edit/department/{id}', EditDepartment::class)->name('edit_department');
-    Route::get('/view/department/trash', TrashDepartment::class)->name('trash_department'); 
-
-    Route::get('/view/staff', ViewStaff::class)->name('view_staff');
-    Route::get('/edit/staff/{id}', EditStaff::class)->name('edit_staff');
-    Route::get('/view/staff/trash', TrashStaff::class)->name('trash_staff');
-
-     Route::get('/view/boardmembers', ViewBoardMembers::class)->name('view_boardmembers');
-     Route::get('/edit/boardmembers/{id}', EditBoardMembers::class)->name('edit_boardmembers');
-     Route::get('/view/boardmembers/trash', TrashBoardMembers::class)->name('trash_boardmembers');
-
-    Route::get('/ceate/message', Message::class)->name('create_message');
-    Route::get('/edit/message/{id}', EditMessage::class)->name('edit_message');
-    Route::get('/ceate/message/trash', TrashMessage::class)->name('trash_message');
-
-    Route::get('/view/facilities', ViewFacilities::class)->name('view_facilities');
-    Route::get('/edit/facilities/{id}', EditFacilities::class)->name('edit_facilities');
-    Route::get('/view/facilities/trash', TrashFacilities::class)->name('trash_facilities');
-    Route::get('/view/facilities/expert', ViewExpertServices::class)->name('view_facilities_expert');
-    Route::get('/edit/facilities/expert/{id}', EditExpertServices::class)->name('edit_facilities_expert'); 
+Route::get('/view/facilities/expert', ViewExpertServices::class)->name('view_facilities_expert');
+Route::get('/edit/facilities/expert/{id}', EditExpertServices::class)->name('edit_facilities_expert'); 
 
 Route::get('/curricular-facility', CurricularFacility::class)->name('view_curricular_facility');
 Route::get('/edit/curricular-facility/{id}', EditCurricularFacility::class)->name('edit_curricular_facility');
@@ -362,10 +330,36 @@ Route::get('/edit/curricular-facility/{id}', EditCurricularFacility::class)->nam
 Route::get('/co-curricular-facility', CoCurricularFacility::class)->name('view_cocurricular_facility');
 Route::get('/edit/co-curricular-facility/{id}', EditCoCurricularFacility::class)->name('edit_cocurricular_facility');   
 
- Route::get('/memberof-trust', ViewMemberofTrust::class)->name('view_memberof_trust');
+Route::get('/memberof-trust', ViewMemberofTrust::class)->name('view_memberof_trust');
     Route::get('/edit/memberof-trust/{id}', EditMemberofTrust::class)->name('edit_memberof_trust');
 
-    Route::get('/view/guest-book', ViewGuestBook::class)->name('view_guest_book');
+Route::get('/contact-view', ContactusView::class)->name('contact_view');
+
+Route::get('/social-view', SocialAppsManager::class)->name('social_view');
+
+Route::get('/footer-quick-links', ViewFooterLinks::class)->name('footer_quick_links'); 
+Route::get('/edit/footer-quick-links/{id}', EditFooterLinks::class)->name('edit_footer_quick_links'); 
+
+Route::get('/contact-entries', ContactFormEntries::class)->name('contact_entries');
+Route::get('/contact-entry/{id}', ViewContactFormEntry::class)->name('contact_view_entry');
+
+Route::get('/page/headings', ViewPageHeadings::class)->name('page_headings');
+Route::get('/page/headings/edit/{id}', EditPageHeadings::class)->name('edit_page_headings');
+
+
+
+//no use extra routes
+ Route::get('/group-photos', AddGroupPhoto::class)->name('group_phptos');
+      Route::get('/group-photos/{id}', EditGroupPhoto::class)->name('edit_group_phptos');
+
+ Route::get('/ceate/message', Message::class)->name('create_message');
+    Route::get('/edit/message/{id}', EditMessage::class)->name('edit_message');
+    Route::get('/ceate/message/trash', TrashMessage::class)->name('trash_message');
+
+   Route::get('/view/our-topper', ViewOurTopper::class)->name('view_our_topper');
+    Route::get('/edit/our-topper/{id}', EditOurTopper::class)->name('edit_our_topper');
+   Route::get('/view/our-topper/trash', TrashOurTopper::class)->name('trash_our_topper');
+Route::get('/view/guest-book', ViewGuestBook::class)->name('view_guest_book');
     Route::get('/edit/guest-book/{id}', EditGuestBook::class)->name('edit_guest_book');
     Route::get('/view/guest-book/trash', TrashGuestBook::class)->name('tarsh_guest_book');
 
@@ -373,43 +367,10 @@ Route::get('/edit/co-curricular-facility/{id}', EditCoCurricularFacility::class)
     Route::get('/edit/grapevine/{id}', EditGrapevine::class)->name('edit_grapevine');
      Route::get('/view/grapevine/trash', TrashGrapevine::class)->name('trash_grapevine');
 
-    Route::get('/contact-view', ContactusView::class)->name('contact_view');
-    Route::get('/contact-view/trash', TrashContactus::class)->name('trash_contact');
-
-    Route::get('/social-view', SocialAppsManager::class)->name('social_view');
-      Route::get('/social-view/trash', TrashSocialAppsManager::class)->name('trash_social_view');
-
-    Route::get('/footer-quick-links', ViewFooterLinks::class)->name('footer_quick_links'); 
-    Route::get('/edit/footer-quick-links/{id}', EditFooterLinks::class)->name('edit_footer_quick_links'); 
-
-    Route::get('/contact-entries', ContactFormEntries::class)->name('contact_entries');
-    Route::get('/contact-entry/{id}', ViewContactFormEntry::class)->name('contact_view_entry');
-    Route::get('/contact-entries/trash', TrashContactFormEntries::class)->name('trash_contact_entries');
-
-
-    Route::get('/add-category', AddCategory::class)->name('add_category');
-    Route::get('/edit-category/{id}', EditCategory::class)->name('edit_hcategory');
-
-  
-
-     Route::get('/add-sub-category', SubCategory::class)->name('add_sub_category');
-    Route::get('/edit-sub-category/{id}', EditSubCategory::class)->name('edit_sub_category');
-
-    Route::get('/roll-of-honour', ViewRollofhonour::class)->name('roll_of_honour');
-    Route::get('/roll-of-honour/{id}', EditRollofhonour::class)->name('edit_roll_of_honour');
-
-    Route::get('/admission-inquery', AdmissionsInquery::class)->name('admission_inquery');
-
-    Route::get('/school-calendar', SchoolCalendar::class)->name('school_calendar');
- Route::get('/edit-school-calendar/{id}', EditSchoolCalendar::class)->name('edit_school_calendar');
-   Route::get('/import-school-calendar', ImportSchoolEvent::class)->name('import_school_calendar');
-
-   Route::get('/faqs-category', AddFaqsCategory::class)->name('faqs_category');
- Route::get('/edit-faqs-category/{id}', EditFaqsCategory::class)->name('edit_faqs_category');
 
  //  CreateFaq
  Route::get('/create-faq', CreateFaq::class)->name('admin_create_faq');
-
+//no use
 Route::get('/add-document', AddDocument::class)->name('add_document');
 Route::get('/edit-document/{id}', EditDocument::class)->name('edit_document');
 
@@ -423,10 +384,26 @@ Route::get('/edit-virtual-tour/{id}', EditVirtualTour::class)->name('edit_virtua
 Route::get('/add-widget', ViewWidget::class)->name('add_widget');
 Route::get('/edit-widget/{id}', EditWidget::class)->name('edit_widget');
 
-Route::get('/page/headings', ViewPageHeadings::class)->name('page_headings');
-Route::get('/page/headings/edit/{id}', EditPageHeadings::class)->name('edit_page_headings');
+
+    Route::get('/add-category', AddCategory::class)->name('add_category');
+    Route::get('/edit-category/{id}', EditCategory::class)->name('edit_hcategory');
 
 
-         
+    Route::get('/add-sub-category', SubCategory::class)->name('add_sub_category');
+    Route::get('/edit-sub-category/{id}', EditSubCategory::class)->name('edit_sub_category');
+//no use
+    Route::get('/roll-of-honour', ViewRollofhonour::class)->name('roll_of_honour');
+    Route::get('/roll-of-honour/{id}', EditRollofhonour::class)->name('edit_roll_of_honour');
+
+    Route::get('/admission-inquery', AdmissionsInquery::class)->name('admission_inquery');
+
+    Route::get('/school-calendar', SchoolCalendar::class)->name('school_calendar');
+ Route::get('/edit-school-calendar/{id}', EditSchoolCalendar::class)->name('edit_school_calendar');
+   Route::get('/import-school-calendar', ImportSchoolEvent::class)->name('import_school_calendar');
+
+   Route::get('/faqs-category', AddFaqsCategory::class)->name('faqs_category');
+ Route::get('/edit-faqs-category/{id}', EditFaqsCategory::class)->name('edit_faqs_category');
+
+
 });
 });

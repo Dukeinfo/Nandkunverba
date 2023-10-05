@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Frontend;
 
 use App\Models\Metadetails;
-
+use App\Models\PageContent;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 use Illuminate\Support\Facades\Validator;

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Frontend;
-
+use App\Models\PageContent;
 use Livewire\Component;
 use App\Models\Categories;
 use App\Models\Gallery as ModelsGallery;

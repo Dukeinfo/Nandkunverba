@@ -95,7 +95,7 @@ class ViewBoardMembers extends Component
       $boardMembers->heading = $this->heading;
       $boardMembers->description = $this->desc;
       $boardMembers->heading_guj = $this->heading_guj;
-      $boardMembers->description_guj = $this->desc_guj;
+      $boardMembers->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $boardMembers->image = $uploadedData['file_name'] ?? NULL;
       $boardMembers->thumbnail = $uploadedData['thumbnail_name'] ?? NULL;
       $boardMembers->sort_id =$this->sort_id;
@@ -118,7 +118,8 @@ class ViewBoardMembers extends Component
 
       $boardMembers = BoardMembers::findOrFail($id);
       if(!is_null($boardMembers)){
-        $boardMembers->delete();
+        $boardMembers->status = 'Inactive';
+        $boardMembers->save();
       }
 
      }

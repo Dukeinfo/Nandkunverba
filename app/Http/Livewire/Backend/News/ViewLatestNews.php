@@ -77,7 +77,8 @@ class ViewLatestNews extends Component
 
       $latestNews = LatestNews::findOrFail($id);
       if(!is_null($latestNews)){
-        $latestNews->delete();
+        $latestNews->status = 'Inactive';
+        $latestNews->save();
       }
 
      }

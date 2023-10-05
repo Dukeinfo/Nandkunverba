@@ -20,7 +20,7 @@ class EditSubMenu extends Component
   use UploadTrait;
 
   public  $submenuId ,$image, $records, $getMenus,$menu_id ,$name,$name_guj ,$sort_id, $cms , $pname ,$status ;
-  public   $url_link,$display_heading,$display_subheading,$display_heading_guj,$display_subheading_guj ,$seo_title ,$clientIp ,$seo_description ,$seo_keywords; 
+  public   $url_link,$display_title,$display_title_guj,$display_heading,$display_subheading,$display_heading_guj,$display_subheading_guj ,$seo_title ,$clientIp ,$seo_description ,$seo_keywords; 
   public $editimage, $thumbnail; 
      public function mount($id){
         $submenu = Submenu::findOrFail($id);
@@ -31,7 +31,9 @@ class EditSubMenu extends Component
         $this->image = $submenu->image;
          $this->thumbnail = $submenu->thumbnail;
          $this->url_link = $submenu->url_link;
-          $this->display_heading = $submenu->display_heading; 
+         $this->display_title = $submenu->display_title;
+         $this->display_title_guj = $submenu->display_title_guj;
+         $this->display_heading = $submenu->display_heading; 
           $this->display_subheading = $submenu->display_subheading; 
           $this->display_heading_guj = $submenu->display_heading_guj; 
           $this->display_subheading_guj = $submenu->display_subheading_guj; 
@@ -102,6 +104,8 @@ class EditSubMenu extends Component
       $submenu->image =   $uploadedData['file_name'] ?? NULL;
       $submenu->thumbnail =  $uploadedData['thumbnail_name'] ?? NULL;
       $submenu->url_link =   $this->url_link ;
+      $submenu->display_title =   $this->display_title ;
+      $submenu->display_title_guj =   $this->display_title_guj ;
       $submenu->display_heading =   $this->display_heading ;
       $submenu->display_subheading =   $this->display_subheading ;
       $submenu->display_heading_guj =   $this->display_heading_guj ;
@@ -134,6 +138,8 @@ class EditSubMenu extends Component
       $submenu->status = $this->status;
 
       $submenu->url_link =   $this->url_link ;
+      $submenu->display_title =   $this->display_title ;
+      $submenu->display_title_guj =   $this->display_title_guj ;
       $submenu->display_heading =   $this->display_heading ;
       $submenu->display_subheading =   $this->display_subheading ;
       $submenu->display_heading_guj =   $this->display_heading_guj ;

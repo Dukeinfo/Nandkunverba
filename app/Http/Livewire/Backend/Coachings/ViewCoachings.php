@@ -85,7 +85,8 @@ class ViewCoachings extends Component
 
       $coachings = Coachings::findOrFail($id);
       if(!is_null($coachings)){
-        $coachings->delete();
+         $coachings->status = 'Inactive';
+         $coachings->save();
       }
 
      }

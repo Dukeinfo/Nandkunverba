@@ -70,7 +70,8 @@ class ViewWidget extends Component
 
       $widget = Widget::findOrFail($id);
       if(!is_null($widget)){
-        $widget->delete();
+        $widget->status = 'Inactive';
+        $widget->save();
       }
 
      }

@@ -52,7 +52,7 @@ class ViewFacilities extends Component
       $facilities->title = $this->title;
       $facilities->description = $this->desc;
       $facilities->title_guj = $this->title_guj;
-      $facilities->description_guj = $this->desc_guj;
+      $facilities->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $facilities->link = $this->link;
       $facilities->sort_id =$this->sort;
       $facilities->status = $this->status;
@@ -71,7 +71,8 @@ class ViewFacilities extends Component
 
       $facilities = Facilities::findOrFail($id);
       if(!is_null($facilities)){
-        $facilities->delete();
+        $facilities->status = 'Inactive';
+        $facilities->save();
       }
 
      }

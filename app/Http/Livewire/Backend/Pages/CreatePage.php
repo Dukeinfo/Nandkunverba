@@ -99,7 +99,7 @@ class CreatePage extends Component
       $createPage->description = $this->desc ?? Null;
        $createPage->heading_guj = $this->heading_guj ?? Null;
       $createPage->slug_guj =  strtolower(str_replace(' ', '-',$this->heading_guj))?? Null;
-      $createPage->description_guj = $this->desc_guj ?? Null;
+      $createPage->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
       $createPage->image = $uploadedData['file_name'] ?? NULL;
       $createPage->thumbnail = $uploadedData['thumbnail_name'] ?? NULL;
       $createPage->link = $this->link ?? Null;
@@ -119,7 +119,8 @@ class CreatePage extends Component
 
       $createPage = appCreatePage::findOrFail($id);
       if(!is_null($createPage)){
-        $createPage->delete();
+        $createPage->status = 'Inactive';
+        $createPage->save();
       }
 
      }

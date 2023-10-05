@@ -100,7 +100,8 @@ class SocialAppsManager extends Component
     public function delete($id)
     {
         $socialApp = SocialApp::findOrFail($id);
-        $socialApp->delete();
+        $socialApp->status = 'Inactive';
+        $socialApp->save();
         session()->flash('success', 'Social app deleted successfully!');
     }
 

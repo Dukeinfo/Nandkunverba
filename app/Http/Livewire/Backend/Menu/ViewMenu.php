@@ -74,7 +74,8 @@ class ViewMenu extends Component
 
       $menu = Menu::findOrFail($id);
       if(!is_null($menu)){
-        $menu->delete();
+        $menu->status = 'Inactive';
+        $menu->save();
       }
 
      }

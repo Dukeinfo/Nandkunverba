@@ -82,7 +82,7 @@ class EditTestimonials extends Component
             $testimonials->name_guj = $this->name_guj;
             $testimonials->slug_guj =  strtolower(str_replace(' ', '-',$this->name_guj));
             $testimonials->position_guj = $this->position_guj;
-            $testimonials->description_guj = $this->desc_guj;
+            $testimonials->description_guj = trim(str_replace('<pre>', '<p>', $this->desc_guj)) ?? Null;
                 
 
             $testimonials->save();

@@ -19,7 +19,7 @@ class ViewSubMenu extends Component
     public $image = null; 
     public $seo_description = null;
     public  $records, $getMenus,$menu_id ,$name,$name_guj,$sort_id, $cms , $pname ,$status ;
-    public   $url_link,$display_heading,$display_subheading,$display_heading_guj,$display_subheading_guj ,$seo_title ,$clientIp  ,$seo_keywords; 
+    public   $url_link,$display_title,$display_title_guj,$display_heading,$display_subheading,$display_heading_guj,$display_subheading_guj ,$seo_title ,$clientIp  ,$seo_keywords; 
     public function render(Request $request)
     {
       $this->clientIp = $request->ip();
@@ -93,6 +93,8 @@ class ViewSubMenu extends Component
         'image' => $uploadedData['file_name'] ?? Null,
         'thumbnail' => $uploadedData['thumbnail_name'] ?? Null,
         'url_link' => $this->url_link ?? Null,
+        'display_title' => $this->display_title ?? Null,  
+        'display_title_guj' => $this->display_title_guj ?? Null,
         'display_heading' => $this->display_heading ?? Null,  
         'display_subheading' => $this->display_subheading ?? Null,
         'display_heading_guj' => $this->display_heading_guj ?? Null,
@@ -165,7 +167,12 @@ class ViewSubMenu extends Component
         $this->pname = null;
         $this->status = null;
         $this->url_link = null;
-        $this->display_name = null;
+        $this->display_title = null;
+        $this->display_title_guj = null;
+        $this->display_heading = null;
+        $this->display_heading_guj = null;
+        $this->display_subheading = null;
+        $this->display_subheading_guj = null;
         $this->seo_title = null;
         $this->seo_keywords = null;
         $this->seo_description = null;
@@ -173,7 +180,8 @@ class ViewSubMenu extends Component
     public function delete($id){
          $smenu = Submenu::findOrFail($id);
           if(!is_null($smenu)){
-           $smenu->delete();
+           $smenu->status = 'Inactive';
+           $smenu->save();
           }
      }
 }

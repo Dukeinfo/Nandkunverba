@@ -145,7 +145,8 @@ class ManageGallery extends Component
 
       $gallery = Gallery::findOrFail($id);
       if(!is_null($gallery)){
-        $gallery->delete();
+        $gallery->status = 'Inactive';
+        $gallery->save();
       }
 
      }

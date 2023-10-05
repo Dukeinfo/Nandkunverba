@@ -57,7 +57,8 @@ class ViewSection extends Component
 
       $section = SectionMaster::findOrFail($id);
       if(!is_null($section)){
-        $section->delete();
+        $section->status = 'Inactive';
+        $section->save();
       }
 
      }

@@ -110,7 +110,8 @@ class ViewGalleryCategory extends Component
 
       $category = Categories::findOrFail($id);
       if(!is_null($category)){
-        $category->delete();
+         $category->status = 'Inactive';
+         $category->save();
       }
 
      }

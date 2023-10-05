@@ -84,7 +84,8 @@ class ViewKnowledgeHome extends Component
 
       $knowledgeHome = KnowledgeHome::findOrFail($id);
       if(!is_null($knowledgeHome)){
-        $knowledgeHome->delete();
+        $knowledgeHome->status = 'Inactive';
+        $knowledgeHome->save();
       }
 
      }
