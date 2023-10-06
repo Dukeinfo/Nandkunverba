@@ -164,64 +164,14 @@ class WidgetSeeder extends Seeder
         $widget->status = 'Active';
         $widget->save();
 
-         //historical-foundation (5 widgets )
-
-        $widget = new Widget();
-        $widget->menu_id = 2;
-        $widget->pname = 'home.historical_foundation';
-        $widget->spname = 'home.historical_foundation';
-        $widget->pagetitle = 'Historical Foundation';
-        $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
-        $widget->sort_id = 15;
-        $widget->status = 'Active';
-        $widget->save();
-
-        $widget = new Widget();
-        $widget->menu_id = 2;
-        $widget->pname = 'home.historical_foundation';
-        $widget->spname = 'home.location';
-        $widget->pagetitle = 'OUR LOCATION';
-        $widget->pagetitleguj = 'અમારું સ્થાન';
-        $widget->sort_id = 15;
-        $widget->status = 'Active';
-        $widget->save();
-
-        $widget = new Widget();
-        $widget->menu_id = 2;
-        $widget->pname = 'home.historical_foundation';
-        $widget->spname = 'home.founders_philosophy';
-        $widget->pagetitle = "FOUNDER'S PHILOSOPHY";
-        $widget->pagetitleguj = 'સ્થાપકની ફિલસૂફી';
-        $widget->sort_id = 16;
-        $widget->status = 'Active';
-        $widget->save();
-
-        $widget = new Widget();
-        $widget->menu_id = 2;
-        $widget->pname = 'home.historical_foundation';
-        $widget->spname = 'home.vision_and_mission';
-        $widget->pagetitle = "VISION & MISSION";
-        $widget->pagetitleguj = 'વિઝન અને મિશન';
-        $widget->sort_id = 17;
-        $widget->status = 'Active';
-        $widget->save();
-
-        $widget = new Widget();
-        $widget->menu_id = 2;
-        $widget->pname = 'home.historical_foundation';
-        $widget->spname = 'home.members_of_trust';
-        $widget->pagetitle = "MEMBERS OF TRUST";
-        $widget->pagetitleguj = 'ટ્રસ્ટના સભ્યો';
-        $widget->sort_id = 18;
-        $widget->status = 'Active';
-        $widget->save();
+         
 
         //founders-philosophy (5 widgets )
 
         $widget = new Widget();
         $widget->menu_id = 2;
         $widget->pname = 'home.founders_philosophy';
-        $widget->spname = 'home.historical_foundation';
+        $widget->spname = NULL;
         $widget->pagetitle = 'Historical Foundation';
         $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
         $widget->sort_id = 15;
@@ -234,7 +184,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.location';
         $widget->pagetitle = 'OUR LOCATION';
         $widget->pagetitleguj = 'અમારું સ્થાન';
-        $widget->sort_id = 15;
+        $widget->sort_id = 16;
         $widget->status = 'Active';
         $widget->save();
 
@@ -244,7 +194,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.founders_philosophy';
         $widget->pagetitle = "FOUNDER'S PHILOSOPHY";
         $widget->pagetitleguj = 'સ્થાપકની ફિલસૂફી';
-        $widget->sort_id = 16;
+        $widget->sort_id = 17;
         $widget->status = 'Active';
         $widget->save();
 
@@ -254,7 +204,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.vision_and_mission';
         $widget->pagetitle = "VISION & MISSION";
         $widget->pagetitleguj = 'વિઝન અને મિશન';
-        $widget->sort_id = 17;
+        $widget->sort_id = 18;
         $widget->status = 'Active';
         $widget->save();
 
@@ -264,7 +214,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.members_of_trust';
         $widget->pagetitle = "MEMBERS OF TRUST";
         $widget->pagetitleguj = 'ટ્રસ્ટના સભ્યો';
-        $widget->sort_id = 18;
+        $widget->sort_id = 19;
         $widget->status = 'Active';
         $widget->save();
 
@@ -272,10 +222,10 @@ class WidgetSeeder extends Seeder
         $widget = new Widget();
         $widget->menu_id = 2;
         $widget->pname = 'home.location';
-        $widget->spname = 'home.historical_foundation';
+        $widget->spname = NULL;
         $widget->pagetitle = 'Historical Foundation';
         $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
-        $widget->sort_id = 15;
+        $widget->sort_id = 20;
         $widget->status = 'Active';
         $widget->save();
 
@@ -285,7 +235,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.location';
         $widget->pagetitle = 'OUR LOCATION';
         $widget->pagetitleguj = 'અમારું સ્થાન';
-        $widget->sort_id = 19;
+        $widget->sort_id = 21;
         $widget->status = 'Active';
         $widget->save();
 
@@ -295,7 +245,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.founders_philosophy';
         $widget->pagetitle = "FOUNDER'S PHILOSOPHY";
         $widget->pagetitleguj = 'સ્થાપકની ફિલસૂફી';
-        $widget->sort_id = 20;
+        $widget->sort_id = 22;
         $widget->status = 'Active';
         $widget->save();
 
@@ -305,7 +255,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.vision_and_mission';
         $widget->pagetitle = "VISION & MISSION";
         $widget->pagetitleguj = 'વિઝન અને મિશન';
-        $widget->sort_id = 21;
+        $widget->sort_id = 23;
         $widget->status = 'Active';
         $widget->save();
 
@@ -315,7 +265,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.members_of_trust';
         $widget->pagetitle = "MEMBERS OF TRUST";
         $widget->pagetitleguj = 'ટ્રસ્ટના સભ્યો';
-        $widget->sort_id = 22;
+        $widget->sort_id = 24;
         $widget->status = 'Active';
         $widget->save();
 
@@ -324,10 +274,10 @@ class WidgetSeeder extends Seeder
         $widget = new Widget();
         $widget->menu_id = 2;
         $widget->pname = 'home.members_of_trust';
-        $widget->spname = 'home.historical_foundation';
+        $widget->spname = NULL;
         $widget->pagetitle = 'Historical Foundation';
         $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
-        $widget->sort_id = 15;
+        $widget->sort_id = 25;
         $widget->status = 'Active';
         $widget->save();
 
@@ -337,7 +287,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.location';
         $widget->pagetitle = 'OUR LOCATION';
         $widget->pagetitleguj = 'અમારું સ્થાન';
-        $widget->sort_id = 23;
+        $widget->sort_id = 26;
         $widget->status = 'Active';
         $widget->save();
 
@@ -347,7 +297,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.founders_philosophy';
         $widget->pagetitle = "FOUNDER'S PHILOSOPHY";
         $widget->pagetitleguj = 'સ્થાપકની ફિલસૂફી';
-        $widget->sort_id = 24;
+        $widget->sort_id = 27;
         $widget->status = 'Active';
         $widget->save();
 
@@ -357,7 +307,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.vision_and_mission';
         $widget->pagetitle = "VISION & MISSION";
         $widget->pagetitleguj = 'વિઝન અને મિશન';
-        $widget->sort_id = 25;
+        $widget->sort_id = 28;
         $widget->status = 'Active';
         $widget->save();
 
@@ -367,7 +317,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.members_of_trust';
         $widget->pagetitle = "MEMBERS OF TRUST";
         $widget->pagetitleguj = 'ટ્રસ્ટના સભ્યો';
-        $widget->sort_id = 26;
+        $widget->sort_id = 29;
         $widget->status = 'Active';
         $widget->save();
 
@@ -379,7 +329,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.news_events';
         $widget->pagetitle = "NEWS AND EVENTS";
         $widget->pagetitleguj = 'સમાચાર અને ઘટનાઓ';
-        $widget->sort_id = 27;
+        $widget->sort_id = 30;
         $widget->status = 'Active';
         $widget->save();
 
@@ -390,7 +340,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.student_headlines';
         $widget->pagetitle = "HEADLINES MADE BY STUDENTS";
         $widget->pagetitleguj = 'વિદ્યાર્થીઓ દ્વારા બનાવવામાં આવેલી હેડલાઇન્સ';
-        $widget->sort_id = 28;
+        $widget->sort_id = 31;
         $widget->status = 'Active';
         $widget->save();
 
@@ -402,7 +352,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.gallery';
         $widget->pagetitle = "PHOTO GALLERY";
         $widget->pagetitleguj = 'ફોટો ગેલેરી';
-        $widget->sort_id = 29;
+        $widget->sort_id = 32;
         $widget->status = 'Active';
         $widget->save();
 
@@ -414,7 +364,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.curricular_facilities';
         $widget->pagetitle = 'CURRICULAR FACILITIES';
         $widget->pagetitleguj = 'અભ્યાસક્રમ સુવિધાઓ';
-        $widget->sort_id = 30;
+        $widget->sort_id = 33;
         $widget->status = 'Active';
         $widget->save();
 
@@ -424,7 +374,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.cocurricular_facilities';
         $widget->pagetitle = 'CO-CURRICULAR FACILITIES';
         $widget->pagetitleguj = 'સહ-અભ્યાસક્રમ સુવિધાઓ';
-        $widget->sort_id = 31;
+        $widget->sort_id = 34;
         $widget->status = 'Active';
         $widget->save();
 
@@ -434,7 +384,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.activities';
         $widget->pagetitle = 'ACTIVITIES';
         $widget->pagetitleguj = 'પ્રવૃત્તિઓ';
-        $widget->sort_id = 32;
+        $widget->sort_id = 35;
         $widget->status = 'Active';
         $widget->save();
 
@@ -444,7 +394,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.societies';
         $widget->pagetitle = 'SOCIETIES';
         $widget->pagetitleguj = 'સોસાયટીઓ';
-        $widget->sort_id = 33;
+        $widget->sort_id = 36;
         $widget->status = 'Active';
         $widget->save();
 
@@ -455,7 +405,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.news_events';
         $widget->pagetitle = 'NEWS AND EVENTS';
         $widget->pagetitleguj = 'સમાચાર અને ઘટનાઓ';
-        $widget->sort_id = 34;
+        $widget->sort_id = 37;
         $widget->status = 'Active';
         $widget->save();
 
@@ -465,7 +415,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.student_headlines';
         $widget->pagetitle = 'HEADLINES MADE BY STUDENTS';
         $widget->pagetitleguj = 'વિદ્યાર્થીઓ દ્વારા બનાવવામાં આવેલી હેડલાઇન્સ';
-        $widget->sort_id = 35;
+        $widget->sort_id = 38;
         $widget->status = 'Active';
         $widget->save();
 
@@ -477,7 +427,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.testimonials';
         $widget->pagetitle = 'Testimonials';
         $widget->pagetitleguj = 'પ્રશંસાપત્રો';
-        $widget->sort_id = 36;
+        $widget->sort_id = 39;
         $widget->status = 'Active';
         $widget->save();
 
@@ -486,10 +436,10 @@ class WidgetSeeder extends Seeder
         $widget = new Widget();
         $widget->menu_id = 2;
         $widget->pname = 'home.vision_and_mission';
-        $widget->spname = 'home.historical_foundation';
+        $widget->spname = NULL;
         $widget->pagetitle = 'Historical Foundation';
         $widget->pagetitleguj = 'ઐતિહાસિક ફાઉન્ડેશન';
-        $widget->sort_id = 15;
+        $widget->sort_id = 40;
         $widget->status = 'Active';
         $widget->save();
 
@@ -500,7 +450,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.location';
         $widget->pagetitle = 'OUR LOCATION';
         $widget->pagetitleguj = 'અમારું સ્થાન';
-        $widget->sort_id = 37;
+        $widget->sort_id = 41;
         $widget->status = 'Active';
         $widget->save();
 
@@ -510,7 +460,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.founders_philosophy';
         $widget->pagetitle = "FOUNDER'S PHILOSOPHY";
         $widget->pagetitleguj = 'સ્થાપકની ફિલસૂફી';
-        $widget->sort_id = 38;
+        $widget->sort_id = 42;
         $widget->status = 'Active';
         $widget->save();
 
@@ -520,7 +470,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.vision_and_mission';
         $widget->pagetitle = "VISION & MISSION";
         $widget->pagetitleguj = 'વિઝન અને મિશન';
-        $widget->sort_id = 39;
+        $widget->sort_id = 43;
         $widget->status = 'Active';
         $widget->save();
 
@@ -530,7 +480,7 @@ class WidgetSeeder extends Seeder
         $widget->spname = 'home.members_of_trust';
         $widget->pagetitle = "MEMBERS OF TRUST";
         $widget->pagetitleguj = 'ટ્રસ્ટના સભ્યો';
-        $widget->sort_id = 40;
+        $widget->sort_id = 44;
         $widget->status = 'Active';
         $widget->save();
 

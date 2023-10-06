@@ -151,24 +151,37 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                     @endif
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$data->heading ?? ''}}
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                  @if(session()->get('language') == 'gujrati')
+                     {{$data->heading_guj ?? ''}}
+                   @else                 
+                    {{$data->heading ?? ''}}
+                   @endif
 
-                       <!-- for gujrati -->     
 
                         </span>
                         </div>
                     </div>
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$data->sub_heading ?? ''}}
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                  @if(session()->get('language') == 'gujrati')
+                     {{$data->sub_heading_guj ?? ''}}
+                  @else    
+                   {{$data->sub_heading ?? ''}}
+                  @endif
      
-                   <!-- for gujrati -->
                     </h5>
 
-                   @if (isset($data->description))
+                    @if (isset($data->description))
 
+                       @if(session()->get('language') == 'gujrati')
+
+                          {!!$data->description_guj!!}
+                       @else
                          {!!$data->description!!}
-
-                         <!-- for gujrati -->
-                 @endif
+ 
+                       @endif
+                         
+                   @endif 
        
      @endforeach 
 
@@ -178,25 +191,37 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
                         <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                       @if(session()->get('language') == 'gujrati')
+                        અમારી સ્થાન
+                       @else   
                         Our Location
-
-                       <!-- for gujrati -->     
-
+                       @endif
                         </span>
                         </div>
                     </div>
                     <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                   @if(session()->get('language') == 'gujrati')
+                    અમે ક્યાં સ્થિત છીએ?
+                   @else   
                     Where We Are Located
-
-                    <!-- for gujrati -->
+                   @endif
+                   
 
                     </h5>
 
+                   @if(session()->get('language') == 'gujrati') 
+                    <p>જ્યારે કોઈ ગુજરાતના ભાવનગર શહેરમાં પ્રવેશ કરે છે, ત્યારે તે ભાવનગરના રાજ્યના છેલ્લા શાસક એચ.એચ. મહારાજ કૃષ્ણકુમાર સિંગજીની મૂર્તિનો સ્વાગત થાય છે, જે ભાવનગર રાજ્યનો છેલ્લો શાસક હતો. તે પહેલો રાજ્યને ભારતના યુનિયન સાથે સમર્પણ કર્યો હતો, પછી મદરાસનું ગવર્નર તરીકે સેવા કર્યો હતો. તેમની વિશાળતા અને તેમના ઉત્કૃષ્ટ પ્રશાસન યુગની સન્માન્ય છે. મૂર્તિની ડાબી બાજુ તેમનો મૂળ વસતો હતો, જે હવે એક વારસી હોટેલ નામે 'નિલંબાગ પેલેસ' છે, જે વિરાસત હોટેલ તરીકે વપરાય છે. </p>
+
+                    <p>દૂસરી બાજુએ એવી છોકરીઓની શાળાનું કૅમ્પસ છે, જે પોતાની સામગ્રી શિક્ષણ સાથે દુનિયાની સામગ્રી બનવાના યુવતીઓને સક્ષમ બનાવવા માટે જમણી છે. મોર પર પુસપી મહિલાઓ વિચર્યું છે, બાળકના છોકરાઓના ચહેરાઓ હસી, અને જ્ઞાનનો પ્રકાશ મૃદુરૂપે શાળા પર પડ્યો છે. આ સંસ્થાના જૂની જમાણી ચરમ ચર્મ અને આધુનિક આત્માનું બીચ આપતા પ્રયાસની સંગતમાં, સંપ્રદાય અને પ્રગતિનું ધન લઇ શકે છે અને પછી સ્થિતિ અને પ્રગતિનો સમૃદ્ધ વારસો વહનારા કઈ છે. </p>
+
+                   @else
                     <p>As one enters the city of Bhavnagar in Gujarat, one is greeted by the statue of HH Maharaja Krishna Kumar Singhji, the last ruler of the kingdom of Bhavnagar. The first to hand over his state to the union of India, he later served as the Governor of Madras. He is revered even today for his magnanimity and the era of his brilliant administration. On the right side of the statue ids his original residence, Nilambag Palace, now a heritage hotel. </p>
 
                     <p>On the other side is the campus of the iconic girls’ school responsible for enabling generations of young women to face the world armed with a well-rounded education. Peacocks roam freely, cherubic young faces smile, and the light of knowledge shines benignly upon the school. Amidst the old-world charm and the modern spirit of this institution, bloom many students who then carry forth the rich inheritance of tradition and progress. </p>
 
-                    <!-- for gujrati -->
+                    @endif
+
+                    
  @endif           
                 </div>
             </div>

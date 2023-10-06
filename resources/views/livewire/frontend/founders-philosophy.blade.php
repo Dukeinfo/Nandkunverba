@@ -151,17 +151,36 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                     @endif
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$data->heading ?? ''}}</span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                   @if(session()->get('language') == 'gujrati')
+                     {{$data->heading_guj ?? ''}}
+                   @else                 
+                    {{$data->heading ?? ''}}
+                   @endif
+                        </span>
                         </div>
 
                     </div>
 
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$data->sub_heading ?? ""}}</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                  @if(session()->get('language') == 'gujrati')
+                     {{$data->sub_heading_guj ?? ''}}
+                  @else    
+                   {{$data->sub_heading ?? ''}}
+                  @endif 
 
-                    @if (isset($data->description))
+                    </h5>
 
-                     {!!$data->description!!}
-                  
+                     @if (isset($data->description))
+
+                       @if(session()->get('language') == 'gujrati')
+
+                          {!!$data->description_guj!!}
+                       @else
+                         {!!$data->description!!}
+ 
+                       @endif
+                         
                    @endif 
     @endforeach 
 
@@ -170,12 +189,28 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
 <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Our Founder</span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                      @if(session()->get('language') == 'gujrati')
+                        અમારા સંસ્થાપક
+                      @else    
+                        Our Founder
+                      @endif  
+                      </span>
                         </div>
                     </div>
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">Founder's Philosophy</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                      @if(session()->get('language') == 'gujrati')
+                      સંસ્થાપકનું દર્શન
+                      @else
+                      Founder's Philosophy
+                      @endif
+                    </h5>
 
+                    @if(session()->get('language') == 'gujrati')
+                    <p>શ્રી નંદકુંવેરબા ક્ષત્રિય કન્યા વિદ્યાલય 1917 માં ભાવનગરની મૃત હું.હું. મહારાણી સાહેબ શ્રી નંદકુંવેરબા સાહેબ દ્વારા સ્થાપિત કરવામાં આવ્યું હતું, તે જે મહિલાઓને મુક્તિ મળવાની માન્યતા આપતી હતી. જ્યારે મહિલાઓને તેમની ઘરની ચાર દીવારો માં બંધાય છે ત્યારે, મહારાણી સાહેબ ને પુર્દા સિસ્ટમને નિર્મૂલ કરવા અને છોકરીઓને પૂર્ણ શિક્ષણ આપવાનો મહત્વપૂર્ણ નિર્ણય લેવો પડ્યો. પ્રચુર વિકાસ અને છોકરીઓને સમગ્ર અને સમાન અવસરો માટે પ્રયાસ કરનારી એક નારીવાદી જ્યારે ટરેન્ડ બનવા લાગ્યો છે, આ સંસ્થા છોકરીઓ માટે અને સમગ્ર વિકાસ માટે પ્રયાસ કરે છે.</p>
+                    @else
                     <p>Shri Nandkunverba Kshatriya Kanya Vidyalaya was founded in the year 1917 by the late HH Maharani Saheba Shri Nandkunverba Saheb of Bhavnagar who believed in the emancipation of women. At a time when women were confined to the four walls of their home, Maharani Saheba, took a bold decision to abolish the purdah system and provide girls with a holistic education. A feminist before the term began to trend, the institute strives for all round development and equal opportunities for girls.</p>
+                    @endif
 @endif                   
                 </div>
             </div>

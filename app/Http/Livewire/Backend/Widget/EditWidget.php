@@ -20,8 +20,8 @@ class EditWidget extends Component
         $this->spname = $widget->spname;
         $this->pagetitle = $widget->pagetitle;
         $this->pagetitleguj = $widget->pagetitleguj;
-    	$this->sort_id = $widget->sort_id;
-    	$this->status = $widget->status;
+       	$this->sort_id = $widget->sort_id;
+      	$this->status = $widget->status;
      }
  
     public function editWidget(){

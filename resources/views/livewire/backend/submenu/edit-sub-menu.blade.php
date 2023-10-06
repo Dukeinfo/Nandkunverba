@@ -101,24 +101,24 @@
                          
 
                             
-                                <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label class="form-label"> Page Name @if($cms == "No") <span class="text-danger">*</span>     @endif </label>
-                                        <select name="selected_route" wire:model="pname"   @if($cms == "Yes") disabled      @endif  id="selected_route"   class="form-control">
-                                         <option  value="">Select page (NULL)</option>
-                                          
-                                            @foreach(Route::getRoutes() as $route)
-                                            @if (str_starts_with($route->getName(), 'home.') )
-                                            @php
-                                             $routeName   = ucwords(str_replace('home.','',$route->getName() )  )
-                                            @endphp
-                                                <option value="{{ $route->getName() }}"    class="form-control">{{ str_replace('_' , ' ',$routeName)}}</option>
-                                           @endif
-                                                @endforeach
-                                        </select>
-                                        @error('pname') <span class="error">{{ $message }}</span> @enderror
-                                    </div>
-                                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label class="form-label"> Page Name @if($cms == "No") <span class="text-danger">*</span>     @endif </label>
+                        <select name="selected_route" wire:model="pname"   @if($cms == "Yes") disabled      @endif  id="selected_route"   class="form-control">
+                         <option  value="">Select page (NULL)</option>
+                          
+                            @foreach(Route::getRoutes() as $route)
+                            @if (str_starts_with($route->getName(), 'home.') )
+                            @php
+                             $routeName   = ucwords(str_replace('home.','',$route->getName() )  )
+                            @endphp
+                                <option value="{{ $route->getName() }}"    class="form-control">{{ str_replace('_' , ' ',$routeName)}}</option>
+                           @endif
+                                @endforeach
+                        </select>
+                        @error('pname') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                </div>
                             <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label">Upload image  <span class="text-danger">*</span></label>

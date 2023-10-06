@@ -17,7 +17,7 @@ class CreateWidgetsTable extends Migration
             $table->id();
             $table->integer('menu_id');
             $table->string('pname');
-            $table->string('spname'); 
+            $table->string('spname')->nullable(); 
             $table->string('pagetitle');
             $table->string('pagetitleguj'); 
             $table->integer('sort_id')->nullable();   

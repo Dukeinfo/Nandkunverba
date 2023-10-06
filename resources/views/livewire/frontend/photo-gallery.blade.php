@@ -144,12 +144,24 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                 <div class="col-lg-9">
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">SNKKV in Media</span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                    @if(session()->get('language') == 'gujrati')
+                        મીડિયામાં SNKKV
+                    @else      
+                        SNKKV in Media
+                    @endif    
+                      </span>
                         </div>
                     </div>
 
                    
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">Photo Gallery</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                  @if(session()->get('language') == 'gujrati')
+                    ફોટો ગેલરી
+                  @else     
+                    Photo Gallery
+                  @endif  
+                  </h5>
 
                     <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2">
                     
@@ -165,15 +177,35 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                                     </a>
                                 </div>
                                 <div class="interactive-banners-box-content padding-35px-all text-center xs-padding-25px-all">
-                                    <a href="#" class="text-extra-dark-gray text-uppercase text-extra-dark-gray-hover text-medium alt-font font-weight-500 d-block line-height-26px">{{$category->name}}</a>
+                                    <a href="#" class="text-extra-dark-gray text-uppercase text-extra-dark-gray-hover text-medium alt-font font-weight-500 d-block line-height-26px">
+                                      @if(session()->get('language') == 'gujrati')
+                                      {{$category->name_guj}}  
+                                      @else
+                                      {{$category->name}}
+                                      @endif
+
+                                    </a>
                                     <div class="position-relative">
       @php
       $totalPhotos =App\Models\Gallery::where(['category_id'=> $category->id , 'status' => 'Active' ])->count();
       @endphp
                                         
-                                        <span>{{$totalPhotos}} Photos</span>
+                                        <span>{{$totalPhotos}} 
+                                 @if(session()->get('language') == 'gujrati')
+                                    ફોટોઝ
+                                 @else
+                                      Photos
+                                 @endif       
+
+                                      </span>
                                         <div class="interactive-banners-box-sub-title">
-                                            <a href="{{url('/gallery-detail')}}/{{$category->id }}" class="btn btn-link thin btn-large text-tussock">View Gallery</a>
+                                            <a href="{{url('/gallery-detail')}}/{{$category->id }}" class="btn btn-link thin btn-large text-tussock">
+                                        @if(session()->get('language') == 'gujrati')
+                                           ગેલરી જુઓ
+                                        @else      
+                                            View Gallery
+                                        @endif    
+                                          </a>
 
                                         </div>
                                     </div>
@@ -188,11 +220,17 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
  @endif
 
 
-                      @else
-         <center><div class="alert alert-warning">
-        <strong>Sorry!</strong> No Record Found.
-        </div>                  
-               @endif    
+      @else
+         @if(session()->get('language') == 'gujrati')
+          <center><div class="alert alert-warning">
+          <strong>માફ કરશો!</strong> કોઈ રેકોર્ડ મળ્યો નથી.
+          </div>
+          @else
+          <center><div class="alert alert-warning">
+          <strong>Sorry!</strong> No Record Found.
+          </div>
+           @endif                 
+   @endif    
                     
        
                     </div>

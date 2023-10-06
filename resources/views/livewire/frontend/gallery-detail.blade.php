@@ -1,7 +1,7 @@
 <div>
-         @php
+@php
 $getRouteName =  Route::currentRouteName();
-$pageHeading =  App\Models\PageHeading::where('status','Active')->where('pname',$getRouteName )->first(); 
+$pageHeading =  App\Models\PageHeading::where('status','Active')->where('pname','home.gallery' )->first(); 
 @endphp
     <!-- start section -->
     <section class="parallax bg-extra-dark-gray p-0" data-parallax-background-ratio="0.5"
@@ -53,7 +53,7 @@ $pageHeading =  App\Models\PageHeading::where('status','Active')->where('pname',
 
 @php
 $getRouteName =  Route::currentRouteName();
-$pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$getRouteName )->first(); 
+$pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname','home.gallery' )->first(); 
 @endphp
   <!-- start page title -->
       <section class="wow animate__fadeIn bg-seashell padding-30px-tb sm-padding-20px-tb page-title-small">
@@ -70,7 +70,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
               @if($menuName->id!=1)
                   {{ $menuName->name_guj}}
                 @else
-                  {{Str::title( $pageTitle->pname_guj) }}
+                  {{Str::title( $pageTitle->pname_guj ?? '') }}
                 @endif
          @else
                 @if($menuName->id!=1)
@@ -96,7 +96,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             @if($pageTitle->menu_id!=1)    
                              <li><a href="javascript:void()">
                              @if(session()->get('language') == 'gujrati')
-                              {{$pageTitle->Menu->name_guj}}
+                              {{$pageTitle->Menu->name_guj ?? ''}}
                              @else 
                                 {{$pageTitle->Menu->name}}
                              @endif   
@@ -106,7 +106,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
 
                          <li>
                             @if(session()->get('language') == 'gujrati')
-                            {{Str::title( $pageTitle->pname_guj) }}
+                            {{Str::title( $pageTitle->pname_guj ?? '') }}
                             @else
                             {{Str::title( $pageTitle->pname_eng) }}
                             @endif
@@ -126,13 +126,33 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                         <div class="col-lg-9">
                             <div class="alt-font font-weight-500 my-3 d-flex">
                                 <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                <div class="flex-grow-1"><span class="text-tussock text-uppercase">Photo Gallery</span>
+                                <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+
+                   @if(session()->get('language') == 'gujrati')
+                    ફોટો ગેલરી
+                  @else     
+                    Photo Gallery
+                  @endif
+                              </span>
                                 </div>
                             </div>
-                            <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">{{$category_name}}</h5>
+                            <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                         @if(session()->get('language') == 'gujrati')
+                            {{$category_name_guj ?? ''}}
+                         @else      
+                            {{$category_name ?? ''}}
+                         @endif   
+                          </h5>
                         </div>
                         <div class="col-lg-3 text-lg-end">
-                            <a href="{{url('photo-gallery')}}" class="btn btn-fancy btn-medium btn-dark-purple">Back to Gallery</a>
+                            <a href="{{url('photo-gallery')}}" class="btn btn-fancy btn-medium btn-dark-purple">
+                      @if(session()->get('language') == 'gujrati')
+                           ગેલરી પરત જાઓ
+                      @else
+                            Back to Gallery
+                      @endif      
+
+                          </a>
                         </div>
                     </div>
                     
@@ -161,9 +181,15 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                               
                               @endforeach
                                @else
-         <center><div class="alert alert-warning">
-        <strong>Sorry!</strong> No Record Found.
-        </div>       
+          @if(session()->get('language') == 'gujrati')
+          <center><div class="alert alert-warning">
+          <strong>માફ કરશો!</strong> કોઈ રેકોર્ડ મળ્યો નથી.
+          </div>
+          @else
+          <center><div class="alert alert-warning">
+          <strong>Sorry!</strong> No Record Found.
+          </div>
+           @endif        
                            @endif
                             </ul>
                         </div>

@@ -27,6 +27,7 @@ class GalleryDetail extends Component
      $category = Categories::findOrFail($category_id);
         $this->category_id = $category->id;
         $this->category_name = $category->name;
+        $this->category_name_guj = $category->name_guj;
 
      $this->records = Gallery::where(['category_id'=> $category_id , 'status' => 'Active' ])->get();
 

@@ -145,10 +145,23 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
     <div class="col-lg-9">
         <div class="alt-font font-weight-500 my-3 d-flex">
             <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-            <div class="flex-grow-1"><span class="text-tussock text-uppercase">School in the News</span>
+            <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+           @if(session()->get('language') == 'gujrati')
+             સકૂલ સમાચારમાં
+           @else   
+            School in the News
+           @endif  
+
+           </span>
             </div>
         </div>
-        <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">News and Events</h5>
+        <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+        @if(session()->get('language') == 'gujrati')
+         સમાચાર અને ઘટનાઓ
+        @else  
+        News and Events
+        @endif 
+      </h5>
         
 
         <div class="row justify-content-center">
@@ -175,10 +188,19 @@ $monthyear = App\Models\BoardMembers::where('status', 'Active')->groupBy(['month
                                 <div class="table-responsive">
                                     <table class="table table-flush w-100">
                                         <thead>
+                                          @if(session()->get('language') == 'gujrati')
+                                          <tr>
+                                                <th width="20%">
+                                                તારીખ</th>
+                                                <th>વિશેષણો</th>
+                                            </tr>
+                                          @else
                                             <tr>
-                                                <th width="20%">Date</th>
+                                                <th width="20%">
+                                                Date</th>
                                                 <th>Particulars</th>
                                             </tr>
+                                          @endif  
                                         </thead>
                                         <tbody>
 @php
@@ -190,7 +212,13 @@ $newsevents = App\Models\BoardMembers::where('status', 'Active')->where('month',
             <tr>
                 <td>{{ \Carbon\Carbon::parse($news->dated)->isoFormat('MMM Do YYYY')}}</td>
                 
-                <td>{{$news->heading}}</td>
+                <td>
+                  @if(session()->get('language') == 'gujrati')
+                   {{$news->heading_guj}}
+                  @else
+                  {{$news->heading}}
+                  @endif 
+                </td>
             </tr>
           @endforeach                  
                @endif                                   

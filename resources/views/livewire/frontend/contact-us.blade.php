@@ -128,8 +128,14 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             <i class="line-icon-Geo2-Love font-weight-600 icon-extra-medium text-tussock margin-30px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
                         </div>
                         <div class="feature-box-content last-paragraph-no-margin">
+                           @if(session()->get('language') == 'gujrati')
+                            <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">અમને શોધો</span>
+                            <p class="d-inline-block w-70 lg-w-90 md-w-60 sm-w-80 xs-w-100">નિલંબો સર્કલ, દેવબાઘ, ભાવનગર, ગુજરાત ૩૬૪૦૦૨</p>
+                           @else
                             <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">Locate Us</span>
                             <p class="d-inline-block w-70 lg-w-90 md-w-60 sm-w-80 xs-w-100">Nilambaug Circle, Devbagh, Bhavnagar, Gujarat 364002</p>
+                           @endif  
+
                         </div>
                     </div>
                 </div>
@@ -141,8 +147,13 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             <i class="line-icon-Headset font-weight-600 icon-extra-medium text-tussock margin-30px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
                         </div>
                         <div class="feature-box-content last-paragraph-no-margin">
+                         @if(session()->get('language') == 'gujrati')      
+                          <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">ચાલો ચર્ચા કરીએ</span>
+                            <p>ફોન: +91 9876543210<br>ફેક્સ: 1-800-222-002</p>
+                         @else 
                             <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">Let's Talk</span>
                             <p>Phone: +91 9876543210<br>Fax: 1-800-222-002</p>
+                         @endif   
                         </div>
                     </div>
                 </div>
@@ -154,7 +165,13 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             <i class="line-icon-Mail-Read font-weight-600 icon-extra-medium text-tussock margin-30px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
                         </div>
                         <div class="feature-box-content last-paragraph-no-margin">
-                            <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">E-mail Us</span>
+                            <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">
+                         @if(session()->get('language') == 'gujrati')
+                           ઇ-મેલ કરો
+                         @else       
+                            E-mail Us
+                         @endif   
+                        </span>
                             <p><a href="mailto:info@yourdomain.com" class="text-sky-blue-hover">info@yourdomain.com</a><br><a href="mailto:hr@yourdomain.com" class="text-light-blue text-sky-blue-hover">hr@yourdomain.com</a></p>
                         </div>
                     </div>
@@ -167,8 +184,13 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             <i class="line-icon-Information font-weight-600 icon-extra-medium text-tussock margin-30px-bottom md-margin-15px-bottom sm-margin-10px-bottom"></i>
                         </div>
                         <div class="feature-box-content last-paragraph-no-margin">
+                          @if(session()->get('language') == 'gujrati')
+                           <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">પ્રવેશ પુછપરછ</span>
+                            <p>ફોન: +91 9876543210<br>ફેક્સ: 1-800-222-002</p>
+                          @else
                             <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">Admission Enquiry</span>
                             <p>Phone: +91 9876543210<br>Fax: 1-800-222-002</p>
+                          @endif
                         </div>
                     </div>
                 </div>
@@ -183,8 +205,20 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                 <div class="col-12 col-lg-10">
                     <div class="row justify-content-center">
                         <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
-                            <span class="alt-font letter-spacing-minus-1-half text-extra-medium d-block margin-5px-bottom">Fill out the form and we'll be in touch soon!</span>
-                            <h4 class="alt-font font-weight-600 text-extra-dark-gray">How we can help you?</h4>
+                            <span class="alt-font letter-spacing-minus-1-half text-extra-medium d-block margin-5px-bottom">
+                     @if(session()->get('language') == 'gujrati')
+                       ફોર્મ ભરો અને અમે તમારી સાથે બની રહીશું!
+                     @else   
+                       Fill out the form and we'll be in touch soon!
+                     @endif
+                   </span>
+                            <h4 class="alt-font font-weight-600 text-extra-dark-gray">
+                      @if(session()->get('language') == 'gujrati')
+                       અમે તમારી સહાય કેવી રીતે કરી શકીએ?
+                      @else          
+                        How we can help you?
+                      @endif  
+                    </h4>
                         </div>
                         <div class="col-12">
                             <!-- start contact form -->
@@ -205,11 +239,24 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                                     <div class="col text-start sm-margin-30px-bottom">
                                         <input type="checkbox" wire:model="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
                                         @error('terms_condition') <span class="text-danger">{{ $message }}</span> @enderror
+                                        
+                                 @if(session()->get('language') == 'gujrati')
+                                   <label for="terms_condition" class="text-small d-inline-block align-top w-85">હું શરતો અને નિયમોની માન્યતા કરું છું અને મને આવી વત્તી સાથે મારા ડેટા સુરક્ષિત રાખવામાં આવશે તે મને સમજ આવ્યો છે. <a href="javascript:void()" target="_blank" class="text-decoration-underline text-extra-dark-gray">ગોપનીયતા નીતિ</a>.</label>
+                                 @else
                                         <label for="terms_condition" class="text-small d-inline-block align-top w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="javascript:void()" target="_blank" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
+                                   @endif
+
+
                                     </div>
                                      
                                     <div class="col text-center text-md-end">
-                                        <button class="btn btn-fancy btn-medium btn-tussock" type="submit">Send Message</button>
+                                        <button class="btn btn-fancy btn-medium btn-tussock" type="submit">
+                                      @if(session()->get('language') == 'gujrati')
+                                       સંદેશ મોકલો
+                                      @else       
+                                        Send Message
+                                      @endif  
+                                    </button>
                                     </div>
                                     <!-- show message -->
                                      @if (session()->has('success'))
@@ -234,7 +281,13 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-12 col-xl-3 col-lg-4 col-md-5 col-sm-6 text-center text-sm-end xs-margin-20px-bottom">
-                    <span class="alt-font font-weight-500 text-extra-large text-extra-dark-gray d-block letter-spacing-minus-1-half">Connect with social media</span>
+                    <span class="alt-font font-weight-500 text-extra-large text-extra-dark-gray d-block letter-spacing-minus-1-half">
+               @if(session()->get('language') == 'gujrati')
+                સોશિયલ મીડિયા સાથે જોડવું
+               @else         
+                Connect with social media
+               @endif 
+            </span>
                 </div>
                 <div class="col-12 col-md-2 d-none d-md-block">
                     <span class="w-100 h-1px d-block bg-medium-gray"></span>

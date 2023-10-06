@@ -152,7 +152,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
                         <div class="flex-grow-1"><span class="text-tussock text-uppercase">
-                    @if(session()->get('language') == 'gujrati')
+                   @if(session()->get('language') == 'gujrati')
                      {{$data->heading_guj ?? ''}}
                    @else                 
                     {{$data->heading ?? ''}}
@@ -186,7 +186,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                          
                    @endif  
 
-             @endforeach
+                  @endforeach
 
 @else
 <!-- show static data -->

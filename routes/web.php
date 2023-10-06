@@ -179,9 +179,7 @@ use Illuminate\Support\Facades\Route;
 // });
 // ============================= frontend route start  ====================== correct  i nblade 
 
-
-
- Route::get('/language/english', [LanguageController::class,'english'])->name('english.language');
+Route::get('/language/english', [LanguageController::class,'english'])->name('english.language');
 
  Route::get('/language/gujrati', [LanguageController::class,'gujrati'])->name('gujrati.language');
 
@@ -209,9 +207,9 @@ Route::get('/student-headlines', StudentHeadlines::class)->name('home.student_he
 Route::get('/testimonials', Testimonials::class)->name('home.testimonials');
 Route::get('/vision-and-mission', VisionAndMission::class)->name('home.vision_and_mission');
 //new pages with empty blade files
-Route::get('/about-us', AboutUs::class)->name('home.about_us');
-Route::get('/historical-foundation', HistoricalFoundation::class)->name('home.historical_foundation');
-Route::get('/academic-objectives', AcademicObjectives::class)->name('home.academic_objectives');
+Route::get('/about-us', AboutUs::class)->name('about_us');
+Route::get('/historical-foundation', HistoricalFoundation::class)->name('historical_foundation');
+Route::get('/academic-objectives', AcademicObjectives::class)->name('academic_objectives');
 
 
 });

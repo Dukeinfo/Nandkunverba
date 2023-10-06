@@ -156,10 +156,25 @@ $members = App\Models\MemberOfTrust::where('category', '1')->where('status', 'Ac
                         <div class="col-md-12 mb-4">
                             <div class="card rounded-0">
                                 <div class="card-header py-3">
-                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">{{$member->name}}</h6>
+                                    <h6 class="alt-font text-dark-purple font-weight-600 mb-1">
+                                     @if(session()->get('language') == 'gujrati')
+                                       {{$member->name_guj}}
+                                     @else   
+                                        {{$member->name}}
+                                     @endif  
+                                    </h6>
                                     <div class="alt-font font-weight-500 d-flex">
                                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">{{$member->designation}}</span>
+                                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+
+                                     @if(session()->get('language') == 'gujrati')
+                                       {{$member->designation_guj}}
+                                     @else   
+                                        {{$member->designation}}
+                                     @endif  
+
+
+                                        </span>
                                         </div>
                                     </div>
                                 </div>
@@ -170,9 +185,15 @@ $members = App\Models\MemberOfTrust::where('category', '1')->where('status', 'Ac
                                                 <img src="{{ getMemberofTrust($member->image) }}" class="img-fluid" alt="">
                                             </div>
                                         </div>
-                                        <div class="col-lg-8">                                            
-                                          {!!$member->description!!}
-                                        </div>
+                    <div class="col-lg-8">
+                     @if(session()->get('language') == 'gujrati')
+                         {!!$member->description_guj!!}
+                          @else   
+                          {{$member->description}}
+                     @endif                                     
+
+                      
+                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -181,9 +202,15 @@ $members = App\Models\MemberOfTrust::where('category', '1')->where('status', 'Ac
                        <!-- close item -->
         @endforeach
          @else
-         <center><div class="alert alert-warning">
-        <strong>Sorry!</strong> No Record Found.
-        </div>   
+          @if(session()->get('language') == 'gujrati')
+          <center><div class="alert alert-warning">
+          <strong>માફ કરશો!</strong> કોઈ રેકોર્ડ મળ્યો નથી.
+          </div>
+          @else
+          <center><div class="alert alert-warning">
+          <strong>Sorry!</strong> No Record Found.
+          </div>
+           @endif    
  @endif                       
                    
                     </div>
@@ -198,19 +225,41 @@ $committeemembers = App\Models\MemberOfTrust::where('category', '2')->where('sta
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th class="h5 text-center">Other Committee Members</th>
+                                            <th class="h5 text-center">
+                           @if(session()->get('language') == 'gujrati')
+                               અન્ય સમિતિના સભ્યો
+                           @else
+                                Other Committee Members
+                           @endif     
+
+                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
  @if(isset($committeemembers) && count($committeemembers)>0  )
         @foreach($committeemembers as $key => $member)                                         
                                         <tr>
-                                            <td>{{$member->name}}</td>
+                                            <td>
+                                @if(session()->get('language') == 'gujrati')
+                                  {{$member->name_guj}}
+                                @else
+                                  {{$member->name}}
+                                @endif        
+
+                                    </td>
                                         </tr>
         @endforeach
         @else
         <tr>
-         <td>No Record Found</td>
+         <td>
+        @if(session()->get('language') == 'gujrati')
+          કોઈ રેકોર્ડ મળ્યો નથી.
+        @else    
+         No Record Found
+        @endif 
+
+
+     </td>
         </tr>
  @endif                                       
                                    
