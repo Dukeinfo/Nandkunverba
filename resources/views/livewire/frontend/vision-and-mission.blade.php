@@ -104,6 +104,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             @endif
                         @endif
 
+                        @if($pageTitle)
                          <li>
                             @if(session()->get('language') == 'gujrati')
                             {{Str::title( $pageTitle->pname_guj) }}
@@ -111,6 +112,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             {{Str::title( $pageTitle->pname_eng) }}
                             @endif
                         </li>
+                        @endif   
                     </ul>
                 </div>
             </div>
@@ -191,13 +193,6 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                     </ul>
                     <p>Our institution is associated with education along with preservation of customs and culture. We teach our students to treat everyone with respect and humility. To achieve all round development and character building the school has a strict discipline policy.</p>
                     <p>We believe that educating a girl is equal to educating a family.</p>
-
-
-                    
-                    
-                    
-                    
-                    
                 </div>
             </div>
         </div>

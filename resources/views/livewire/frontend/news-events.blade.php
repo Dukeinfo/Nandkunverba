@@ -103,7 +103,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                              </a></li>
                             @endif
                         @endif
-
+                        @if($pageTitle)
                          <li>
                             @if(session()->get('language') == 'gujrati')
                             {{Str::title( $pageTitle->pname_guj) }}
@@ -111,6 +111,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             {{Str::title( $pageTitle->pname_eng) }}
                             @endif
                         </li>
+                        @endif  
                     </ul>
                 </div>
             </div>
@@ -229,7 +230,18 @@ $newsevents = App\Models\BoardMembers::where('status', 'Active')->where('month',
                         </div>
                     </div>
                     <!-- end accordion item -->
-         @endforeach                  
+         @endforeach  
+
+               @else
+          @if(session()->get('language') == 'gujrati')
+          <center><div class="alert alert-warning">
+          <strong>માફ કરશો!</strong> કોઈ રેકોર્ડ મળ્યો નથી.
+          </div>
+          @else
+          <center><div class="alert alert-warning">
+          <strong>Sorry!</strong> No Record Found.
+          </div>
+           @endif  
                @endif              
                    
                    

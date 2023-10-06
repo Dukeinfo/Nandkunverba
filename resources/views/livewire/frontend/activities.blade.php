@@ -104,6 +104,8 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             @endif
                         @endif
 
+
+               @if($pageTitle)
                          <li>
                             @if(session()->get('language') == 'gujrati')
                             {{Str::title( $pageTitle->pname_guj) }}
@@ -111,6 +113,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             {{Str::title( $pageTitle->pname_eng) }}
                             @endif
                         </li>
+                 @endif       
                     </ul>
                 </div>
             </div>

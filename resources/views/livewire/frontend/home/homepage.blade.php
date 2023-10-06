@@ -25,8 +25,8 @@
 
                    <a href="javascript:void();" class="w-30 xl-w-40 md-w-50 xs-w-80">
                     <h1 class="altr-font font-weight-300 text-white mb-0">
-                    <span class="font-weight-700 d-block">{{Str::limit($slider->heading, 13) ?? '
-શોધો'}}</span> {{Str::limit($slider->subheading, 17) ?? 'દીપ્તિ'}}    </h1></a> 
+                    <span class="font-weight-700 d-block">{{Str::limit($slider->heading_guj, 13) ?? '
+શોધો'}}</span> {{Str::limit($slider->subheading_guj, 17) ?? 'દીપ્તિ'}}    </h1></a> 
                   @else 
                     <a href="javascript:void();" class="w-30 xl-w-40 md-w-50 xs-w-80">
                     <h1 class="altr-font font-weight-300 text-white mb-0">
@@ -45,7 +45,7 @@
                                @if(session()->get('language') == 'gujrati')  
                                <span
                                 class="alt-font text-large text-white padding-3-rem-left xs-padding-2-rem-left">
-                                 {{Str::limit($slider->detail, 40) ?? 'શિક્ષણ અંદર અને બહાર વિકાસને પ્રોત્સાહન આપે છે.'}}        </span>
+                                 {{Str::limit($slider->detail_guj, 40) ?? 'શિક્ષણ અંદર અને બહાર વિકાસને પ્રોત્સાહન આપે છે.'}}        </span>
                                @else                  
                                 <span
                                 class="alt-font text-large text-white padding-3-rem-left xs-padding-2-rem-left">

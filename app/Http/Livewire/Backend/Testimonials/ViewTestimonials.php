@@ -85,7 +85,7 @@ class ViewTestimonials extends Component
       $testimonials->slug =  strtolower(str_replace(' ', '-',$this->name));
       $testimonials->photo = $uploadedData['file_name'] ?? Null;
       $testimonials->thumbnail = $uploadedData['thumbnail_name']?? Null;
-      $testimonials->raqting =$this->rating;
+      $testimonials->rating =$this->rating;
       $testimonials->sort_id =$this->sort_id;
       $testimonials->status = $this->status;
       $testimonials->position = $this->position;

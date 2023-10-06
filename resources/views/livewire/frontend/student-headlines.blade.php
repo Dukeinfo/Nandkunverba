@@ -104,6 +104,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             @endif
                         @endif
 
+                         @if($pageTitle) 
                          <li>
                             @if(session()->get('language') == 'gujrati')
                             {{Str::title( $pageTitle->pname_guj) }}
@@ -111,6 +112,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             {{Str::title( $pageTitle->pname_eng) }}
                             @endif
                         </li>
+                       @endif  
                     </ul>
                 </div>
             </div>
@@ -145,86 +147,58 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                 <div class="col-lg-9">
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">School in the News</span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                  @if(session()->get('language') == 'gujrati')
+                    સ્કૂલની સમાચાર
+                  @else          
+                    School in the News
+                  @endif  
+                </span>
                         </div>
                     </div>
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">Headlines Made by Students</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                   @if(session()->get('language') == 'gujrati')
+                    વિદ્યાર્થીઓ દ્વારા તમામ મુખ્ય મુદ્દાઓ
+                   @else     
+                    Headlines Made by Students
+                   @endif 
+                </h5>
                     
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
                                     <thead>
+                                     @if(session()->get('language') == 'gujrati')
+                                      <tr>
+                                            <th width="10%">ક્રમાંક</th>
+                                            <th>વિશેષણો</th>
+                                        </tr>
+                                     @else   
                                         <tr>
-                                            <th width="10%">Sl No.</th>
+                                            <th width="10%">Serial No.</th>
                                             <th>Particulars</th>
                                         </tr>
+                                     @endif   
                                     </thead>
                                     <tbody>
+@php
+$studentHeadlines = App\Models\LatestNews::where('status', 'Active')->get();              
+ @endphp                
+ @if(isset($studentHeadlines) && count($studentHeadlines)>0  )
+                @foreach($studentHeadlines as $key => $news) 
                                         <tr>
-                                            <td>1.</td>
-                                            <td>Bhumika Chauhan of our college on account of scoring highest marks in English was awarded shree Swaminarayan Gurukul Bhavnagar Gold plate.</td>
+                                            <td> {{$key+1}} </td>
+                                            <td>
+                             @if(session()->get('language') == 'gujrati')
+                                {{$news->description_guj ?? ''}}      
+                                @else               
+                                 {{$news->description ?? ''}} 
+                                @endif
+                   </td>
                                         </tr>
-                                        <tr>
-                                            <td>2.</td>
-                                            <td>Goyani Krinal stood first in university for the subject of psychology in semester second of masters</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3.</td>
-                                            <td>Gohil Vibhutiba stood third in university for the subject of psychology in semester second of masters</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4.</td>
-                                            <td>Sarvaiya Sheetalba stood seventh in university for the subject of psychology in semester second of masters</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5.</td>
-                                            <td>Makwana Tanaz has secured first rank in school and in entire Gujarat for scoring highest in 10th boards exams from Gujrati medium section</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6.</td>
-                                            <td>Solanki Ayushiba secured first rank in school for scoring highest in 10th boards exams from English medium section</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7.</td>
-                                            <td>Chudasama Dityaba secured highest rank in for scoring highest in 12th boards exams from Gujarati medium section</td>
-                                        </tr>
-                                        <tr>
-                                            <td>8.</td>
-                                            <td>Patel Dhruvya secured highest rank in for scoring highest in 12th boards exams from English medium section</td>
-                                        </tr>
-                                        <tr>
-                                            <td>9.</td>
-                                            <td>CDT Hiralba Chudasama who is a part of 03 GUJ AIR SQN NCC Bhavnagar completed four sorties by flying for 62 minutes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10.</td>
-                                            <td>Niyatiba Gohil is selected for Basketball National Level in school games federation India SGIF, entitling her to attend camp in Delhi</td>
-                                        </tr>
-                                        <tr>
-                                            <td>11.</td>
-                                            <td>Rajeshwariba Gohil and Rumi were honoured with Khel Veerangana award under MKBU'S Youth Talent awards</td>
-                                        </tr>
-                                        <tr>
-                                            <td>12.</td>
-                                            <td>Ruhi Kureshi of Gujarati medium section is selected for National Talent camp organized by Sports Authority of India</td>
-                                        </tr>
-                                        <tr>
-                                            <td>13.</td>
-                                            <td>Niyatiba Gohil of English medium section is awarded with prize money of 12,000 rupees by Iscon club for basketball league championship</td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.</td>
-                                            <td>Solanki Tanvi Kishorbhai of 5th standard from Gujarati Medium section stood second in Roller skating championship held in Jamnagar</td>
-                                        </tr>
-                                        <tr>
-                                            <td>15.</td>
-                                            <td>Solanki Drija Kishorbhai participated in open Bhavnagar Skating Championship and won a silver medal</td>
-                                        </tr>
-                                        <tr>
-                                            <td>16.</td>
-                                            <td>Rucha Bhatt of our college won 1st prize in mix doubles and 2nd in women singles in AYBA tournament</td>
-                                        </tr>
+                                   @endforeach                  
+               @endif        
                                     </tbody>
                                 </table>
                             </div>

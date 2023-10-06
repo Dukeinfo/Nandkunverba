@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SliderSeeder::class);
         $this->call(MembershipsSeeder::class);
         $this->call(TestimonialsSeeder::class);
-        $this->call(StudentHeadlinesSeeder::class);
         $this->call(WidgetSeeder::class);
         $this->call(SocialAppSeeder::class);
         $this->call(FooterLinksSeeder::class);
