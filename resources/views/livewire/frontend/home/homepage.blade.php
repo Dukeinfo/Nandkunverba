@@ -1,8 +1,6 @@
 
 <div>
-    @push('keywords')
-    <meta name="keywords" content="{{$seo_keywords ?? ''}}">
-    @endpush
+    
      <!-- start slider section -->
     <section class="home-vertical-portfolio p-0 full-screen w-100 position-relative">
         <div class="swiper-container vertical-white-move slider-vertical swiper-container-vertical"
