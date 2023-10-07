@@ -2,7 +2,7 @@
 <div>
        <!-- start section -->
     <section class="parallax bg-extra-dark-gray p-0" data-parallax-background-ratio="0.5"
-        style="background-image:url('assets/images/parallaxbg_header.jpg');">
+        style=" background-image: url({{ $backimage ? getsubmenuImage($backimage) : asset('assets/images/parallaxbg_header.jpg')}});">
         <div class="container">
             <div class="row justify-content-center">
                 <div
