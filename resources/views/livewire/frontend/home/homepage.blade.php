@@ -318,7 +318,14 @@ $expertservices = App\Models\ExpertService::where('status', 'Active')->first();
                                             class="feature-box-move-bottom-top padding-3-rem-tb padding-4-rem-lr md-padding-2-rem-tb md-padding-2-half-rem-lr sm-padding-3-rem-tb sm-padding-4-half-rem-lr">
                                             <h4
                                                 class="feature-box-icon alt-font font-weight-500 text-tussock margin-20px-bottom letter-spacing-minus-2px">
-                                                {{$key+1}}</h4>
+                                             @if($key+1>0 && $key+1<10)  
+                                                 0{{$key+1}}
+                                             @else 
+                                                {{$key+1}}
+
+                                            @endif    
+
+                                            </h4>
                                             <div class="feature-box-content last-paragraph-no-margin">
                                                 <span
                                                     class="text-dark-purple text-extra-medium font-weight-600 text-uppercase d-block margin-10px-bottom alt-font">
