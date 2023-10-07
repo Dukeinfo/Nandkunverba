@@ -62,9 +62,8 @@ class ContactUs extends Component
 
 // Send email only when validation and database entry are successful
 if (empty($this->getErrorBag()->messages())) {
-      //info@juriskart.com
         // Send email
-        Mail::to('jassi@yopmail.com')->send(new ContactUsMail([
+        Mail::to('info@juriskart.com')->send(new ContactUsMail([
             'name' => $this->name,
             'email' => $this->email,
             'phone' => $this->phone,

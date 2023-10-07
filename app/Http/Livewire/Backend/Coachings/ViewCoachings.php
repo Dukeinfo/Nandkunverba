@@ -18,8 +18,10 @@ class ViewCoachings extends Component
 
     public $image,$title,$desc,$title_guj,$desc_guj,$link,$sort,$status;
 
+    //'image' => 'required|dimensions:width=700,height=900',
+
     protected $rules = [
-        'image' => 'required', 
+        'image' => 'required|dimensions:min_width=700,min_height=900', 
         'title' => 'required', 
         'desc' => 'required', 
         'title_guj' => 'required', 

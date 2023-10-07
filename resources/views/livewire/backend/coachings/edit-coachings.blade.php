@@ -39,7 +39,7 @@
 
                             	<div class="col-md-e">
                                     <div class="mb-3">
-                                        <label class="form-label">Image  (Image (width:700 height:972)</label>
+                                        <label class="form-label">Image  (Image (width:700 height:900)</label>
                                         <input type="file" class="form-control" id="" wire:model="editimage">
  @if(isset($editimage))  
  <img  src="{{$editimage->temporaryUrl()}}" width="200" alt="---"  width="100" height="70">  
