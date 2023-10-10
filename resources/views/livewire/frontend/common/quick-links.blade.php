@@ -18,7 +18,7 @@ $widgets =  App\Models\Widget::where('status','Active')->where('pname',$getRoute
         
                  <li class="padding-15px-bottom border-bottom border-color-medium-gray">
                  @if($widget->spname)        
-                 <a href="{{url($widgetlink)}}" class="text-tussock-hover">
+                 <a href="javascript:void()" class="text-tussock-hover">
                  @if(session()->get('language') == 'gujrati') 
                     {{$widget->pagetitleguj}} 
                  @else 

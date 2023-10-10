@@ -23,12 +23,12 @@
 
                    <a href="javascript:void();" class="w-30 xl-w-40 md-w-50 xs-w-80">
                     <h1 class="altr-font font-weight-300 text-white mb-0">
-                    <span class="font-weight-700 d-block">{{Str::limit($slider->heading_guj, 13) ?? '
-શોધો'}}</span> {{Str::limit($slider->subheading_guj, 17) ?? 'દીપ્તિ'}}    </h1></a> 
+                    <span class="font-weight-700 d-block">{{Str::limit($slider->heading_guj) ?? '
+શોધો'}}</span> {{Str::limit($slider->subheading_guj) ?? 'દીપ્તિ'}}    </h1></a> 
                   @else 
                     <a href="javascript:void();" class="w-30 xl-w-40 md-w-50 xs-w-80">
                     <h1 class="altr-font font-weight-300 text-white mb-0">
-                    <span class="font-weight-700 d-block">{{Str::limit($slider->heading, 13) ?? 'Discover'}}</span> {{Str::limit($slider->subheading, 17) ?? 'Brilliance'}}    </h1></a>
+                    <span class="font-weight-700 d-block">{{Str::title($slider->heading) ?? 'Discover'}}</span> {{Str::title($slider->subheading) ?? 'Brilliance'}}    </h1></a>
                  @endif    
 
  
