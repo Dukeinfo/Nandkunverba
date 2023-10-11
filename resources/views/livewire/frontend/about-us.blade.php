@@ -194,32 +194,42 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
                         <div class="flex-grow-1"><span class="text-tussock text-uppercase">
                        @if(session()->get('language') == 'gujrati')
-                        અમારી સ્થાન
+                        અમારી વિરાસત
                        @else   
-                        Our Location
+                        OUR LEGACY
                        @endif
                         </span>
                         </div>
                     </div>
                     <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
                    @if(session()->get('language') == 'gujrati')
-                    અમે ક્યાં સ્થિત છીએ?
+                    ઐતિહાસિક આધાર
                    @else   
-                    Where We Are Located
+                    Historical Foundation
                    @endif
                    
 
                     </h5>
 
                    @if(session()->get('language') == 'gujrati') 
-                    <p>જ્યારે કોઈ ગુજરાતના ભાવનગર શહેરમાં પ્રવેશ કરે છે, ત્યારે તે ભાવનગરના રાજ્યના છેલ્લા શાસક એચ.એચ. મહારાજ કૃષ્ણકુમાર સિંગજીની મૂર્તિનો સ્વાગત થાય છે, જે ભાવનગર રાજ્યનો છેલ્લો શાસક હતો. તે પહેલો રાજ્યને ભારતના યુનિયન સાથે સમર્પણ કર્યો હતો, પછી મદરાસનું ગવર્નર તરીકે સેવા કર્યો હતો. તેમની વિશાળતા અને તેમના ઉત્કૃષ્ટ પ્રશાસન યુગની સન્માન્ય છે. મૂર્તિની ડાબી બાજુ તેમનો મૂળ વસતો હતો, જે હવે એક વારસી હોટેલ નામે 'નિલંબાગ પેલેસ' છે, જે વિરાસત હોટેલ તરીકે વપરાય છે. </p>
+                    <p> શ્રી નંદકુંવરબા ક્ષત્રીય કન્યા વિદ્યાલય" એ 1917માં ભાવનગરની મરણ હુઈ HH મહારાણી શ્રી નંદકુંવરબા શ્રી ભવસિંહજી સાહેબ અને તેમના પતિ શ્રી ભવસિંહજી સાહેબ એ એક મોદર્ન, અગ્રગતિપૂર્ણ રાજ્ય બનાવ્યો હતો. એવા "પુરડા સિસ્ટમ" ના અને આજ્ઞાપત્રિ સમયનું એવા એક યુગ માં, આ પુરડા સિસ્ટમ"ને ખત્મ કરવાનો સોચિયો અને ભાવનગર ની મહિલાઓને શિક્ષા મળવી આવ્યું અને એવું એક પરિવર્તન અને સુધારણાઓનો યુગ લાવ્યો.
 
-                    <p>દૂસરી બાજુએ એવી છોકરીઓની શાળાનું કૅમ્પસ છે, જે પોતાની સામગ્રી શિક્ષણ સાથે દુનિયાની સામગ્રી બનવાના યુવતીઓને સક્ષમ બનાવવા માટે જમણી છે. મોર પર પુસપી મહિલાઓ વિચર્યું છે, બાળકના છોકરાઓના ચહેરાઓ હસી, અને જ્ઞાનનો પ્રકાશ મૃદુરૂપે શાળા પર પડ્યો છે. આ સંસ્થાના જૂની જમાણી ચરમ ચર્મ અને આધુનિક આત્માનું બીચ આપતા પ્રયાસની સંગતમાં, સંપ્રદાય અને પ્રગતિનું ધન લઇ શકે છે અને પછી સ્થિતિ અને પ્રગતિનો સમૃદ્ધ વારસો વહનારા કઈ છે. </p>
+શરૂઆતમાં, આમાંને "શ્રી નંદકુંવરબા ઝનાના બોર્ડિંગ" તરીકે ઓળખવામાં આવ્યો હતો. પછી HH મહારાજ શ્રી કૃષ્ણકુમાર સિંગજી એ 1951માં આ વિદ્યાલયને મુકાબલા કરવાનો નિર્ણય લઈ, અને તેનું નામ "શ્રી નંદકુંવરબા ક્ષત્રીય કન્યા વિદ્યાલય" રાખ્યું. આ વિદ્યાલયનો ઉદ્ઘાટન HH મહારાજ શ્રી દિગ્વિજય સિંગજી, સૌરાષ્ટ્ર રાજ્યની મુખ્ય કર્ણાવતાર, 1951ના 25 માર્ચની તારીખે કરી.</p>
+
+                    <p> આ જમીન અને સંસાધનો ને HH મહારાજ કૃષ્ણ કુમાર સિંહજી દ્વારા દાન કર્યા હતા અને આ વિદ્યાલયને તેની વિકાસની દિશા સ્થાપવામાં આવી હતી. દશ વર્ષ પછી, તે પદની અધિક્ષેપ થયો અને HH મહારાજ સાહેબ તોતે ટ્રસ્ટનો કમિટી પ્રમુખનો મોકોબો લીધો અને ભાવનગરની તમામ બેટીઓને દરવાજો ખોલવા નિર્ણય કર્યો, જે એક ધાર્મિકતાનું શ્રેષ્ઠ ઉદાહરણ બન્યું.</p>
+
+                    <p>પછી, HH મહારાણી સાહેબા બ્રિજરાજ નંદિની દેવી આ વિદ્યાલયનું વૃદ્ધિ અને સુધારણાની દિશામાં વધુ આગળ ઘસ્યું હતું, અને તેમનું વિરાસ તેમની છે. તેની વિરાસને હાલની ટ્રસ્ટની મુખ્ય અધ્યક્ષ HH મહારાણી સાહેબા સમ્યુક્તા કુમારી દ્વારા આગળ લઈ જાય છે. </p>
+
+                    <p>આ ટ્રસ્ટ ગુજરાતી અને ઇંગ્લિશ મીડિયમ દ્વારા પ્રાથમિક, મિડલ સ્કૂલ અને માધ્યમિક શાળાઓનું શિક્ષણ આપે છે. 2016 માં યહોના એક આર્ટ્સ અને કોમર્સ કોલેજનું લેખાશાસ્ત્ર અને વાણિજ્ય માંથી શિક્ષણ આપવામાં આવ્યું હતું, જેથી આમાંની છોકરીઓને અનેક વધુ અધ્યયનની સૌથીક સ્થાન મળ્યો છે. </p>
 
                    @else
-                    <p>As one enters the city of Bhavnagar in Gujarat, one is greeted by the statue of HH Maharaja Krishna Kumar Singhji, the last ruler of the kingdom of Bhavnagar. The first to hand over his state to the union of India, he later served as the Governor of Madras. He is revered even today for his magnanimity and the era of his brilliant administration. On the right side of the statue ids his original residence, Nilambag Palace, now a heritage hotel. </p>
+                    <p>Shri Nandkunverba Kshatriya Kanya Vidyalaya was founded in the year 1917 by the late HH Maharani Saheba Shri Nandkunverba Saheb of Bhavnagar. Her husband the late HH Maharaja Bhavsinghji Saheb and she were a pathbreaking couple who developed Bhavnagar into a modern, progressive kingdom. In an era of "purdah system" for all Rajput women, this foresighted Maharani abolished it for the women of Bhavnagar and decided to educate the girls of the community. Thus, ushering in an era of change and reform. Initially, our institute was known as "Shri Nandkunverba Zanana Boarding". The sudden and tragic demise of Maharani Saheba in 1918 and Maharaja Saheb in 1919 left the institute bereft, following which it was run by the State Council Administration until the year 1927. It was in 1951 that HH Maharaja Shri Krishna Kumar Singhji restarted the school, changing the name to Shri Nandkunverba Kshatriya Kanya Vidyalaya. The school was inaugurated by HH Maharaja Saheb Shri Digvijay Singhji of Jamnagar, the Head of Saurashtra State on 25th March 1951. </p>
 
-                    <p>On the other side is the campus of the iconic girls’ school responsible for enabling generations of young women to face the world armed with a well-rounded education. Peacocks roam freely, cherubic young faces smile, and the light of knowledge shines benignly upon the school. Amidst the old-world charm and the modern spirit of this institution, bloom many students who then carry forth the rich inheritance of tradition and progress. </p>
+                    <p>The land and the resources were donated by HH Maharaja Krishna Kumar Singhji and the school was set on its path of development under the Presidentship of his wife Maharani Vijayaba Saheb. Ten years down the line, she relinquished the post and Maharaja Saheb took the reins of the Trust himself and decided to open the doors to all the daughters of Bhavnagar, making it a prime example of secularism.</p>
+
+                    <p>Thereafter, HH Maharani Saheba Brijraj Nandini Devi further pushed the school towards growth and improvement, and her legacy is being carried forward by her daughter-in-law Maharani Saheba Samyukta Kumari, the current President of the Trust.</p>
+
+                    <p>The Trust offers a primary, a middle school and a secondary school education in both Gujarati as well as in English Medium. The year 2016 has seen the landmark opening of an Arts and Commerce College on the campus, thus offering our girls the opportunity to study further.</p>
 
                     @endif
 
