@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SocialAppSeeder::class);
         $this->call(FooterLinksSeeder::class);
         $this->call(PageHeadingsSeeder::class);
+        $this->call(StudentHeadlinesSeeder::class);
 
     }
 }

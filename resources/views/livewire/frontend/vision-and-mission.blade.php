@@ -148,51 +148,133 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                     <img src="assets/images/about_historical_foundation.jpg" class="img-fluid rounded mb-3" alt="">
                     <div class="alt-font font-weight-500 my-3 d-flex">
                         <span class="flex-shrink-0 w-30px h-1px bg-tussock opacity-7 align-self-center margin-20px-right"></span>
-                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">Our Goals</span>
+                        <div class="flex-grow-1"><span class="text-tussock text-uppercase">
+                 @if(session()->get('language') == 'gujrati')
+                       અમારા લક્ષ્યો
+                 @else
+                        Our Goals
+                 @endif
+
+                    </span>
                         </div>
                     </div>
-                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">Goals of Our Institute</h5>
+                    <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
+                    @if(session()->get('language') == 'gujrati')
+                     આમાંનો ઇન્સ્ટીટ્યૂટના લક્ષ્યો
+                    @else
+                    Goals of Our Institute
+                    @endif
+                  </h5>
 
 
-                    <h6 class="alt-font text-dark-purple font-weight-600 mb-3">The Vision</h6>
+                    <h6 class="alt-font text-dark-purple font-weight-600 mb-3">
+                @if(session()->get('language') == 'gujrati')
+                     દ્રષ્ટિ
+                @else         
+                    The Vision
+                @endif    
+                </h6>
+                @if(session()->get('language') == 'gujrati')
+                  <p>યુવા મનોને મૂલ્યાધારિત શિક્ષણથી સન્માનયુક્ત કરવું અને સમગ્ર વિકાસનો ઉદ્દેશ્ય સાથે સંપત્તિ કરવી. </p>
+                @else
                     <p>To enrich young minds with value-based education with an objective of all round development. </p>
+                @endif
+                    <h6 class="alt-font text-dark-purple font-weight-600 mb-3">
+             @if(session()->get('language') == 'gujrati')
+                 લોગો
+             @else
 
-                    <h6 class="alt-font text-dark-purple font-weight-600 mb-3">The Logo</h6>
+               The Logo
+
+             @endif   
+
+                    </h6>
                     <div class="row mb-4">
                         <div class="col-lg-4">
                             <img src="assets/images/school-logo.png" alt="">
                         </div>
                         <div class="col-lg-8">
+                 @if(session()->get('language') == 'gujrati')
+                         <p>શાળાનું લોગો સંસ્કૃત મંત્ર સહિત છે, જે 'જ્ઞાન દ્વારા આપેલી ચીર્યતા' અથવા 'અમૃત્વ' નું અનુવાદ કરે છે. લોગો એ દર્શાવે છે કે જ્ઞાનની સમુદ્ર વિશાળ છે અને સંસ્થા એ જે છે જેમ, તે વિદ્યાર્થીઓ જોઈન કરે છે. આ લોગો એમ દર્શાવે છે કે જ્ઞાનની સમુદ્ર વિશાળ છે અને સંસ્થા એ જે છે જેમ, તે વિદ્યાર્થીઓ જોઈન કરે છે. </p>
+                 @else           
                             <p>The school logo has a Sanskrit mantra, which translates to, through knowledge one can achieve eternity or "amrutva". The logo depicts a boat sailing on the sea, which indicates that the ocean of knowledge is vast and the institution is the sailing boat on which, the students embark. </p>
+                 @endif           
                         </div>
                     </div>
 
-                    <h6 class="alt-font text-dark-purple font-weight-600 mb-3">The Mission</h6>
+                    <h6 class="alt-font text-dark-purple font-weight-600 mb-3">
+               @if(session()->get('language') == 'gujrati')
+                    મિશન
+               @else         
+                    The Mission
+               @endif      
+                 </h6>
+
+                 @if(session()->get('language') == 'gujrati')
+                      <p>અમે મૂલ્યાધારિત શિક્ષણની દ્રષ્ટિનું અમલ કરવાનો પ્રયાસ કરીએ છીએ.</p>
+                 @else
                     <p>We strive to materialize on the vision of value-based education through</p>
+                 @endif   
                     <ul class="list-style-02">
                         <li class="margin-20px-bottom">
                             <i class="feather icon-feather-arrow-right-circle text-large text-dark position-relative margin-10px-right" aria-hidden="true"></i>
-                            <span> Character Development </span>
+                            <span> 
+                          @if(session()->get('language') == 'gujrati')
+                            ચરિત્ર વિકાસ
+                          @else      
+                            Character Development
+                          @endif  
+                             </span>
                         </li>
                         <li class="margin-20px-bottom">
                             <i class="feather icon-feather-arrow-right-circle text-large text-dark position-relative margin-10px-right" aria-hidden="true"></i>
-                            <span> Simple Living, Higher Thinking </span>
+                            <span> 
+                        @if(session()->get('language') == 'gujrati')
+                            સરળ જીવન, ઉચ્ચ ચિંતન
+                        @else         
+                            Simple Living, Higher Thinking
+                        @endif     
+                        </span>
                         </li>
                         <li class="margin-20px-bottom">
                             <i class="feather icon-feather-arrow-right-circle text-large text-dark position-relative margin-10px-right" aria-hidden="true"></i>
-                            <span> Education Beyond Textbook Learning </span>
+                            <span> 
+                       @if(session()->get('language') == 'gujrati')
+                         પાઠ્યપુસ્તક શિક્ષણ પર્યાંતનું શિક્ષણ
+                       @else
+                        Education Beyond Textbook Learning 
+                       @endif
+                       </span>
                         </li>
                         <li class="margin-20px-bottom">
                             <i class="feather icon-feather-arrow-right-circle text-large text-dark position-relative margin-10px-right" aria-hidden="true"></i>
-                            <span> Academic Excellence </span>
+                            <span>
+                         @if(session()->get('language') == 'gujrati')
+                            એકેડમિક ઉત્કૃષ્ટતા
+                         @else        
+                             Academic Excellence
+                         @endif     
+                         </span>
                         </li>
                         <li class="margin-20px-bottom">
                             <i class="feather icon-feather-arrow-right-circle text-large text-dark position-relative margin-10px-right" aria-hidden="true"></i>
-                            <span> Balance Traditional Values and Modern Life  </span>
+                            <span>
+                        @if(session()->get('language') == 'gujrati')
+                           પારંપરિક મૂલ્યો અને આધુનિક જીવનનું સંતુલન
+                        @else      
+                            Balance Traditional Values and Modern Life
+                        @endif      
+                        </span>
                         </li>
-                    </ul>
+                     </ul>
+              @if(session()->get('language') == 'gujrati')
+                    <p>અમારું સંસ્થા શિક્ષણ સાથે રિતિ-રિવાજો અને સંસ્કૃતિનું સંબંધ ધરે છે. અમે આપણા વિદ્યાર્થીઓને દરેકને સંમાન અને વિનમ્રતાથી સાંભળવાનું શીખવીએ. સમગ્ર વિકાસ અને ચરિત્ર નિર્માણ પ્રાપ્ત કરવા માટે સ્કૂલમાં શિક્ષણ મંગવવાની રૂખી નીતિ છે.</p>
+                    <p>અમે માન્ય છીએ કે એક છોકરીનું શિક્ષણ એ માને છે કે એક કુટુંબનું શિક્ષણ કરવું સમાન છે.</p>
+              @else
+
                     <p>Our institution is associated with education along with preservation of customs and culture. We teach our students to treat everyone with respect and humility. To achieve all round development and character building the school has a strict discipline policy.</p>
                     <p>We believe that educating a girl is equal to educating a family.</p>
+               @endif     
                 </div>
             </div>
         </div>
