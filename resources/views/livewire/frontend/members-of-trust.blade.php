@@ -191,7 +191,7 @@ $members = App\Models\MemberOfTrust::where('category', '1')->where('status', 'Ac
                      @if(session()->get('language') == 'gujrati')
                          {!!$member->description_guj!!}
                           @else   
-                          {{$member->description}}
+                          {!!$member->description!!}
                      @endif                                     
 
                       
