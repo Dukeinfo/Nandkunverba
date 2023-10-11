@@ -72,13 +72,31 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
 
 @endphp
 
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">
+
+
+<li class="menu-list-item">
+
+   @if(isset($menu->link) ) 
+   <a href="{{ !empty($menu->link) ? route($menu->link) : '#' }}">
         @if(session()->get('language') == 'gujrati')
-             {{$menu->name_guj ?? ''}}</a>
+             {{$menu->name_guj ?? ''}}
         @else
-             {{$menu->name ?? ''}}</a>
-        @endif                          
+             {{$menu->name ?? ''}}
+
+        @endif 
+         </a> 
+
+   @else
+
+    <a href="javascript:void(0);">
+        @if(session()->get('language') == 'gujrati')
+             {{$menu->name_guj ?? ''}}
+        @else
+             {{$menu->name ?? ''}}
+
+        @endif 
+         </a>      
+  @endif                         
                             @if(isset($submenus) )
                                @foreach($submenus as $submenu)
                             <span class="menu-toggle"></span>
