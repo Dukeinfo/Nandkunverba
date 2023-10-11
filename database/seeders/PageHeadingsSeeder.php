@@ -23,10 +23,10 @@ class PageHeadingsSeeder extends Seeder
         $pageHeading->pname_guj = 'અમારી વિશેષ';
         $pageHeading->pname_title = 'About SNKKV';
         $pageHeading->pname_title_guj = 'SNKKV વિશે';
-        $pageHeading->pname_heading = "Where Children";
-        $pageHeading->pname_heading_guj = 'ક્યાં બાળકો';
-        $pageHeading->pname_subheading = 'Go To Be Educated';
-        $pageHeading->pname_subheading_guj = 'શૈક્ષણિક થવા માટે જાઓ';
+        $pageHeading->pname_heading = "Historical";
+        $pageHeading->pname_heading_guj = 'ઐતિહાસિક';
+        $pageHeading->pname_subheading = 'Foundatation';
+        $pageHeading->pname_subheading_guj = 'આધાર';
         $pageHeading->sort_id = 1;
         $pageHeading->status = 'Active';
         $pageHeading->save();

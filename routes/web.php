@@ -190,6 +190,10 @@ Route::get('/phpinfo', function (){
 Route::get('detail/page/{page_id}/{slug}', DetailpageView::class)->name('detail_page');
 Route::group(['middleware' => ['check-menu-route-status']], function () {
 Route::get('/', Homepage::class)->name('home.homepage');
+//new pages with empty blade files
+Route::get('/about-us', AboutUs::class)->name('home.about_us');
+Route::get('/historical-foundation', HistoricalFoundation::class)->name('historical_foundation');
+Route::get('/academic-objectives', AcademicObjectives::class)->name('academic_objectives');
 Route::get('/activities', Activities::class)->name('home.activities');
 Route::get('/career-counselling', CareerCounselling::class)->name('home.career_counselling');
 Route::get('/cocurricular-facilities', CocurricularFacilities::class)->name('home.cocurricular_facilities');
@@ -206,10 +210,7 @@ Route::get('/societies', Societies::class)->name('home.societies');
 Route::get('/student-headlines', StudentHeadlines::class)->name('home.student_headlines');
 Route::get('/testimonials', Testimonials::class)->name('home.testimonials');
 Route::get('/vision-and-mission', VisionAndMission::class)->name('home.vision_and_mission');
-//new pages with empty blade files
-Route::get('/about-us', AboutUs::class)->name('about_us');
-Route::get('/historical-foundation', HistoricalFoundation::class)->name('historical_foundation');
-Route::get('/academic-objectives', AcademicObjectives::class)->name('academic_objectives');
+
 
 
 });
