@@ -63,6 +63,7 @@ class EditGallery extends Component
         
      }
 
+
      private function resetInputFields(){
         $this->category_id = '';
         $this->image = '';
