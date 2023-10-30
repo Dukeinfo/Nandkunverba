@@ -16,7 +16,7 @@ class EditGallery extends Component
     use WithFileUploads;
     use UploadTrait;
     public $galleryId,$category_id, $name, $image,$editimage,$sort,$status ,$thumbnail;
-    public  $categories,$title, $year;
+    public  $categories,$title,$title_guj, $year;
      public function mount($id){
         $gallery = Gallery::findOrFail($id);
         $this->galleryId = $gallery->id;
@@ -46,8 +46,6 @@ class EditGallery extends Component
             $gallery->thumbnail = $uploadedData['thumbnail_name']?? NULL;
             $gallery->sort_id =$this->sort;
             $gallery->status = $this->status;
-            $gallery->addmision_no = $this->addmision_no;
-
             $gallery->save();
  
         }
