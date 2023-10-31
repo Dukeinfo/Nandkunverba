@@ -171,7 +171,7 @@
                                             <th>Page Name</th>
                                             <th>Sub Page Name</th>
                                             <th>Page Title (Eng)</th>
-                                            <th>Sub Page Title Nam (Guj)</th>
+                                            <th>Page Title(Guj)</th>
                                             <th>Sorting Order#</th>
                                             <th>Status</th>
                                             <th>Action</th>
