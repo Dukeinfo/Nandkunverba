@@ -508,6 +508,7 @@ $lifeat = App\Models\Coachings::where('status', 'Active')->get();
             <div class="row justify-content-center">
         @if(isset($lifeat) && count($lifeat) >0 )
             @foreach($lifeat as $life)
+                <!-- dynamic box start -->
                 <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"
                     data-wow-delay="0.2s">
                     <div class="interactive-banners-style-05">
@@ -555,16 +556,171 @@ $lifeat = App\Models\Coachings::where('status', 'Active')->get();
                         </div>
                     </div>
                 </div>
+             <!-- dynamic box end -->    
          @endforeach
          @else
           @if(session()->get('language') == 'gujrati')
-          <center><div class="alert alert-warning">
-          <strong>માફ કરશો!</strong> કોઈ રેકોર્ડ મળ્યો નથી.
-          </div>
+           <!-- static box start -->
+           
+                <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"
+                    data-wow-delay="0.2s">
+                    <div class="interactive-banners-style-05">
+                        <div class="interactive-banners-image">
+                            <img src="assets/images/lifeat1.jpg" alt="" />
+                            <div class="overlay-bg bg-gradient-midium-gray-transparent opacity-medium"></div>
+                            <a href="#"
+                                class="section-link icon-box-circled w-35px h-35px line-height-32px text-center text-white border-all border-width-2px border-color-white position-absolute bottom-50px right-45px z-index-1 lg-right-30px xs-bottom-25px">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="interactive-banners-content padding-3-half-rem-all lg-padding-2-half-rem-lr xs-padding-4-rem-all ">
+                            <div class="overlayer-box bottom-0px top-auto opacity-9 bg-extra-dark-gray"></div>
+                            <div class="d-table h-100 w-100">
+                                <div class="d-table-cell align-bottom padding-35px-right">
+                                    <span
+                                        class="text-white d-block text-extra-large margin-15px-bottom alt-font font-weight-500">શિક્ષણશાસ્ત્રીઓ</span>
+                                    <p class="interactive-banners-content-text">અમારું ધ્યેય વિશ્વમાં સારી ગોળાકાર વ્યક્તિત્વોને મોકલવાનું છે, જેઓ આંતરિક શક્તિ અને મનોબળ સાથે જીવનનો સામનો કરવા સક્ષમ છે અને સમાજની સંપત્તિ બની શકે છે.</p>
+                                    <a href="#" class="btn btn-small btn-tussock">વધુ જોવો</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"
+                    data-wow-delay="0.4s">
+                    <div class="interactive-banners-style-05">
+                        <div class="interactive-banners-image">
+                            <img src="assets/images/lifeat2.jpg" alt="" />
+                            <div class="overlay-bg bg-gradient-midium-gray-transparent opacity-medium"></div>
+                            <a href="#"
+                                class="section-link icon-box-circled w-35px h-35px line-height-32px text-center text-white border-all border-width-2px border-color-white position-absolute bottom-50px right-45px z-index-1 lg-right-30px xs-bottom-25px">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="interactive-banners-content padding-3-half-rem-all lg-padding-2-half-rem-lr xs-padding-4-rem-all">
+                            <div class="overlayer-box bottom-0px top-auto opacity-9 bg-extra-dark-gray"></div>
+                            <div class="d-table h-100 w-100">
+                                <div class="d-table-cell align-bottom padding-35px-right">
+                                    <span
+                                        class="text-white d-block text-extra-large margin-15px-bottom alt-font font-weight-500">અભ્યાસક્રમ સુવિધાઓ</span>
+                                    <p class="interactive-banners-content-text">અમે માનીએ છીએ કે શિક્ષણ પાઠ્યપુસ્તકો અને વર્ગખંડોથી આગળ વધે છે. અમારી પ્રવૃત્તિઓ સર્વગ્રાહી વિકાસ અને સંવર્ધન કૌશલ્યોને પ્રોત્સાહન આપવા માટે રચાયેલ છે.</p>
+                                    <a href="#" class="btn btn-small btn-tussock">વધુ જોવો</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-12 col-lg-4 col-md-6 col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s">
+                    <div class="interactive-banners-style-05">
+                        <div class="interactive-banners-image">
+                            <img src="assets/images/lifeat3.jpg" alt="" />
+                            <div class="overlay-bg bg-gradient-midium-gray-transparent opacity-medium"></div>
+                            <a href="#"
+                                class="section-link icon-box-circled w-35px h-35px line-height-32px text-center text-white border-all border-width-2px border-color-white position-absolute bottom-50px right-45px z-index-1 lg-right-30px xs-bottom-25px">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="interactive-banners-content padding-3-half-rem-all lg-padding-2-half-rem-lr xs-padding-4-rem-all">
+                            <div class="overlayer-box bottom-0px top-auto opacity-9 bg-extra-dark-gray"></div>
+                            <div class="d-table h-100 w-100">
+                                <div class="d-table-cell align-bottom padding-35px-right">
+                                    <span
+                                        class="text-white d-block text-extra-large margin-15px-bottom alt-font font-weight-500">સહ-અભ્યાસક્રમ સુવિધાઓ</span>
+                                    <p class="interactive-banners-content-text">એક મજબૂત સહ-અભ્યાસક્રમનો અનુભવ પ્રદાન કરવાની અમારી પ્રતિબદ્ધતા એ સુનિશ્ચિત કરે છે કે દરેક વિદ્યાર્થીની પ્રતિભાને ઓળખવામાં આવે અને તેનું સંવર્ધન થાય.</p>
+                                    <a href="#" class="btn btn-small btn-tussock">વધુ જોવો</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           <!-- static box end -->
           @else
-          <center><div class="alert alert-warning">
-          <strong>Sorry!</strong> No Record Found.
-          </div>
+           <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"
+                    data-wow-delay="0.2s">
+                    <div class="interactive-banners-style-05">
+                        <div class="interactive-banners-image">
+                            <img src="assets/images/lifeat1.jpg" alt="" />
+                            <div class="overlay-bg bg-gradient-midium-gray-transparent opacity-medium"></div>
+                            <a href="#"
+                                class="section-link icon-box-circled w-35px h-35px line-height-32px text-center text-white border-all border-width-2px border-color-white position-absolute bottom-50px right-45px z-index-1 lg-right-30px xs-bottom-25px">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="interactive-banners-content padding-3-half-rem-all lg-padding-2-half-rem-lr xs-padding-4-rem-all ">
+                            <div class="overlayer-box bottom-0px top-auto opacity-9 bg-extra-dark-gray"></div>
+                            <div class="d-table h-100 w-100">
+                                <div class="d-table-cell align-bottom padding-35px-right">
+                                    <span
+                                        class="text-white d-block text-extra-large margin-15px-bottom alt-font font-weight-500">Academics</span>
+                                    <p class="interactive-banners-content-text">We aim to send out well-rounded personalities into the world, who are capable of facing life with an inner strength and fortitude, and becoming an asset to society.</p>
+                                    <a href="#" class="btn btn-small btn-tussock">View more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-12 col-lg-4 col-md-6 col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn"
+                    data-wow-delay="0.4s">
+                    <div class="interactive-banners-style-05">
+                        <div class="interactive-banners-image">
+                            <img src="assets/images/lifeat2.jpg" alt="" />
+                            <div class="overlay-bg bg-gradient-midium-gray-transparent opacity-medium"></div>
+                            <a href="#"
+                                class="section-link icon-box-circled w-35px h-35px line-height-32px text-center text-white border-all border-width-2px border-color-white position-absolute bottom-50px right-45px z-index-1 lg-right-30px xs-bottom-25px">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="interactive-banners-content padding-3-half-rem-all lg-padding-2-half-rem-lr xs-padding-4-rem-all">
+                            <div class="overlayer-box bottom-0px top-auto opacity-9 bg-extra-dark-gray"></div>
+                            <div class="d-table h-100 w-100">
+                                <div class="d-table-cell align-bottom padding-35px-right">
+                                    <span
+                                        class="text-white d-block text-extra-large margin-15px-bottom alt-font font-weight-500">Curricular Facilities</span>
+                                    <p class="interactive-banners-content-text">We believe that education goes beyond textbooks and classrooms. Our activities are designed to foster holistic development and nurturing skills.</p>
+                                    <a href="#" class="btn btn-small btn-tussock">View more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-12 col-lg-4 col-md-6 col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s">
+                    <div class="interactive-banners-style-05">
+                        <div class="interactive-banners-image">
+                            <img src="assets/images/lifeat3.jpg" alt="" />
+                            <div class="overlay-bg bg-gradient-midium-gray-transparent opacity-medium"></div>
+                            <a href="#"
+                                class="section-link icon-box-circled w-35px h-35px line-height-32px text-center text-white border-all border-width-2px border-color-white position-absolute bottom-50px right-45px z-index-1 lg-right-30px xs-bottom-25px">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="interactive-banners-content padding-3-half-rem-all lg-padding-2-half-rem-lr xs-padding-4-rem-all">
+                            <div class="overlayer-box bottom-0px top-auto opacity-9 bg-extra-dark-gray"></div>
+                            <div class="d-table h-100 w-100">
+                                <div class="d-table-cell align-bottom padding-35px-right">
+                                    <span
+                                        class="text-white d-block text-extra-large margin-15px-bottom alt-font font-weight-500">Co-Curricular Facilities</span>
+                                    <p class="interactive-banners-content-text">Our commitment to providing a robust co-curricular experience ensures that every student's talents are recognized and cultivated.</p>
+                                    <a href="#" class="btn btn-small btn-tussock">View more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           <!-- static box end -->
           @endif
        @endif       
             
