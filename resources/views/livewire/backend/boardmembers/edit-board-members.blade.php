@@ -148,7 +148,7 @@
                                  
                                  <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label">Image</label>
+                                        <label class="form-label">Image (width:800 height:500)</label>
                                         <input type="file" class="form-control" id="" wire:model="editimage">
                                          @if(isset($editimage))  
                                                <img  src="{{$editimage->temporaryUrl()}}" width="200" alt="---"  width="100" height="70">  

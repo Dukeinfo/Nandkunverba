@@ -154,7 +154,7 @@
                              
                                  <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label">Image</label>
+                                        <label class="form-label">Image (width:800 height:500)</label>
                                         <input type="file" class="form-control" id="" wire:model="image">
                                         @error('image') <span class="error">{{ $message }}</span> @enderror
                                     </div>
