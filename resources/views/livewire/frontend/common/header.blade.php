@@ -72,8 +72,6 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
 
 @endphp
 
-
-
 <li class="menu-list-item">
    @if(isset($menu->link) ) 
    <a href="{{ !empty($menu->link) ? route($menu->link) : '#' }}">
@@ -97,7 +95,8 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
           <!-- show + sign for toggle -->           
           @if(isset($submenus) )
               @foreach($submenus as $submenu)
-                      <span class="menu-toggle"></span>
+                       <span class="menu-toggle">Test</span>
+
               @endforeach
           @endif
             <!-- ul start for sub menus -->     
