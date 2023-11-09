@@ -116,12 +116,13 @@ class CreatePage extends Component
     }
 
      public function delete($id){
+       $createPage=appCreatePage::where('id',$id)->delete();
 
-      $createPage = appCreatePage::findOrFail($id);
+      /*$createPage = appCreatePage::findOrFail($id);
       if(!is_null($createPage)){
         $createPage->status = 'Inactive';
         $createPage->save();
-      }
+      }*/
 
      }
 
