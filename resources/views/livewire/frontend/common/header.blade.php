@@ -82,7 +82,13 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
 
         @endif 
     </a> 
-     <span class="menu-toggle"></span>
+    <!-- show + sign for toggle -->           
+          @if(isset($submenus) )
+              @foreach($submenus as $submenu)
+                       <span class="menu-toggle"></span>
+
+              @endforeach
+          @endif
    @else
     <a href="javascript:void(0);">
 
@@ -94,7 +100,13 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
         @endif 
   </a> 
 
-  <span class="menu-toggle"></span>
+  <!-- show + sign for toggle -->           
+          @if(isset($submenus) )
+              @foreach($submenus as $submenu)
+                       <span class="menu-toggle"></span>
+
+              @endforeach
+          @endif
 
                 
 @endif              
