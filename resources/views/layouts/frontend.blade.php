@@ -148,13 +148,12 @@
     <!-- end scroll to top -->
     <!-- javascript -->
 
+     @livewireScripts
      
+
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/theme-vendors.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
-
-    @livewireScripts
-
 </body>
 
 </html>
