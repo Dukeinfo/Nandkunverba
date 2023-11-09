@@ -224,7 +224,7 @@
                                         <label class="form-label">Status <span class="text-danger">*</span></label>
                                             <select wire:model="status" class="form-select">
                                                  <option value="">Select</option>
-                                                <option value="Active" selected>Active</option>
+                                                <option value="Active"  >Active</option>
                                                 <option value="Inactive">Inactive</option>
                                             </select>
                                         @error('status') <span class="error">{{ $message }}</span> @enderror

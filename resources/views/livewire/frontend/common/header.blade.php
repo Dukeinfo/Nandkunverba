@@ -104,28 +104,28 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
                              @endif
                             <ul class="sub-menu-item">
                         @foreach($getpage as $page)
-                           @if($page->SubMenu->cms == 'Yes' && $page->SubMenu->status == 'Active' )
-                                <li class="menu-list-item"><a href="{{ route('detail_page', ['page_id' => $page->id ?? '', 'slug' => $page->SubMenu->slug ?? '']) }}">@if(session()->get('language') == 'gujrati')
-             {{$page->SubMenu->name_guj ?? ''}}
-        @else
-             {{$page->SubMenu->name ?? ''}}
-        @endif  
+                   @if($page->SubMenu->cms == 'Yes' && $page->SubMenu->status == 'Active' )
+                                <li class="menu-list-item"><a href="{{ route('detail_page', ['page_id' => $page->id ?? '', 'slug' => $page->SubMenu->slug ?? '']) }}">
+                      @if(session()->get('language') == 'gujrati')
+                           {{$page->SubMenu->name_guj ?? ''}}
+                      @else
+                           {{$page->SubMenu->name ?? ''}}
+                      @endif  
 </a></li>
 
-        
-
-
-                           @else
+      
+                      @else
 
                             @endif
 
                             @endforeach
                             @foreach($submenus as $submenu)
-                                 <li class="menu-list-item"><a href="{{ isset($submenu->pname) ? route($submenu->pname) : '#' }}">@if(session()->get('language') == 'gujrati')
-             {{$submenu->name_guj ?? ''}}
-        @else
-             {{$submenu->name ?? ''}}
-        @endif </a></li>
+                                 <li class="menu-list-item"><a href="{{ isset($submenu->pname) ? route($submenu->pname) : '#' }}">
+                              @if(session()->get('language') == 'gujrati')
+                                   {{$submenu->name_guj ?? ''}}
+                              @else
+                                   {{$submenu->name ?? ''}}
+                              @endif </a></li>
                             @endforeach
 
 

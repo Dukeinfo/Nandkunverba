@@ -61,11 +61,11 @@ class ViewSubMenu extends Component
           'name_guj' => 'required', 
           'sort_id' => 'required',
           'cms' => 'required', 
-          'url_link' => 'required', 
           'status' => 'required', 
           'image' =>  'required', 
         ]);
       }
+    if($this->cms == "No"){   
     $this->validate([
       'menu_id' => 'required', 
       'name' => 'required ',
@@ -75,6 +75,7 @@ class ViewSubMenu extends Component
       'status' => 'required', 
       'pname'=> 'required', 
     ]);
+  }
       if(!is_null($this->image)){
         $image =  $this->image;
         // Define folder path

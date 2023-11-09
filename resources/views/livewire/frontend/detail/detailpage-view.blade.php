@@ -129,6 +129,8 @@
                 <div class="col-lg-9">
                     @forelse ($getpageData as $index => $data) 
 
+
+
                     @if(isset($data->image))
                     <img src="{{ getpageImage($data->image) ?? '' }}" class="img-fluid rounded mb-3" alt="">
                     @endif
@@ -136,13 +138,13 @@
 @if(session()->get('language') == 'gujrati')
                 <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
 
-                    {!! $data->heading_guj ?? "" !!}</h5>
+                    {!! $data->heading_guj ?? "" !!}  </h5>
 
                     <p>{!! $data->description_guj ?? "" !!}</p>
 @else
                     <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
 
-                    {!! $data->heading ?? "" !!}</h5>
+                    {!! $data->heading ?? "" !!}  </h5>
 
                     <p>{!! $data->description ?? "" !!}</p>
 
