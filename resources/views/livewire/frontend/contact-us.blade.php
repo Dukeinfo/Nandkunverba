@@ -132,10 +132,14 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                         <div class="feature-box-content last-paragraph-no-margin">
                            @if(session()->get('language') == 'gujrati')
                             <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">અમને શોધો</span>
-                            <p class="d-inline-block w-70 lg-w-90 md-w-60 sm-w-80 xs-w-100">નિલંબો સર્કલ, દેવબાઘ, ભાવનગર, ગુજરાત ૩૬૪૦૦૨</p>
+                            <p class="d-inline-block w-70 lg-w-90 md-w-60 sm-w-80 xs-w-100">શ્રી નંદકુંવરબા ક્ષત્રિય કન્યા વિદ્યાલય ટ્રસ્ટ,
+નિલમબાગ સર્કલ,
+ભાવનગર, ગુજરાત</p>
                            @else
                             <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">Locate Us</span>
-                            <p class="d-inline-block w-70 lg-w-90 md-w-60 sm-w-80 xs-w-100">Nilambaug Circle, Devbagh, Bhavnagar, Gujarat 364002</p>
+                            <p class="d-inline-block w-70 lg-w-90 md-w-60 sm-w-80 xs-w-100">Shree Nandkunverba Kshatriya Kanya Vidyalaya Trust,
+Nilambaug Circle,
+Bhavnagar, Gujarat</p>
                            @endif  
 
                         </div>
@@ -151,10 +155,10 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                         <div class="feature-box-content last-paragraph-no-margin">
                          @if(session()->get('language') == 'gujrati')      
                           <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">ચાલો ચર્ચા કરીએ</span>
-                            <p>ફોન: +91 9876543210<br>ફેક્સ: 1-800-222-002</p>
+                            <p>જયદેવ પાઠક : 9427144017<br></p>
                          @else 
                             <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">Let's Talk</span>
-                            <p>Phone: +91 9876543210<br>Fax: 1-800-222-002</p>
+                            <p>Jaydev Pathak : 9427144017<br></p>
                          @endif   
                         </div>
                     </div>
@@ -174,7 +178,7 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                             E-mail Us
                          @endif   
                         </span>
-                            <p><a href="mailto:info@yourdomain.com" class="text-sky-blue-hover">info@yourdomain.com</a><br><a href="mailto:hr@yourdomain.com" class="text-light-blue text-sky-blue-hover">hr@yourdomain.com</a></p>
+                            <p><a href="mailto:jainandinigohil18@gmail.com" class="text-sky-blue-hover">info@yourdomain.com</a><br><a href="mailto:hr@yourdomain.com" class="text-light-blue text-sky-blue-hover"></a></p>
                         </div>
                     </div>
                 </div>
@@ -188,10 +192,10 @@ $pageTitle =  App\Models\PageHeading::where('status','Active')->where('pname',$g
                         <div class="feature-box-content last-paragraph-no-margin">
                           @if(session()->get('language') == 'gujrati')
                            <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">પ્રવેશ પુછપરછ</span>
-                            <p>ફોન: +91 9876543210<br>ફેક્સ: 1-800-222-002</p>
+                            <p>ફોન: +91 9427144017<br></p>
                           @else
                             <span class="alt-font font-weight-500 margin-10px-bottom d-block text-extra-dark-gray text-small text-uppercase">Admission Enquiry</span>
-                            <p>Phone: +91 9876543210<br>Fax: 1-800-222-002</p>
+                            <p>Phone: +91 9427144017<br></p>
                           @endif
                         </div>
                     </div>
