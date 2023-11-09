@@ -57,13 +57,13 @@ class ViewSubMenu extends Component
       if($this->cms == "Yes"){
         $this->validate([
           'menu_id' => 'required', 
-          'name' => 'required | unique:submenus,name',
-          'name_guj' => 'required | unique:submenus,name_guj', 
+          'name' => 'required ',
+          'name_guj' => 'required', 
           'sort_id' => 'required',
           'cms' => 'required', 
           'url_link' => 'required', 
           'status' => 'required', 
-          'image' =>  'required|file', 
+          'image' =>  'required', 
         ]);
       }
     $this->validate([
