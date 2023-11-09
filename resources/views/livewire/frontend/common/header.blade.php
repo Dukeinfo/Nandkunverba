@@ -56,6 +56,9 @@ $SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where(['status' =>
             @foreach($menus as $menu)
 
 @php
+
+$submenuCount= App\Models\Submenu::where(['menu_id' => $menu->id])->count(); //count record
+
  $submenus = App\Models\Submenu::with(['Menu'])->where('cms', 'No')
             ->where('menu_id', $menu->id)
             ->orderBy('sort_id', 'asc')
@@ -83,12 +86,12 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
         @endif 
     </a> 
     <!-- show + sign for toggle -->           
-        
+          @if($submenuCount>0) 
              
-              <span class="menu-toggle"></span>
+                       <span class="menu-toggle"></span>
 
               
-          
+          @endif
    @else
     <a href="javascript:void(0);">
 
@@ -101,10 +104,11 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
   </a> 
 
   <!-- show + sign for toggle -->           
-         
-      <span class="menu-toggle"></span>
+          @if($submenuCount>0) 
+                       <span class="menu-toggle"></span>
 
-             
+              
+          @endif
 
                 
 @endif              
