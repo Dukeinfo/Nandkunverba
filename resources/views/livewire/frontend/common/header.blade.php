@@ -47,8 +47,8 @@ $SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where(['status' =>
                      @endif
                 <div class="menu-list-wrapper w-75 lg-w-80 md-w-75 sm-w-60 xs-w-100 position-relative padding-15px-lr margin-3-rem-tb"
                     data-scroll-options='{ "theme": "light" }'>
-                    <!-- start menu -->
-                    <ul class="menu-list alt-font w-70 xl-w-100 margin-auto-lr">
+<!-- start menu -->
+<ul class="menu-list alt-font w-70 xl-w-100 margin-auto-lr">
 @php
  $menus = App\Models\Menu::orderBy('sort_id','asc')->where('status','Active')->get();     
 @endphp    
@@ -75,7 +75,6 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
 
 
 <li class="menu-list-item">
-
    @if(isset($menu->link) ) 
    <a href="{{ !empty($menu->link) ? route($menu->link) : '#' }}">
         @if(session()->get('language') == 'gujrati')
@@ -84,10 +83,8 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
              {{$menu->name ?? ''}}
 
         @endif 
-         </a> 
-
+    </a> 
    @else
-
     <a href="javascript:void(0);">
         @if(session()->get('language') == 'gujrati')
              {{$menu->name_guj ?? ''}}
@@ -95,50 +92,50 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
              {{$menu->name ?? ''}}
 
         @endif 
-         </a>      
-  @endif                         
-                            @if(isset($submenus) )
-                               @foreach($submenus as $submenu)
-                            <span class="menu-toggle"></span>
-                            @endforeach
-                             @endif
-                            <ul class="sub-menu-item">
-                        @foreach($getpage as $page)
+  </a>      
+@endif              
+          <!-- show + sign for toggle -->           
+          @if(isset($submenus) )
+              @foreach($submenus as $submenu)
+                      <span class="menu-toggle"></span>
+              @endforeach
+          @endif
+            <!-- ul start for sub menus -->     
+            <ul class="sub-menu-item">
+              <!--  sub menus if custom=Yes  -->
+               @foreach($getpage as $page)
                    @if($page->SubMenu->cms == 'Yes' && $page->SubMenu->status == 'Active' )
-                                <li class="menu-list-item"><a href="{{ route('detail_page', ['page_id' => $page->id ?? '', 'slug' => $page->SubMenu->slug ?? '']) }}">
+              <li class="menu-list-item"><a href="{{ route('detail_page', ['page_id' => $page->id ?? '', 'slug' => $page->SubMenu->slug ?? '']) }}">
                       @if(session()->get('language') == 'gujrati')
                            {{$page->SubMenu->name_guj ?? ''}}
                       @else
                            {{$page->SubMenu->name ?? ''}}
                       @endif  
-</a></li>
+              </a>
+             </li>
+                     @else
+                        <!-- show here for else -->
+                  @endif
+             @endforeach
 
-      
-                      @else
-
-                            @endif
-
-                            @endforeach
-                            @foreach($submenus as $submenu)
-                                 <li class="menu-list-item"><a href="{{ isset($submenu->pname) ? route($submenu->pname) : '#' }}">
+             <!-- sub menus if custom=No -->
+              @foreach($submenus as $submenu)
+                  <li class="menu-list-item"><a href="{{ isset($submenu->pname) ? route($submenu->pname) : '#' }}">
                               @if(session()->get('language') == 'gujrati')
                                    {{$submenu->name_guj ?? ''}}
                               @else
                                    {{$submenu->name ?? ''}}
-                              @endif </a></li>
-                            @endforeach
-
-
-                            </ul>
-
-                            
-                            
-                           
-                        </li>
+                              @endif 
+                  </a>
+                 </li>
+              <!-- sub menus end -->   
+               @endforeach
+              </ul><!-- ul end for sub menus -->
+   </li>
                @endforeach
             @endif
-                    </ul>
-                    <!-- end menu -->
+</ul>
+ <!-- end menu -->
                 </div>
                 <div class="text-center elements-social social-icon-style-12 d-none d-md-inline-block">
                     <ul class="small-icon light">

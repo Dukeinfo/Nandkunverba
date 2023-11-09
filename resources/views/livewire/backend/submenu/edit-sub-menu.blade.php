@@ -241,7 +241,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" wire:loading.attr="disabled"  class="btn btn-primary w-md" wire:click="editsubMenu">Submit</button>
+                                    <button type="submit"   class="btn btn-primary w-md" wire:click="editsubMenu">Submit</button>
                                    
                                 </div>
                                 <div wire:loading wire:target="editsubMenu">

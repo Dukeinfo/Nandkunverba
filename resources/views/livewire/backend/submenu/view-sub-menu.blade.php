@@ -131,10 +131,12 @@
                             <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label">Upload image  @if($cms == "Yes") <span class="text-danger">*</span> @endif</label>
-                                        <input type="file" class="form-control" @if($cms == "No") disabled     @endif    wire:model="image">
+                                        <input type="file" class="form-control" @if($cms == "No") disabled     @endif    wire:model="image" wire:click="addImage">
                                         @error('image') <span class="error">{{ $message }}</span> @enderror
                                     
                                     </div>
+
+                                  
                                 </div>
                        
                                 
@@ -232,12 +234,10 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" wire:loading.attr="disabled"  class="btn btn-primary w-md" >Submit</button>
+                                    <button type="submit"   class="btn btn-primary w-md" >Submit</button>
                                    
                                 </div>
-                                <div wire:loading wire:target="addsubMenu">
-                                    <img src="{{asset('loading.gif')}}" width="30" height="30" class="m-auto mt-1/4">
-                                 </div>
+                                
                             </div>
                         </div>
                     </div>
