@@ -32,8 +32,8 @@ class ViewSubMenu extends Component
 
     protected $rules = [ 
         'menu_id' => 'required', 
-        'name' => 'required | unique:submenus,name',
-        'name_guj' => 'required | unique:submenus,name_guj', 
+        'name' => 'required ',
+        'name_guj' => 'required', 
         'sort_id' => 'required',
         'cms' => 'required', 
         'status' => 'required', 
@@ -68,8 +68,8 @@ class ViewSubMenu extends Component
       }
     $this->validate([
       'menu_id' => 'required', 
-      'name' => 'required | unique:submenus,name',
-      'name_guj' => 'required | unique:submenus,name_guj', 
+      'name' => 'required ',
+      'name_guj' => 'required', 
       'sort_id' => 'required',
       'cms' => 'required', 
       'status' => 'required', 
