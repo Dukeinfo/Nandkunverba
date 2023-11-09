@@ -48,88 +48,94 @@ $SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where(['status' =>
                 <div class="menu-list-wrapper w-75 lg-w-80 md-w-75 sm-w-60 xs-w-100 position-relative padding-15px-lr margin-3-rem-tb"
                     data-scroll-options='{ "theme": "light" }'>
  <!-- start menu -->
-                    <ul class="menu-list alt-font w-70 xl-w-100 margin-auto-lr">
+<ul class="menu-list alt-font w-70 xl-w-100 margin-auto-lr">
+@php
+ $menus = App\Models\Menu::orderBy('sort_id','asc')->where('status','Active')->get();     
+@endphp    
+          @if(isset($menus) )
+            @foreach($menus as $menu)
 
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">Home</a>
-                        </li>
-
-
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">About Us</a><span class="menu-toggle"></span>
-                            <ul class="sub-menu-item">
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">About</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Vision & Mission</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Location</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Historical Foundation</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Founder's Philosophy</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">Academics</a><span class="menu-toggle"></span>
-                            <ul class="sub-menu-item">
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Academic Objectives</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">Guidence & Counselling</a><span class="menu-toggle"></span>
-                            <ul class="sub-menu-item">
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Counselling Cell</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Career Counselling</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">Activities</a>
-                        </li>
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">Facilities</a><span class="menu-toggle"></span>
-                            <ul class="sub-menu-item">
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Curricular Facilities</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="javascript:void(0);">Co-Curricular Facilities</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">Societies</a>
-                        </li>
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">News & Events</a>
-                        </li>
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">Student Speaks</a>
-                        </li>
-                        <li class="menu-list-item">
-                            <a href="javascript:void(0);">Contact Us</a>
-                        </li>
+@php
+ $submenus = App\Models\Submenu::with(['Menu'])->where('cms', 'No')
+            ->where('menu_id', $menu->id)
+            ->orderBy('sort_id', 'asc')
+            ->where('status', 'Active')
+            ->get();   
 
 
+$getpage = App\Models\CreatePage::where('menu_id', $menu->id)
+            ->with(['SubMenu'])
+            ->orderBy('sort_id', 'asc')
+            ->where('status', 'Active')
+            ->groupBy('submenu_id')
+            ->get();
 
-                    </ul>
-                    <!-- end menu -->
+@endphp
+
+<li class="menu-list-item">
+   @if(isset($menu->link) ) 
+   <a href="{{ !empty($menu->link) ? route($menu->link) : '#' }}">
+        @if(session()->get('language') == 'gujrati')
+             {{$menu->name_guj ?? ''}}
+        @else
+             {{$menu->name ?? ''}}
+
+        @endif 
+    </a> 
+     <span class="menu-toggle"></span>
+   @else
+    <a href="javascript:void(0);">
+
+        @if(session()->get('language') == 'gujrati')
+             {{$menu->name_guj ?? ''}}
+        @else
+             {{$menu->name ?? ''}}
+
+        @endif 
+  </a> 
+
+  <span class="menu-toggle"></span>
+
+                
+@endif              
+          
+
+            <!-- ul start for sub menus -->     
+            <ul class="sub-menu-item">
+              <!--  sub menus if custom=Yes  -->
+               @foreach($getpage as $page)
+                   @if($page->SubMenu->cms == 'Yes' && $page->SubMenu->status == 'Active' )
+              <li class="menu-list-item"><a href="{{ route('detail_page', ['page_id' => $page->id ?? '', 'slug' => $page->SubMenu->slug ?? '']) }}">
+                      @if(session()->get('language') == 'gujrati')
+                           {{$page->SubMenu->name_guj ?? ''}}
+                      @else
+                           {{$page->SubMenu->name ?? ''}}
+                      @endif  
+              </a>
+             </li>
+                     @else
+                        <!-- show here for else -->
+                  @endif
+             @endforeach
+
+             <!-- sub menus if custom=No -->
+              @foreach($submenus as $submenu)
+                  <li class="menu-list-item"><a href="{{ isset($submenu->pname) ? route($submenu->pname) : '#' }}">
+                              @if(session()->get('language') == 'gujrati')
+                                   {{$submenu->name_guj ?? ''}}
+                              @else
+                                   {{$submenu->name ?? ''}}
+                              @endif 
+                  </a>
+                 </li>
+              <!-- sub menus end -->   
+               @endforeach
+              </ul><!-- ul end for sub menus -->
+   </li>
+               @endforeach
+            @endif
+</ul>
+ <!-- end menu -->
                 </div>
                 <div class="text-center elements-social social-icon-style-12 d-none d-md-inline-block">
                     <ul class="small-icon light">
