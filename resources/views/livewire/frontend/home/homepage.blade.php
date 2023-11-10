@@ -454,7 +454,7 @@ $categorySecond = App\Models\Whyus::where('category', '2')->where('status', 'Act
                     @endif
 
                     @endif
-                    <a href="{{$categorySecond->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple margin-20px-top" target="_blank">
+                    <a href="{{$categorySecond->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple margin-20px-top" >
                         @if(session()->get('language') == 'gujrati')
                         વધુ જાણો
                         @else

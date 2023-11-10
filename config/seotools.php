@@ -36,7 +36,7 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'Pinegrow school | Home', // set false to total remove
+            'title'       => 'Shri Nandkunverba Kshatriya Kanya Vidyalaya - Bhavnagar, Gujrat', // set false to total remove
             'description' => '', // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
@@ -58,8 +58,8 @@ return [
          * The default configurations to be used by the json-ld generator.
          */
         'defaults' => [
-            'title'       => 'Pinegrow school', // set false to total remove
-            'description' => 'This is my page description of Pinegrow school', // set false to total remove
+            'title'       => 'Shri Nandkunverba Kshatriya Kanya Vidyalaya', // set false to total remove
+            'description' => '', // set false to total remove
             'url'         => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [],
