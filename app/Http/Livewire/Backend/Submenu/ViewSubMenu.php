@@ -179,7 +179,7 @@ class ViewSubMenu extends Component
         $this->seo_description = null;
     }
     public function delete($id){
-      // $smenu=Submenu::where('id',$id)->delete();
+       //$smenu=Submenu::where('id',$id)->delete();
          $smenu = Submenu::findOrFail($id);
           if(!is_null($smenu)){
            $smenu->status = 'Inactive';

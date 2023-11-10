@@ -37,12 +37,14 @@ class EditWhyusPage extends Component
         $this->image = $whyus->image;
         $this->thumbnail = $whyus->thumbnail;
         $this->desc = $whyus->description;
+        $this->link = $whyus->link;
         $this->desc_guj = $whyus->description_guj;
         $this->yearexcellence = $whyus->yearexcellence;
         $this->expteachers = $whyus->expteachers;
         $this->notalumna = $whyus->notalumna;
         $this->sort_id = $whyus->sort_id;
     	  $this->status = $whyus->status;
+
 
        
 

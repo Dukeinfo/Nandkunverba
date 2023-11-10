@@ -118,23 +118,21 @@ $getpage = App\Models\CreatePage::where('menu_id', $menu->id)
             <ul class="sub-menu-item">
               <!--  sub menus if custom=Yes  -->
                @foreach($getpage as $page)
+                 @if($page->SubMenu) 
                    @if($page->SubMenu->cms == 'Yes' && $page->SubMenu->status == 'Active' )
-
-              <li class="menu-list-item">
-              
-                <a href="{{ route('detail_page', ['page_id' => $page->id ?? '', 'slug' => $page->SubMenu->slug ?? '']) }}">
-            
-
-                      @if(session()->get('language') == 'gujrati')
-                           {{$page->SubMenu->name_guj ?? ''}}
-                      @else
-                           {{$page->SubMenu->name ?? ''}}
-                      @endif  
-              </a>
-             </li>
+                  <li class="menu-list-item">
+                    <a href="{{ route('detail_page', ['page_id' => $page->id ?? '', 'slug' => $page->SubMenu->slug ?? '']) }}">
+                        @if(session()->get('language') == 'gujrati')
+                               {{$page->SubMenu->name_guj ?? ''}}
+                          @else
+                               {{$page->SubMenu->name ?? ''}}
+                          @endif  
+                  </a>
+                 </li>
                      @else
                         <!-- show here for else -->
                   @endif
+                @endif  
              @endforeach
 
              <!-- sub menus if custom=No -->

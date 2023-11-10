@@ -112,7 +112,7 @@
                             
                             <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">                    
 @php
-$submenus= App\Models\Submenu::where('menu_id', $menu_id)->where('cms', 'Yes')->get(); 
+$submenus= App\Models\Submenu::where('menu_id', $menu_id)->where('cms', 'Yes')->where('status', 'Active')->get(); 
 @endphp
 @if(isset($submenus) && count($submenus)>0  )
           @foreach($submenus as $key => $submenu) 
@@ -147,9 +147,6 @@ $page = App\Models\CreatePage::where('submenu_id', $submenu->id)
                
                 <div class="col-lg-9">
                     @forelse ($getpageData as $index => $data) 
-
-
-
                     @if(isset($data->image))
                     <img src="{{ getpageImage($data->image) ?? '' }}" class="img-fluid rounded mb-3" alt="">
                     @endif
