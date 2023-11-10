@@ -111,15 +111,25 @@
                             </div>
                             
                             <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">
-                                <li class="padding-15px-bottom border-bottom border-color-medium-gray">
+                           
+      @php
+      $submenus= App\Models\Submenu::where('menu_id', $menu_id)->get(); 
+      @endphp
+      
+       @if(isset($submenus) && count($submenus)>0  )
+                @foreach($submenus as $key => $submenu) 
+
+<li class="padding-15px-bottom border-bottom border-color-medium-gray">
                                     <a href="javascript:void()" class="text-tussock-hover">
                                     @if(session()->get('language') == 'gujrati')
-                                    {{Str::title( $name_guj) }}
+                                    {{Str::title( $submenu->name_guj) }}
                                     @else    
-                                    {{Str::title( $name) }}
+                                    {{Str::title( $submenu->name) }}
                                     @endif
                                     </a>
                                 </li>
+       @endforeach                  
+            @endif            
                                 
                             </ul>
                         </div>

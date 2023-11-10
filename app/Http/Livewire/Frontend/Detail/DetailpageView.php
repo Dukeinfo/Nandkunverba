@@ -43,6 +43,7 @@ class DetailpageView extends Component
             $this->display_heading_guj = $pageData->SubMenu->display_heading_guj;
             $this->display_subheading_guj = $pageData->SubMenu->display_subheading_guj;
             $this->name = $pageData->SubMenu->name;
+            $this->menu_id = $pageData->SubMenu->menu_id;
             $this->name_guj = $pageData->SubMenu->name_guj;
             
             $this->seotitle = $pageData->SubMenu->seo_title;

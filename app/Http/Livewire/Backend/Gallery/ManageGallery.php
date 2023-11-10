@@ -97,7 +97,7 @@ class ManageGallery extends Component
       $gallery->status = $this->status;
       $gallery->save();
 
-       $this->resetInputFields();
+      $this->resetInputFields();
 
        $this->dispatchBrowserEvent('swal:modal', [
               'type' => 'success',  
