@@ -116,8 +116,20 @@ $submenus= App\Models\Submenu::where('menu_id', $menu_id)->where('cms', 'Yes')->
 @endphp
 @if(isset($submenus) && count($submenus)>0  )
           @foreach($submenus as $key => $submenu) 
+@php
+$page = App\Models\CreatePage::where('submenu_id', $submenu->id)
+            ->with(['SubMenu'])
+            ->orderBy('sort_id', 'asc')
+            ->where('status', 'Active')
+            ->first();
+@endphp           
+
     <li class="padding-15px-bottom border-bottom border-color-medium-gray">
-            <a href="javascript:void()" class="text-tussock-hover">
+    @if($page)
+    <a href="{{ route('detail_page', ['page_id' => $page->id ?? '', 'slug' => $page->SubMenu->slug ?? '']) }}" class="text-tussock-hover">
+    @else 
+     <a href="#" class="text-tussock-hover">
+    @endif  
             @if(session()->get('language') == 'gujrati')
             {{Str::title( $submenu->name_guj) }}
             @else    
