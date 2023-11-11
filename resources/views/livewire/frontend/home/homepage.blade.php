@@ -775,11 +775,11 @@ $testimonials = App\Models\Testimonials::where('status', 'Active')->get();
 
 
 
-{!! Str::limit($testim->description_guj, 481, $end='<a href="' . route('home.testimonials') . '"> Read more</a>') !!}
+{!! Str::limit($testim->description_guj, 481, $end='<a href="' . route('home.testimonials') . '" style="text-decoration:underline;color: inherit;" target="_blank">&nbsp; Read more</a>') !!}
 
 @else
 
-{!! Str::limit($testim->description, 481, $end='<a href="' . route('home.testimonials') . '"> Read more</a>') !!}
+{!! Str::limit($testim->description, 481, $end='<a href="' . route('home.testimonials') . '" style="text-decoration:underline;color: inherit;" target="_blank"> &nbsp;Read more</a>') !!}
 
 @endif   
                                        </p>
