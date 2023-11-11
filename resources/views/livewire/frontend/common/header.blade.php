@@ -8,7 +8,7 @@ $SocialApps = App\Models\SocialApp::orderBy('sort_id','asc')->where(['status' =>
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent header-dark fixed-top navbar-static-overlay">
             <div class="container-fluid h-130px md-h-70px">
                 <div class="col-6 col-lg-2 me-auto me-auto ps-lg-0">
-                    <a class="navbar-brand" href="javascript:void()">
+                    <a class="navbar-brand" href="{{url('/')}}">
                  @if (isset($contactInfo->logo))
                         <img src="{{ asset('storage/' . $contactInfo->logo) }}" class="default-logo" alt="">
                         <img src="{{ asset('storage/' . $contactInfo->logo) }}" class="mobile-logo" alt="">

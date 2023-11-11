@@ -136,7 +136,7 @@ $categoryFirst = App\Models\Whyus::where('category', '1')->where('status', 'Acti
                         decided to educate the girls of the community.</p>
                     @endif
              @endif    
-                    <a href="{{$categoryFirst->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple">
+                    <a href="{{$categoryFirst->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple" target="_blank">
                     @if(session()->get('language') == 'gujrati')    
                         વધુ અન્વેષણ કરો
                     @else
@@ -454,7 +454,7 @@ $categorySecond = App\Models\Whyus::where('category', '2')->where('status', 'Act
                     @endif
 
                     @endif
-                    <a href="{{$categorySecond->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple margin-20px-top" >
+                    <a href="{{$categorySecond->link ?? 'javascript:void()'}}" class="btn btn-fancy btn-medium btn-dark-purple margin-20px-top" target="_blank">
                         @if(session()->get('language') == 'gujrati')
                         વધુ જાણો
                         @else
