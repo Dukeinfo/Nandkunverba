@@ -112,7 +112,9 @@
                             
                             <ul class="list-style-02 alt-font font-weight-500 text-small text-uppercase text-extra-dark-gray my-4">                    
 @php
-$submenus= App\Models\Submenu::where('menu_id', $menu_id)->where('cms', 'Yes')->where('status', 'Active')->get(); 
+$submenusIds = App\Models\CreatePage::where('menu_id',$menu_id)->pluck('submenu_id');
+
+$submenus= App\Models\Submenu::whereIn('id', $submenusIds)->where('status', 'Active')->get(); 
 @endphp
 @if(isset($submenus) && count($submenus)>0  )
           @foreach($submenus as $key => $submenu) 
@@ -122,7 +124,7 @@ $page = App\Models\CreatePage::where('submenu_id', $submenu->id)
             ->orderBy('sort_id', 'asc')
             ->where('status', 'Active')
             ->first();
-@endphp           
+@endphp            
 
     <li class="padding-15px-bottom border-bottom border-color-medium-gray">
     @if($page)

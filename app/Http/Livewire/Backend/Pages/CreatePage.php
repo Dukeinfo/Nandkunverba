@@ -65,7 +65,7 @@ class CreatePage extends Component
     public function render()
     {
     	$this->getMenus = Menu::get();
-    	 $this->records = appCreatePage::orderBy('submenu_id')->get();
+    	$this->records = appCreatePage::orderBy('submenu_id')->get();
         return view('livewire.backend.pages.create-page')->layout('layouts.backend');
     }
 
@@ -116,13 +116,13 @@ class CreatePage extends Component
     }
 
      public function delete($id){
-       $createPage=appCreatePage::where('id',$id)->delete();
+      //$createPage=appCreatePage::where('id',$id)->delete();
 
-      /*$createPage = appCreatePage::findOrFail($id);
+      $createPage = appCreatePage::findOrFail($id);
       if(!is_null($createPage)){
         $createPage->status = 'Inactive';
         $createPage->save();
-      }*/
+      }
 
      }
 
