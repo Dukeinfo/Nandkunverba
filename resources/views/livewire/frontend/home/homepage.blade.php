@@ -270,15 +270,19 @@ $expertservices = App\Models\ExpertService::where('status', 'Active')->first();
 
           @if(isset($expertservices->detail) )
                      @if(session()->get('language') == 'gujrati')
-                     {!! isset($expertservices->detail_guj) 
+                     {!! isset($expertservices->detailguj) 
                              ? 
-                             str_limit($expertservices->detail_guj, $limit=115 )
+                             str_limit($expertservices->detailguj, $limit=115 )
                               : ''!!}
+
+                      <br><br>
                      @else
                      {!! isset($expertservices->detail) 
                              ? 
                              str_limit($expertservices->detail, $limit=115 )
                               : ''!!}
+
+                     <br><br>         
                      @endif          
 
             @else    
@@ -290,14 +294,24 @@ $expertservices = App\Models\ExpertService::where('status', 'Active')->first();
                 @endif    
            @endif
 
+                @if(!empty($expertservices->link))
+                 <a href="{{$expertservices->link ?? 'javascript:void()'}}" class="btn btn-small btn-tussock" target="_blank">
+                 
+                @else
+                <a href="javascript:void()" class="btn btn-small btn-tussock" >
+                 @endif
 
-                    <a href="{{$expertservices->link ?? 'javascript:void()'}}" class="btn btn-small btn-tussock">
-                   @if(session()->get('language') == 'gujrati')
+                @if(session()->get('language') == 'gujrati')
                     વધુ જોવો
                    @else     
                     View more
-                   @endif  
+                 @endif  
                 </a>
+
+
+
+
+
                     <!-- <div class="swiper-button-next-nav-2 swiper-button-next slider-navigation-style-06"><i
                             class="line-icon-Arrow-OutRight"></i></div>
                     <div class="swiper-button-previous-nav-2 swiper-button-prev slider-navigation-style-06"><i
@@ -342,8 +356,18 @@ $expertservices = App\Models\ExpertService::where('status', 'Active')->first();
                                 @endif                
                                             </div>
                                             <div class="move-bottom-top margin-15px-top">
-                                                <a href="#"
+
+                                   @if(!empty($facility->link))             
+                                                <a href="{{$facility->link ?? 'javascript:void()'}}"
+                                                    class="btn btn-link p-0 btn-extra-large text-tussock text-tussock-hover md-margin-auto-lr" target="_blank">
+
+                                   @else
+                                    <a href="javascript:void()"
                                                     class="btn btn-link p-0 btn-extra-large text-tussock text-tussock-hover md-margin-auto-lr">
+                                   @endif
+
+
+
                                    @if(session()->get('language') == 'gujrati')
                                         વધુ વાંચો
                                    @else                 
