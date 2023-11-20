@@ -153,6 +153,7 @@ $page = App\Models\CreatePage::where('submenu_id', $submenu->id)
                     <img src="{{ getpageImage($data->image) ?? '' }}" class="img-fluid rounded mb-3" alt="">
                     @endif
 
+                    
 @if(session()->get('language') == 'gujrati')
                 <h5 class="alt-font text-dark-purple font-weight-600 w-85 margin-30px-bottom xl-w-100">
 
