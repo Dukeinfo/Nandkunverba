@@ -62,6 +62,7 @@ class EditCoachings extends Component
       $coachings->description = $this->desc;
       $coachings->title_guj = $this->title_guj;
       $coachings->description_guj = $this->desc_guj;
+      $coachings->link = $this->link;
       $coachings->sort_id =$this->sort;
       $coachings->status = $this->status;
       $coachings->save();
