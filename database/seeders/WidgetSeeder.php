@@ -15,6 +15,10 @@ class WidgetSeeder extends Seeder
     public function run()
     {
 
+        /*
+         menu_id  1  for home
+       */
+
     	//activities (4 widgets)
         $widget = new Widget();
         $widget->menu_id = 1;
